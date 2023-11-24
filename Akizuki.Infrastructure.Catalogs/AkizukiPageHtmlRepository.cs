@@ -6,6 +6,7 @@ using AngleSharp.XPath;
 using Akizuki.Domain.Catalogs;
 using CapStore.Domain.Components;
 using System.Text.RegularExpressions;
+using CapStore.Domain.Shareds;
 
 namespace Akizuki.Infrastructure.Catalogs.Html
 {
@@ -40,19 +41,20 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 			return description;
         }
 
-		private ComponentImages PartseComponentImages(IDocument document)
+		private ComponentImages PartseComponentImages(IDocument document, CatalogId catalogId)
 		{
-			const string PATTERN = "\\/img\\/goods\\/[A-Z][1-9]\\/[A-Z]-d{5}\\.jpg";
 			//画像
-			var imageTableNode = document.Body.GetElementsByTagName("a")
-												.Where(x => Regex.IsMatch(x.GetAttribute("href"), PATTERN));
-			
-			foreach(var node in imageTableNode)
-			{
-				Console.WriteLine(node);
-			}
+			IEnumerable<ImageUrl> imageUrls = document.Body.GetElementsByTagName("img")
+												.Select(x => x.GetAttribute("src"))
+												.Where(x => x.Contains(catalogId.Value))
+												.Distinct()
+												.Select(x => new AkizukiPageUrl(x))
+												.Where(x => Regex.IsMatch(x.Value, AkizukiImageUrl.PATTERN))
+												.Select(x => new ImageUrl(x.Value));												
 
-			return new ComponentImages();
+
+
+			return new ComponentImages(imageUrls);
 		}
 
         public async Task<AkizukiPage> FetchAkizukiPageAsync(AkizukiCatalogPageUrl url)
@@ -88,7 +90,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 				Maker maker = new Maker(MakerId.UnDetect(), makerName, null);
 
 
-				ComponentImages componentImages = PartseComponentImages(parsedDocument);
+				ComponentImages componentImages = PartseComponentImages(parsedDocument, url.CatalogId);
 
 				Component component = new Component(ComponentId.UnDetectId(),
 													name,

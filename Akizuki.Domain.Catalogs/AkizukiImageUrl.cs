@@ -10,7 +10,7 @@ namespace Akizuki.Domain.Catalogs
 	/// </summary>
 	public class AkizukiImageUrl
 	{
-		private readonly string PATTERN = $"{AkizukiPageUrlDomain.Value}/img/goods/[A-Z0-9]/[A-Z]-\\d{{5}}.(jpg|jpeg|gif|png)$";
+		public static readonly string PATTERN = $"{AkizukiPageUrlDomain.Value}/img/goods/[A-Z0-9]/[A-Z]-\\d{{5}}.(jpg|jpeg|gif|png)$";
 
 		private readonly ImageUrl _url;
 
@@ -33,6 +33,11 @@ namespace Akizuki.Domain.Catalogs
 		/// 秋月電子の画像URL
 		/// </summary>
 		public string Value => _url.Value;
+
+		/// <summary>
+		/// 画像URL
+		/// </summary>
+		public ImageUrl ImageUrl => _url;
 	}
 }
 

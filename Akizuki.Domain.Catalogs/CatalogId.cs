@@ -5,7 +5,7 @@ using CapStore.Domain.Shareds.Exceptions;
 namespace Akizuki.Domain.Catalogs
 {
 	/// <summary>
-	/// カタログID
+	/// カタログID(通販コード)
 	/// </summary>
 	public class CatalogId
 	{
@@ -35,7 +35,7 @@ namespace Akizuki.Domain.Catalogs
 		}
 
 		/// <summary>
-		/// カタログID
+		/// カタログID(通販コード)
 		/// </summary>
 		public string Value => _catalogId;
 

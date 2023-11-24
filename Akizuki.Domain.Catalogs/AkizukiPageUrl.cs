@@ -47,6 +47,7 @@ namespace Akizuki.Domain.Catalogs
 		/// 秋月電子のURL
 		/// </summary>
 		public string Value => _url;
+
     }
 }
 
