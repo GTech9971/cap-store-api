@@ -32,6 +32,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html.Test
 			Assert.IsTrue(akizukiPage.Component.Description.Value.Any());
             Assert.AreEqual("株式会社東芝セミコンダクター社(TOSHIBA)", akizukiPage.Component.Maker.Name.Value);
             Assert.AreEqual("半導体(モジュール)", akizukiPage.Component.Category.Name.Value);
+            Assert.IsTrue(akizukiPage.Component.Images.Any());
         }
 
         [TestMethod]
@@ -48,6 +49,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html.Test
             Assert.IsTrue(akizukiPage.Component.Description.Value.Any());
             Assert.AreEqual("Microchip Technology Inc.(マイクロチップ)/Atmel Corporation(アトメル)", akizukiPage.Component.Maker.Name.Value);
             Assert.AreEqual("マイコン関連", akizukiPage.Component.Category.Name.Value);
+            Assert.IsTrue(akizukiPage.Component.Images.Any());
         }
 
         [TestMethod]
@@ -64,6 +66,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html.Test
             Assert.IsTrue(akizukiPage.Component.Description.Value.Any());
             Assert.AreEqual("Microchip Technology Inc.(マイクロチップ)/Atmel Corporation(アトメル)", akizukiPage.Component.Maker.Name.Value);
             Assert.AreEqual("マイコン関連", akizukiPage.Component.Category.Name.Value);
+            Assert.IsTrue(akizukiPage.Component.Images.Any());
         }
 
         [TestMethod]
@@ -80,6 +83,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html.Test
             Assert.IsTrue(akizukiPage.Component.Description.Value.Any());
             Assert.AreEqual("Microchip Technology Inc.(マイクロチップ)/Atmel Corporation(アトメル)", akizukiPage.Component.Maker.Name.Value);
             Assert.AreEqual("マイコン関連", akizukiPage.Component.Category.Name.Value);
+            Assert.IsTrue(akizukiPage.Component.Images.Any());
         }
 
 
@@ -97,6 +101,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html.Test
             Assert.IsTrue(akizukiPage.Component.Description.Value.Any());
             Assert.AreEqual("株式会社秋月電子通商", akizukiPage.Component.Maker.Name.Value);
             Assert.AreEqual("マイコン関連", akizukiPage.Component.Category.Name.Value);
+            Assert.IsTrue(akizukiPage.Component.Images.Any());
         }
 
         [TestMethod]
@@ -113,6 +118,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html.Test
             Assert.IsTrue(akizukiPage.Component.Description.Value.Any());
             Assert.AreEqual("Cixi Wanjie Electronic Co.,Ltd(慈渓市万捷電子有限公司)", akizukiPage.Component.Maker.Name.Value);
             Assert.AreEqual("パーツ一般", akizukiPage.Component.Category.Name.Value);
+            Assert.IsTrue(akizukiPage.Component.Images.Any());
         }
     }
 }

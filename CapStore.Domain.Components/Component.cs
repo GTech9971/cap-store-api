@@ -12,18 +12,18 @@ namespace CapStore.Domain.Components
 		private readonly ComponentId _id;
 		private readonly ComponentName _name;
 		private readonly ComponentModelName _modelName;
-		private readonly ComponentDescription? _description;
+		private readonly ComponentDescription _description;
 		private readonly Category _category;
 		private readonly Maker _maker;
-		private readonly ComponentImages? _images;
+		private readonly ComponentImages _images;
 
 		public Component(ComponentId id,
 						ComponentName name,
 						ComponentModelName modelName,
-						ComponentDescription? description,
+						ComponentDescription description,
 						Category category,
 						Maker maker,
-						ComponentImages? images)
+						ComponentImages images)
 		{
 
 			if(id == null)
@@ -41,6 +41,11 @@ namespace CapStore.Domain.Components
 				throw new ValidationArgumentNullException("電子部品モデル名は必須です");
 			}
 
+			if(description == null)
+			{
+                throw new ValidationArgumentNullException("電子部品説明がNullです");
+            }
+
 			if(maker == null)
 			{
 				throw new ValidationArgumentNullException("メーカーは必須です");
@@ -50,6 +55,11 @@ namespace CapStore.Domain.Components
 			{
 				throw new ValidationArgumentNullException("カテゴリーは必須です");
 			}
+
+			if(images == null)
+			{
+                throw new ValidationArgumentNullException("画像リストがNullです");
+            }
 
 			_id = id;
 			_name = name;
@@ -75,7 +85,7 @@ namespace CapStore.Domain.Components
 		/// <summary>
 		/// 電子部品説明
 		/// </summary>
-		public ComponentDescription? Description => _description;
+		public ComponentDescription Description => _description;
 		/// <summary>
 		/// 電子部品製造メーカー
 		/// </summary>
@@ -87,7 +97,7 @@ namespace CapStore.Domain.Components
 		/// <summary>
 		/// 電子部品画像リスト
 		/// </summary>
-		public ComponentImages? Images => _images;
+		public ComponentImages Images => _images;
 
 	}
 }

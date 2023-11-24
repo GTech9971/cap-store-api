@@ -9,6 +9,14 @@ namespace CapStore.Domain.Components
 	/// </summary>
 	public class ComponentImages
 	{
+		/// <summary>
+		/// 空の画像リスト
+		/// </summary>
+		/// <returns></returns>
+		public static ComponentImages Empty()
+		{
+			return new ComponentImages();
+		}
 
 		private readonly List<ImageUrl> _imageUrls;
 
@@ -38,6 +46,12 @@ namespace CapStore.Domain.Components
 		public IReadOnlyCollection<ImageUrl> AsList()
 		{
 			return _imageUrls.AsReadOnly();
+		}
+
+
+		public bool Any()
+		{
+			return _imageUrls.Any();
 		}
 	}
 }
