@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Domain.Catalogs", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Domain.Catalogs.Test", "Akizuki.Domain.Catalogs.Test\Akizuki.Domain.Catalogs.Test.csproj", "{34C39BDF-E8A0-4AEC-9057-CFA60949559E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Infrastructure.Catalogs.Html", "Akizuki.Infrastructure.Catalogs\Akizuki.Infrastructure.Catalogs.Html.csproj", "{50AA8035-CA38-48BC-9AFE-807A0CE667BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Infrastructure.Catalogs.Html.Test", "Akizuki.Infrastructure.Catalogs.Html.Test\Akizuki.Infrastructure.Catalogs.Html.Test.csproj", "{445DD020-26E7-4B18-A2B5-7FF83492C72F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{34C39BDF-E8A0-4AEC-9057-CFA60949559E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34C39BDF-E8A0-4AEC-9057-CFA60949559E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34C39BDF-E8A0-4AEC-9057-CFA60949559E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50AA8035-CA38-48BC-9AFE-807A0CE667BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50AA8035-CA38-48BC-9AFE-807A0CE667BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50AA8035-CA38-48BC-9AFE-807A0CE667BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50AA8035-CA38-48BC-9AFE-807A0CE667BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{445DD020-26E7-4B18-A2B5-7FF83492C72F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{445DD020-26E7-4B18-A2B5-7FF83492C72F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{445DD020-26E7-4B18-A2B5-7FF83492C72F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{445DD020-26E7-4B18-A2B5-7FF83492C72F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

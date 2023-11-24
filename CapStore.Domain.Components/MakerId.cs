@@ -9,6 +9,17 @@ namespace CapStore.Domain.Components
 	public class MakerId
 	{
 
+		private const int UNDETECT_ID = 999999;
+
+		/// <summary>
+		/// 未確定メーカーID
+		/// </summary>
+		/// <returns></returns>
+		public static MakerId UnDetect()
+		{
+			return new MakerId(UNDETECT_ID);
+		}
+
 		private readonly int _id;
 
 		public MakerId(int id)
@@ -25,6 +36,15 @@ namespace CapStore.Domain.Components
 		/// メーカーID
 		/// </summary>
 		public int Value => _id;
+
+		/// <summary>
+		/// 未確定かどうか
+		/// </summary>
+		/// <returns></returns>
+		public bool IsUnDetect()
+		{
+			return _id == UNDETECT_ID;
+		}
 	}
 }
 
