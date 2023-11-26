@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Infrastructure.Cata
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Infrastructure.Catalogs.Html.Test", "Akizuki.Infrastructure.Catalogs.Html.Test\Akizuki.Infrastructure.Catalogs.Html.Test.csproj", "{445DD020-26E7-4B18-A2B5-7FF83492C72F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Domain.Makers", "CapStore.Domain.Makers\CapStore.Domain.Makers.csproj", "{26D0E8D3-435D-48D5-87C6-E51DDBBCF4E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Domain.Makers.Test", "CapStore.Domain.Makers.Test\CapStore.Domain.Makers.Test.csproj", "{EDB1D2AE-327B-49AC-918B-DA507113D7F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{445DD020-26E7-4B18-A2B5-7FF83492C72F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{445DD020-26E7-4B18-A2B5-7FF83492C72F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{445DD020-26E7-4B18-A2B5-7FF83492C72F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26D0E8D3-435D-48D5-87C6-E51DDBBCF4E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26D0E8D3-435D-48D5-87C6-E51DDBBCF4E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26D0E8D3-435D-48D5-87C6-E51DDBBCF4E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26D0E8D3-435D-48D5-87C6-E51DDBBCF4E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDB1D2AE-327B-49AC-918B-DA507113D7F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDB1D2AE-327B-49AC-918B-DA507113D7F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDB1D2AE-327B-49AC-918B-DA507113D7F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDB1D2AE-327B-49AC-918B-DA507113D7F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

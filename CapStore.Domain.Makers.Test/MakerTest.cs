@@ -1,4 +1,5 @@
 ﻿using System;
+using CapStore.Domain.Makers;
 using CapStore.Domain.Shareds;
 using CapStore.Domain.Shareds.Exceptions;
 

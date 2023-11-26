@@ -6,6 +6,7 @@ using AngleSharp.XPath;
 using Akizuki.Domain.Catalogs;
 using CapStore.Domain.Components;
 using System.Text.RegularExpressions;
+using CapStore.Domain.Makers;
 using CapStore.Domain.Shareds;
 
 namespace Akizuki.Infrastructure.Catalogs.Html

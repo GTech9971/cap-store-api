@@ -2,7 +2,7 @@
 using CapStore.Domain.Shareds;
 using CapStore.Domain.Shareds.Exceptions;
 
-namespace CapStore.Domain.Components
+namespace CapStore.Domain.Makers
 {
 	/// <summary>
 	/// メーカーモデル
