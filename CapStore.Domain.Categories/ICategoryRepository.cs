@@ -13,7 +13,6 @@ namespace CapStore.Domain.Categories
 		Task<Category?> Fetch(CategoryName categoryName);
 
 		Task<Category> Save(Category category);
-		Task Delete(CategoryId categoryId);
 	}
 }
 

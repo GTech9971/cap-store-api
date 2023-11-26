@@ -38,12 +38,15 @@ namespace CapStore.Domain.Categories
 		public int Value => _id;
 
 		/// <summary>
-		/// 未確定のID
+		/// 未確定のIDかどうか
 		/// </summary>
 		/// <returns></returns>
-		public bool IsUnDetect()
+		public bool IsUnDetect
 		{
-			return _id == UNDETECT_ID;
+			get
+			{
+                return _id == UNDETECT_ID;
+            }
 		}
 	}
 }
