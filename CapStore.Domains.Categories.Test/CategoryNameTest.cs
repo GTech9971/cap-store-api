@@ -1,4 +1,5 @@
 ﻿using System;
+using CapStore.Domain.Categories;
 using CapStore.Domain.Shareds.Exceptions;
 
 namespace CapStore.Domain.Components.Test

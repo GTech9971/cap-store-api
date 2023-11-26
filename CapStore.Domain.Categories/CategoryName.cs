@@ -1,7 +1,7 @@
 ﻿using System;
 using CapStore.Domain.Shareds.Exceptions;
 
-namespace CapStore.Domain.Components
+namespace CapStore.Domain.Categories
 {
 	/// <summary>
 	/// モデル名

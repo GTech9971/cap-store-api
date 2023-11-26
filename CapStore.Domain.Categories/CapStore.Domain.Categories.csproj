@@ -8,7 +8,5 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CapStore.Domain.Shareds\CapStore.Domain.Shareds.csproj" />
-    <ProjectReference Include="..\CapStore.Domain.Makers\CapStore.Domain.Makers.csproj" />
-    <ProjectReference Include="..\CapStore.Domain.Categories\CapStore.Domain.Categories.csproj" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 ﻿using System;
 using CapStore.Domain.Makers;
+using CapStore.Domain.Categories;
 using CapStore.Domain.Shareds.Exceptions;
 
 namespace CapStore.Domain.Components
