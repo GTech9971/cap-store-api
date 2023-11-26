@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Domain.Categories"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Domain.Categories.Test", "CapStore.Domains.Categories.Test\CapStore.Domain.Categories.Test.csproj", "{65232BFD-03EE-434A-94E5-F553045BB8BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.ApplicationService.Categories", "CapStore.ApplicationService.Categories\CapStore.ApplicationService.Categories.csproj", "{0556D651-6F3E-4CED-B2B6-B08C02ADA49C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{65232BFD-03EE-434A-94E5-F553045BB8BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65232BFD-03EE-434A-94E5-F553045BB8BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65232BFD-03EE-434A-94E5-F553045BB8BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0556D651-6F3E-4CED-B2B6-B08C02ADA49C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0556D651-6F3E-4CED-B2B6-B08C02ADA49C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0556D651-6F3E-4CED-B2B6-B08C02ADA49C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0556D651-6F3E-4CED-B2B6-B08C02ADA49C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,12 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CapStore.Domain.Shareds\CapStore.Domain.Shareds.csproj" />
+    <ProjectReference Include="..\CapStore.Domain.Categories\CapStore.Domain.Categories.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Services\" />
+    <None Remove="Data\" />
+    <None Remove="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
+    <Folder Include="Data\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
 </Project>
