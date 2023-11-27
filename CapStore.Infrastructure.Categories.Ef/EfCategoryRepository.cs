@@ -54,14 +54,15 @@ namespace CapStore.Infrastructure.Categories.Ef
                 .Where(x => x.Id == category.Id.Value)
                 .SingleOrDefaultAsync();
 
-            CategoryData data = new CategoryData(category);
-
+            CategoryData data;
             if (found == null)
             {
+                data = new CategoryData(category);
                 await _context.CategoryDatas.AddAsync(data);
             }
             else
             {
+                data = Transfer(category, found);
                 _context.CategoryDatas.Update(data);
             }
 
@@ -78,6 +79,14 @@ namespace CapStore.Infrastructure.Categories.Ef
                 from.Image == null
                 ? null
                 : new Domain.Shareds.ImageUrl(from.Image));
+        }
+
+        private CategoryData Transfer(Category from, CategoryData to)
+        {
+            to.Id = from.Id.Value;
+            to.Name = from.Name.Value;
+            to.Image = from.Image?.Value;
+            return to;
         }
     }
 }

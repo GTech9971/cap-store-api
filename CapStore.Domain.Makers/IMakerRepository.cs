@@ -10,7 +10,6 @@ namespace CapStore.Domain.Makers
 		Task<Maker?> Fetch(MakerName makerName);
 
 		Task<Maker> Save(Maker maker);
-		Task Delete(MakerId makerId);
 	}
 }
 

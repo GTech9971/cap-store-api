@@ -41,9 +41,12 @@ namespace CapStore.Domain.Makers
 		/// 未確定かどうか
 		/// </summary>
 		/// <returns></returns>
-		public bool IsUnDetect()
+		public bool IsUnDetect
 		{
-			return _id == UNDETECT_ID;
+			get
+			{
+				return _id == UNDETECT_ID;
+			}
 		}
 	}
 }

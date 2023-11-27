@@ -14,11 +14,12 @@
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
     <PackageReference Include="coverlet.collector" Version="3.2.0" />
-    <PackageReference Include="Testcontainers" Version="3.6.0" />
     <PackageReference Include="Testcontainers.PostgreSql" Version="3.6.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj" />
     <ProjectReference Include="..\CapStore.Infrastructure.Categories.Ef\CapStore.Infrastructure.Categories.Ef.csproj" />
+    <ProjectReference Include="..\CapStore.Infrastructure.Makers.Ef\CapStore.Infrastructure.Makers.Ef.csproj" />
   </ItemGroup>
 </Project>

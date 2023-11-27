@@ -8,16 +8,14 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CapStore.Domain.Categories\CapStore.Domain.Categories.csproj" />
-    <ProjectReference Include="..\CapStore.Domain.Makers\CapStore.Domain.Makers.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Data\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapStore.Domain.Makers\CapStore.Domain.Makers.csproj" />
   </ItemGroup>
 </Project>
