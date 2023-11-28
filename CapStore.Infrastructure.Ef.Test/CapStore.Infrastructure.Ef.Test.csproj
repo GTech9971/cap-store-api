@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj" />
-    <ProjectReference Include="..\CapStore.Infrastructure.Categories.Ef\CapStore.Infrastructure.Categories.Ef.csproj" />
-    <ProjectReference Include="..\CapStore.Infrastructure.Makers.Ef\CapStore.Infrastructure.Makers.Ef.csproj" />
+    <ProjectReference Include="..\CapStore.Infrastructure.Ef\CapStore.Infrastructure.Ef.csproj" />
   </ItemGroup>
 </Project>

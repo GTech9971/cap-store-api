@@ -1,26 +1,15 @@
 ﻿using System;
 using CapStore.Domain.Categories;
-using CapStore.Domain.Makers;
-using CapStore.Infrastructure.Categories.Ef;
-using Microsoft.EntityFrameworkCore;
+using CapStore.Infrastructure.Ef.Categories;
 
 namespace CapStore.Infrastructure.Ef.Test
 {
 	[TestClass]
-	public class EfCategoryRepositoryTest : BaseEfRepositoryTest<CategoryDbContext>
+	public class EfCategoryRepositoryTest : BaseEfRepositoryTest
 	{
 		
 		private const string CATEGORY = "カテゴリーレポジトリEF";		
 
-        protected override CategoryDbContext CreateContext()
-        {
-            return new CategoryDbContext(
-            new DbContextOptionsBuilder<CategoryDbContext>()
-                .UseNpgsql(_container.GetConnectionString())
-                .Options);
-        }
-
-		
 
 		[TestMethod]
 		[TestCategory(CATEGORY)]

@@ -1,16 +1,16 @@
 ﻿using System;
 using CapStore.Domain.Makers;
-using CapStore.Infrastructure.Makers.Ef.Data;
+using CapStore.Infrastructure.Ef.Makers.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace CapStore.Infrastructure.Makers.Ef
+namespace CapStore.Infrastructure.Ef
 {
 	public class EfMakerRepository : IMakerRepository
 	{
 
-		private readonly MakerDbContext _context;
+		private readonly CapStoreDbContext _context;
 
-		public EfMakerRepository(MakerDbContext context)
+		public EfMakerRepository(CapStoreDbContext context)
 		{
 			_context = context;
 		}

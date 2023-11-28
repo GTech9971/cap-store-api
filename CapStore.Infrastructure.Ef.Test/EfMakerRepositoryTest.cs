@@ -1,12 +1,10 @@
 ﻿using System;
 using CapStore.Domain.Makers;
-using CapStore.Infrastructure.Makers.Ef;
-using Microsoft.EntityFrameworkCore;
 
 namespace CapStore.Infrastructure.Ef.Test
 {
 	[TestClass]
-	public class EfMakerRepositoryTest : BaseEfRepositoryTest<MakerDbContext>
+	public class EfMakerRepositoryTest : BaseEfRepositoryTest
 	{
 
         private const string CATEGORY = "メーカーレポジトリEF";
@@ -43,13 +41,6 @@ namespace CapStore.Infrastructure.Ef.Test
             }
         }
 
-        protected override MakerDbContext CreateContext()
-        {
-            return new MakerDbContext(
-           new DbContextOptionsBuilder<MakerDbContext>()
-               .UseNpgsql(_container.GetConnectionString())
-               .Options);
-        }
     }
 }
 

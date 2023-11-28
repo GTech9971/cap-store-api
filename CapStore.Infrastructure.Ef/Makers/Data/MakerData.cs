@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace CapStore.Infrastructure.Makers.Ef.Data
+namespace CapStore.Infrastructure.Ef.Makers.Data
 {
 	/// <summary>
 	/// efで使用するメーカーのデータ

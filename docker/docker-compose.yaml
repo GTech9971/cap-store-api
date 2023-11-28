@@ -1,0 +1,35 @@
+# 参考サイトは以下
+# https://casualdevelopers.com/tech-tips/how-to-set-up-docker-compose-for-mysql-postgres-mongodb/
+version: "3"
+services:
+  ef-postgres:
+    image: postgres
+    restart: always
+    environment:
+      TZ: "Asia/Tokyo"
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: test_db
+    ports:
+      - 5432:5432
+    volumes:
+      - ef-postgres:/var/lib/postgresql/data
+      # - ./postgres/initdb:/docker-entorypoint-initdb.d
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@test.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    depends_on:
+      - ef-postgres
+  
+volumes:
+  ef-postgres:
+  pgadmin:
+      

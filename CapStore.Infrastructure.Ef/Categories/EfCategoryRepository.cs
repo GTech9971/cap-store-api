@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using CapStore.Domain.Categories;
-using CapStore.Infrastructure.Categories.Ef.Data;
+using CapStore.Infrastructure.Ef.Categories.Data;
 
-namespace CapStore.Infrastructure.Categories.Ef
+namespace CapStore.Infrastructure.Ef.Categories
 {
     /// <summary>
     /// EFを使用したカテゴリーの永続化を行う
@@ -11,9 +11,9 @@ namespace CapStore.Infrastructure.Categories.Ef
     public class EfCategoryRepository : ICategoryRepository
     {
 
-        private readonly CategoryDbContext _context;
+        private readonly CapStoreDbContext _context;
 
-        public EfCategoryRepository(CategoryDbContext context)
+        public EfCategoryRepository(CapStoreDbContext context)
         {
             _context = context;
         }

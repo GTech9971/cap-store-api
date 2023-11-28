@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using CapStore.Domain.Categories;
 using Microsoft.EntityFrameworkCore;
 
-namespace CapStore.Infrastructure.Categories.Ef.Data
+namespace CapStore.Infrastructure.Ef.Categories.Data
 {
 	/// <summary>
 	/// efで使用するカテゴリーのデータモデル

@@ -4,7 +4,7 @@ using Testcontainers.PostgreSql;
 
 namespace CapStore.Infrastructure.Ef.Test
 {
-	public abstract class BaseEfRepositoryTest<T> where T : DbContext
+	public abstract class BaseEfRepositoryTest : DbContext
 	{
         protected readonly PostgreSqlContainer _container;
 
@@ -44,7 +44,13 @@ namespace CapStore.Infrastructure.Ef.Test
         /// DbContext作成
         /// </summary>
         /// <returns></returns>
-        protected abstract T CreateContext();       
+        protected CapStoreDbContext CreateContext()
+        {
+            return new CapStoreDbContext(
+            new DbContextOptionsBuilder<CapStoreDbContext>()
+                .UseNpgsql(_container.GetConnectionString())
+                .Options);
+        }
     }
 }
 
