@@ -1,43 +1,45 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1706.7
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34302.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStoreAPI", "cap-store-api\CapStoreAPI.csproj", "{1C8A754D-7965-46AC-ACDF-4EC7B3AD3662}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStoreAPI", "cap-store-api\CapStoreAPI.csproj", "{1C8A754D-7965-46AC-ACDF-4EC7B3AD3662}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Domain.Components", "CapStore.Domain.Components\CapStore.Domain.Components.csproj", "{8CDA5CA2-71F8-4C3E-B592-28FB84284246}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Components", "CapStore.Domain.Components\CapStore.Domain.Components.csproj", "{8CDA5CA2-71F8-4C3E-B592-28FB84284246}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Domain.Shareds", "CapStore.Domain.Shareds\CapStore.Domain.Shareds.csproj", "{2AB66BA0-5F63-44EE-9D54-4F5302A1EBCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Shareds", "CapStore.Domain.Shareds\CapStore.Domain.Shareds.csproj", "{2AB66BA0-5F63-44EE-9D54-4F5302A1EBCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Domain.Components.Test", "CapStore.Domain.Components.Test\CapStore.Domain.Components.Test.csproj", "{1B2FB1E3-DB50-4F14-86E6-76561FC53B36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Components.Test", "CapStore.Domain.Components.Test\CapStore.Domain.Components.Test.csproj", "{1B2FB1E3-DB50-4F14-86E6-76561FC53B36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Domain.Shareds.Test", "CapStore.Domain.Shareds.Test\CapStore.Domain.Shareds.Test.csproj", "{6EE69B9F-8C1B-42E3-B888-497D128D838A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Shareds.Test", "CapStore.Domain.Shareds.Test\CapStore.Domain.Shareds.Test.csproj", "{6EE69B9F-8C1B-42E3-B888-497D128D838A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Domain.Catalogs", "Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj", "{B838B758-2BD7-4173-A4F3-C0DADB0D4D00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akizuki.Domain.Catalogs", "Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj", "{B838B758-2BD7-4173-A4F3-C0DADB0D4D00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Domain.Catalogs.Test", "Akizuki.Domain.Catalogs.Test\Akizuki.Domain.Catalogs.Test.csproj", "{34C39BDF-E8A0-4AEC-9057-CFA60949559E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akizuki.Domain.Catalogs.Test", "Akizuki.Domain.Catalogs.Test\Akizuki.Domain.Catalogs.Test.csproj", "{34C39BDF-E8A0-4AEC-9057-CFA60949559E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Infrastructure.Catalogs.Html", "Akizuki.Infrastructure.Catalogs\Akizuki.Infrastructure.Catalogs.Html.csproj", "{50AA8035-CA38-48BC-9AFE-807A0CE667BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akizuki.Infrastructure.Catalogs.Html", "Akizuki.Infrastructure.Catalogs\Akizuki.Infrastructure.Catalogs.Html.csproj", "{50AA8035-CA38-48BC-9AFE-807A0CE667BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Infrastructure.Catalogs.Html.Test", "Akizuki.Infrastructure.Catalogs.Html.Test\Akizuki.Infrastructure.Catalogs.Html.Test.csproj", "{445DD020-26E7-4B18-A2B5-7FF83492C72F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akizuki.Infrastructure.Catalogs.Html.Test", "Akizuki.Infrastructure.Catalogs.Html.Test\Akizuki.Infrastructure.Catalogs.Html.Test.csproj", "{445DD020-26E7-4B18-A2B5-7FF83492C72F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Domain.Makers", "CapStore.Domain.Makers\CapStore.Domain.Makers.csproj", "{26D0E8D3-435D-48D5-87C6-E51DDBBCF4E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Makers", "CapStore.Domain.Makers\CapStore.Domain.Makers.csproj", "{26D0E8D3-435D-48D5-87C6-E51DDBBCF4E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Domain.Makers.Test", "CapStore.Domain.Makers.Test\CapStore.Domain.Makers.Test.csproj", "{EDB1D2AE-327B-49AC-918B-DA507113D7F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Makers.Test", "CapStore.Domain.Makers.Test\CapStore.Domain.Makers.Test.csproj", "{EDB1D2AE-327B-49AC-918B-DA507113D7F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.ApplicationServices.Makers", "CapStore.ApplicationServices.Makers\CapStore.ApplicationServices.Makers.csproj", "{537F2218-2743-4BB4-94BB-207BF0913272}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.ApplicationServices.Makers", "CapStore.ApplicationServices.Makers\CapStore.ApplicationServices.Makers.csproj", "{537F2218-2743-4BB4-94BB-207BF0913272}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Domain.Categories", "CapStore.Domain.Categories\CapStore.Domain.Categories.csproj", "{8806DF9A-3F0E-4B9C-BC6E-3D50212F84B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Categories", "CapStore.Domain.Categories\CapStore.Domain.Categories.csproj", "{8806DF9A-3F0E-4B9C-BC6E-3D50212F84B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Domain.Categories.Test", "CapStore.Domains.Categories.Test\CapStore.Domain.Categories.Test.csproj", "{65232BFD-03EE-434A-94E5-F553045BB8BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Categories.Test", "CapStore.Domains.Categories.Test\CapStore.Domain.Categories.Test.csproj", "{65232BFD-03EE-434A-94E5-F553045BB8BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.ApplicationService.Categories", "CapStore.ApplicationService.Categories\CapStore.ApplicationService.Categories.csproj", "{0556D651-6F3E-4CED-B2B6-B08C02ADA49C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.ApplicationService.Categories", "CapStore.ApplicationService.Categories\CapStore.ApplicationService.Categories.csproj", "{0556D651-6F3E-4CED-B2B6-B08C02ADA49C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Infrastructure.Categories.Ef", "CapStore.Infrastructure.Categories.Ef\CapStore.Infrastructure.Categories.Ef.csproj", "{BFD4CE88-2FDD-4B40-B82D-AF53C6C4793D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Infrastructure.Categories.Ef", "CapStore.Infrastructure.Categories.Ef\CapStore.Infrastructure.Categories.Ef.csproj", "{BFD4CE88-2FDD-4B40-B82D-AF53C6C4793D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Infrastructure.Makers.Ef", "CapStore.Infrastructure.Makers.Ef\CapStore.Infrastructure.Makers.Ef.csproj", "{7E001D05-B97C-48A6-BDED-B0D2D30B44FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Infrastructure.Makers.Ef", "CapStore.Infrastructure.Makers.Ef\CapStore.Infrastructure.Makers.Ef.csproj", "{7E001D05-B97C-48A6-BDED-B0D2D30B44FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Infrastructure.Ef.Test", "CapStore.Infrastructure.Ef.Test\CapStore.Infrastructure.Ef.Test.csproj", "{1164D8AC-AA1C-48D3-9BF8-00EF098B795A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Infrastructure.Ef.Test", "CapStore.Infrastructure.Ef.Test\CapStore.Infrastructure.Ef.Test.csproj", "{1164D8AC-AA1C-48D3-9BF8-00EF098B795A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.ApplicationService.Catalogs", "Akizuki.ApplicationService.Catalogs\Akizuki.ApplicationService.Catalogs.csproj", "{C7FB891E-289B-41C9-866F-FFFA32775A37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{1164D8AC-AA1C-48D3-9BF8-00EF098B795A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1164D8AC-AA1C-48D3-9BF8-00EF098B795A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1164D8AC-AA1C-48D3-9BF8-00EF098B795A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7FB891E-289B-41C9-866F-FFFA32775A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7FB891E-289B-41C9-866F-FFFA32775A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7FB891E-289B-41C9-866F-FFFA32775A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7FB891E-289B-41C9-866F-FFFA32775A37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
