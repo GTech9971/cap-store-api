@@ -19,15 +19,20 @@
     <None Remove="Categories\" />
     <None Remove="Categories\Data\" />
     <None Remove="Makers\Data\" />
+    <None Remove="Components\" />
+    <None Remove="Components\Data\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Makers\" />
     <Folder Include="Categories\" />
     <Folder Include="Categories\Data\" />
     <Folder Include="Makers\Data\" />
+    <Folder Include="Components\" />
+    <Folder Include="Components\Data\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapStore.Domain.Makers\CapStore.Domain.Makers.csproj" />
     <ProjectReference Include="..\CapStore.Domain.Categories\CapStore.Domain.Categories.csproj" />
+    <ProjectReference Include="..\CapStore.Domain.Components\CapStore.Domain.Components.csproj" />
   </ItemGroup>
 </Project>
