@@ -12,8 +12,7 @@ namespace CapStore.Infrastructure.Ef
 
 		public CapStoreDbContext(DbContextOptions options) : base(options) { }
 
-
-		public DbSet<ComponentData> ComponentDatas => Set<ComponentData>();
+        public DbSet<ComponentData> ComponentDatas => Set<ComponentData>();
 		public DbSet<ComponentImageData> ComponentImageDatas => Set<ComponentImageData>();
 		public DbSet<CategoryData> CategoryDatas => Set<CategoryData>();
 		public DbSet<MakerData> MakerDatas => Set<MakerData>();

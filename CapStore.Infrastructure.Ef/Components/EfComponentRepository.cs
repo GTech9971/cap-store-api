@@ -1,5 +1,7 @@
 ﻿using System;
 using CapStore.Domain.Components;
+using CapStore.Infrastructure.Ef.Components.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CapStore.Infrastructure.Ef.Components
 {
@@ -15,19 +17,100 @@ namespace CapStore.Infrastructure.Ef.Components
             _context = context;
         }
 
-        public Task<Component> Fetch(ComponentId componentId)
+        public async Task<Component?> Fetch(ComponentId componentId)
         {
-            throw new NotImplementedException();
+            ComponentData? data = await _context.ComponentDatas
+                .AsNoTracking()
+                .Where(x => x.ComponentId == componentId.Value)
+                .Include(x=>x.CategoryData)
+                .Include(x=>x.MakerData)
+                .Include(x=>x.ComponentImageDatas)
+                .SingleOrDefaultAsync();
+
+            if(data == null)
+            {
+                return null;
+            }
+
+            return data.ToModel();
         }
 
-        public Task<Component> Fetch(ComponentName componentName)
+        public async Task<Component?> Fetch(ComponentName componentName)
         {
-            throw new NotImplementedException();
+            ComponentData? data = await _context.ComponentDatas
+                .AsNoTracking()
+                .Where(x => x.Name == componentName.Value)
+                .Include(x => x.CategoryData)
+                .Include(x => x.MakerData)
+                .Include(x => x.ComponentImageDatas)
+                .SingleOrDefaultAsync();
+
+            if(data == null)
+            {
+                return null;
+            }
+
+            return data.ToModel();
         }
 
-        public Task<Component> Save(Component component)
+        public IQueryable<Component> FetchAll()
         {
-            throw new NotImplementedException();
+            return _context.ComponentDatas
+                .AsNoTracking()
+                .Include(x => x.CategoryData)
+                .Include(x => x.MakerData)
+                .Include(x => x.ComponentImageDatas)
+                .Select(x => x.ToModel());
+        }
+
+        public async Task<Component> Save(Component component)
+        {
+            ComponentData? found = await _context.ComponentDatas
+                .Where(x => x.ComponentId == component.Id.Value)
+                .SingleOrDefaultAsync();
+
+            ComponentData data;
+            if(found == null)
+            {                
+                data = new ComponentData(component);
+                await _context.ComponentDatas.AddAsync(data);
+            }
+            else
+            {
+                data = Transfer(component, found);
+                _context.ComponentDatas.Update(data);
+            }
+
+            await _context.SaveChangesAsync();
+
+            return data.ToModel();
+        }
+
+        private ComponentData Transfer(Component from, ComponentData to)
+        {
+            to.ComponentId = from.Id.Value;
+            to.Name = from.Name.Value;
+            to.ModelName = from.ModelName.Value;
+            to.Description = from.Description.Value;
+            //category
+            to.CategoryId = from.Category.Id.Value;
+            to.CategoryData.Id = from.Category.Id.Value;
+            to.CategoryData.Name = from.Category.Name.Value;
+            to.CategoryData.Image = from.Category.Image?.Value;
+            //maker
+            to.MakerId = from.Maker.Id.Value;
+            to.MakerData.Id = from.Maker.Id.Value;
+            to.MakerData.Name = from.Maker.Name.Value;
+            to.MakerData.Image = from.Maker.Image?.Value;
+            //images
+            var fromImageList = from.Images.AsList();
+            to.ComponentImageDatas.ToList().ForEach(x =>
+            {
+                //電子部品画像UrlIdと電子部品IDで一意に特定する
+                ComponentImage? fromImage = fromImageList.SingleOrDefault(y => y.ComponentImageId.Value == x.Id && y.ComponentId.Value == x.ComponentId);
+                x.ImageUrl = fromImage.Image.Value;
+            });
+            return to;
         }
     }
 }

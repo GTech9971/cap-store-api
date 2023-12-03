@@ -7,8 +7,10 @@ namespace CapStore.Domain.Components
 	public interface IComponentRepository
 	{
 
-		public Task<Component> Fetch(ComponentId componentId);
-		public Task<Component> Fetch(ComponentName componentName);
+		public Task<Component?> Fetch(ComponentId componentId);
+		public Task<Component?> Fetch(ComponentName componentName);
+		public IQueryable<Component> FetchAll();
+
 		public Task<Component> Save(Component component);
 	}
 }

@@ -18,7 +18,7 @@ namespace CapStore.Infrastructure.Ef.Test
         /// </summary>
         /// <returns></returns>
         [TestInitialize]
-        public async Task Setup()
+        public virtual async Task Setup()
         {
             //コンテナ起動
             await _container.StartAsync();

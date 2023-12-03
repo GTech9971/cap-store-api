@@ -30,7 +30,7 @@ namespace CapStore.Infrastructure.Ef.Categories
                 return null;
             }
 
-            return ToModel(data);
+            return data.ToModel();
         }
 
         public async Task<Category?> Fetch(CategoryName categoryName)
@@ -45,7 +45,7 @@ namespace CapStore.Infrastructure.Ef.Categories
                 return null;
             }
 
-            return ToModel(data);
+            return data.ToModel();
         }
 
         public async Task<Category> Save(Category category)
@@ -68,18 +68,9 @@ namespace CapStore.Infrastructure.Ef.Categories
 
             await _context.SaveChangesAsync();
 
-            return ToModel(data);
+            return data.ToModel();
         }
 
-        private Category ToModel(CategoryData from)
-        {
-            return new Category(
-                new CategoryId(from.Id),
-                new CategoryName(from.Name),
-                from.Image == null
-                ? null
-                : new Domain.Shareds.ImageUrl(from.Image));
-        }
 
         private CategoryData Transfer(Category from, CategoryData to)
         {

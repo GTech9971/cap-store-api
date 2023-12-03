@@ -17,7 +17,7 @@ namespace CapStore.Domain.Components
 		private readonly ComponentDescription _description;
 		private readonly Category _category;
 		private readonly Maker _maker;
-		private readonly ComponentImages _images;
+		private readonly ComponentImageList _images;
 
 		public Component(ComponentId id,
 						ComponentName name,
@@ -25,7 +25,7 @@ namespace CapStore.Domain.Components
 						ComponentDescription description,
 						Category category,
 						Maker maker,
-						ComponentImages images)
+						ComponentImageList images)
 		{
 
 			if(id == null)
@@ -99,7 +99,7 @@ namespace CapStore.Domain.Components
 		/// <summary>
 		/// 電子部品画像リスト
 		/// </summary>
-		public ComponentImages Images => _images;
+		public ComponentImageList Images => _images;
 
 	}
 }

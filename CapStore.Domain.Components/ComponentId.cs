@@ -20,9 +20,6 @@ namespace CapStore.Domain.Components
 			return new ComponentId(UNDETECT_ID);
 		}
 
-		public const int MIN_VALUE = 100;
-
-
 		private readonly int _componentId;
 
 		public ComponentId(int componentId)
@@ -31,12 +28,6 @@ namespace CapStore.Domain.Components
 			{
 				throw new ValidationArgumentException($"電子部品IDの値がマイナスです。");
 			}
-
-			if(componentId < MIN_VALUE)
-			{
-				throw new ValidationArgumentException($"電子部品IDの値が最小値:{MIN_VALUE}より小さいです。");
-			}
-
 
 			_componentId = componentId;
 		}
@@ -51,9 +42,9 @@ namespace CapStore.Domain.Components
 		/// 未確定かどうか
 		/// </summary>
 		/// <returns></returns>
-		public bool IsUnDetect()
+		public bool IsUnDetect
 		{
-			return _componentId == UNDETECT_ID;
+			get { return _componentId == UNDETECT_ID; }
 		}
 	}
 }

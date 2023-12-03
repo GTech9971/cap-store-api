@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using CapStore.Domain.Components;
+using CapStore.Domain.Shareds;
 
 namespace CapStore.Infrastructure.Ef.Components.Data
 {
@@ -11,11 +12,11 @@ namespace CapStore.Infrastructure.Ef.Components.Data
 	[Table("component_images")]
 	public class ComponentImageData
 	{
-
 		/// <summary>
 		/// 主キー
 		/// </summary>
 		[Key]
+		[Column("id")]
 		public int Id { get; set; }
 
 		/// <summary>
@@ -34,9 +35,27 @@ namespace CapStore.Infrastructure.Ef.Components.Data
 
 		public ComponentImageData() { }
 
-		public ComponentImageData(ComponentId id, ComponentImages from)
+		public ComponentImageData(ComponentImage from)
 		{
-			//TODO
+			if(from.ComponentImageId.IsUnDetect == false)
+			{
+                Id = from.ComponentImageId.Value;
+            }
+
+			if(from.ComponentId.IsUnDetect == false)
+			{
+                ComponentId = from.ComponentId.Value;
+            }
+			
+			ImageUrl = from.Image.Value;
+		}
+
+		public ComponentImage ToModel()
+		{
+			return new ComponentImage(
+							new ComponentImageId(Id),
+							new ComponentId(ComponentId),
+							new ImageUrl(ImageUrl));
 		}
 	}
 }

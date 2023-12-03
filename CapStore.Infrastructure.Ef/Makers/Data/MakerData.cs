@@ -3,6 +3,7 @@ using CapStore.Domain.Makers;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
+using CapStore.Domain.Shareds;
 
 namespace CapStore.Infrastructure.Ef.Makers.Data
 {
@@ -46,7 +47,17 @@ namespace CapStore.Infrastructure.Ef.Makers.Data
 
 			Name = from.Name.Value;
 			Image = from.Image?.Value;
-		}	
+		}
+
+		public Maker ToModel()
+		{
+            return new Maker(
+              new MakerId(Id),
+              new MakerName(Name),
+              Image == null
+              ? null
+              : new ImageUrl(Image));
+        }
 	}
 }
 

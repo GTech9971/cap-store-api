@@ -27,7 +27,7 @@ namespace CapStore.Infrastructure.Ef
                 return null;
             }
 
-            return ToModel(data);
+            return data.ToModel();
         }
 
         public async Task<Maker?> Fetch(MakerName makerName)
@@ -42,7 +42,7 @@ namespace CapStore.Infrastructure.Ef
                 return null;
             }
 
-            return ToModel(data);
+            return data.ToModel();
         }
 
         public async Task<Maker> Save(Maker maker)
@@ -65,17 +65,7 @@ namespace CapStore.Infrastructure.Ef
 
             await _context.SaveChangesAsync();
 
-            return ToModel(data);
-        }
-
-        private Maker ToModel(MakerData from)
-        {
-            return new Maker(
-                new MakerId(from.Id),
-                new MakerName(from.Name),
-                from.Image == null
-                ? null
-                : new Domain.Shareds.ImageUrl(from.Image));
+            return data.ToModel();
         }
 
         /// <summary>

@@ -48,8 +48,8 @@ namespace CapStore.Infrastructure.Ef.Components.Data
 		[Column("category_id")]
 		public int CategoryId { get; set; }
 
-        [ForeignKey(nameof(CategoryId))]
-        public CategoryData CategoryData { get; set; } = null!;
+		[ForeignKey(nameof(CategoryId))]
+		public CategoryData CategoryData { get; set; } = null!;
 
 		/// <summary>
 		/// メーカーID
@@ -58,8 +58,8 @@ namespace CapStore.Infrastructure.Ef.Components.Data
 		[Column("maker_id")]
 		public int MakerId { get; set; }
 
-        [ForeignKey(nameof(MakerId))]
-        public MakerData MakerData { get; set; } = null!;
+		[ForeignKey(nameof(MakerId))]
+		public MakerData MakerData { get; set; } = null!;
 
 		/// <summary>
 		/// 電子部品画像リスト
@@ -70,7 +70,43 @@ namespace CapStore.Infrastructure.Ef.Components.Data
 
 		public ComponentData(Component from)
 		{
-			//TODO
+			if (from.Id.IsUnDetect == false)
+			{
+				ComponentId = from.Id.Value;
+			}
+
+			Name = from.Name.Value;
+			ModelName = from.ModelName.Value;
+			Description = from.Description.Value;
+			//category
+			CategoryId = from.Category.Id.Value;
+			//以下の変換を行うとEFエラーが発生するので、IDのみを変換させる
+			//CategoryData = new CategoryData(from.Category);
+
+			//maker
+			MakerId = from.Maker.Id.Value;
+            //以下の変換を行うとEFエラーが発生するので、IDのみを変換させる
+            //MakerData = new MakerData(from.Maker);
+
+            //images
+            ComponentImageDatas = from.Images
+				.AsList()
+				.Select(x => new ComponentImageData(x))
+				.ToList();
+		}
+
+		public Component ToModel()
+		{
+			return new Component(
+					new ComponentId(ComponentId),
+					new ComponentName(Name),
+					new ComponentModelName(ModelName),
+					new ComponentDescription(Description),
+					CategoryData.ToModel(),
+					MakerData.ToModel(),
+					new ComponentImageList(
+							ComponentImageDatas.Select(x => x.ToModel()))
+				);
 		}
 	}
 }

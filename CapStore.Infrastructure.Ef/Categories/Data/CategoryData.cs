@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using CapStore.Domain.Categories;
+using CapStore.Domain.Shareds;
 using Microsoft.EntityFrameworkCore;
 
 namespace CapStore.Infrastructure.Ef.Categories.Data
@@ -46,6 +47,16 @@ namespace CapStore.Infrastructure.Ef.Categories.Data
 			Name = from.Name.Value;
 			Image = from.Image?.Value;
 		}
+
+		public Category ToModel()
+		{
+            return new Category(
+              new CategoryId(Id),
+              new CategoryName(Name),
+              Image == null
+              ? null
+              : new ImageUrl(Image));
+        }
 	}
 }
 
