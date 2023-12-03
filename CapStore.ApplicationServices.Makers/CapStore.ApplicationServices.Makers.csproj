@@ -10,12 +10,4 @@
     <ProjectReference Include="..\CapStore.Domain.Makers\CapStore.Domain.Makers.csproj" />
     <ProjectReference Include="..\CapStore.Domain.Shareds\CapStore.Domain.Shareds.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <None Remove="Data\" />
-    <None Remove="Exceptions\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Exceptions\" />
-  </ItemGroup>
 </Project>

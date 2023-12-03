@@ -10,8 +10,6 @@ public class ComponentIdTest
     [TestCategory(CATEGORY)]
     [ExpectedException(typeof(ValidationArgumentException))]
     [DataRow(-1)]
-    [DataRow(0)]
-    [DataRow(99)]
     public void TestExceptions(int id)
     {
         new ComponentId(id);
@@ -19,6 +17,7 @@ public class ComponentIdTest
 
     [TestMethod]
     [TestCategory(CATEGORY)]
+    [DataRow(1)]
     [DataRow(100)]
     [DataRow(101)]
     [DataRow(int.MaxValue)]

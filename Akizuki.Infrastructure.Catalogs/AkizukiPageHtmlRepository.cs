@@ -43,20 +43,20 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 			return description;
         }
 
-		private ComponentImages PartseComponentImages(IDocument document, CatalogId catalogId)
+		private ComponentImageList PartseComponentImages(IDocument document, CatalogId catalogId)
 		{
 			//画像
-			IEnumerable<ImageUrl> imageUrls = document.Body.GetElementsByTagName("img")
+			IEnumerable<ComponentImage> imageUrls = document.Body.GetElementsByTagName("img")
 												.Select(x => x.GetAttribute("src"))
 												.Where(x => x.Contains(catalogId.Value))
 												.Distinct()
 												.Select(x => new AkizukiPageUrl(x))
 												.Where(x => Regex.IsMatch(x.Value, AkizukiImageUrl.PATTERN))
-												.Select(x => new ImageUrl(x.Value));												
+												.Select(x => ComponentImage.UnDetectId(new ImageUrl(x.Value)));
 
 
 
-			return new ComponentImages(imageUrls);
+			return new ComponentImageList(imageUrls);
 		}
 
         public async Task<AkizukiPage> FetchAkizukiPageAsync(AkizukiCatalogPageUrl url)
@@ -92,7 +92,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 				Maker maker = new Maker(MakerId.UnDetect(), makerName, null);
 
 
-				ComponentImages componentImages = PartseComponentImages(parsedDocument, url.CatalogId);
+				ComponentImageList componentImages = PartseComponentImages(parsedDocument, url.CatalogId);
 
 				Component component = new Component(ComponentId.UnDetectId(),
 													name,

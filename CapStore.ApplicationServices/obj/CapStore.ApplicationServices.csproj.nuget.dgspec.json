@@ -1,0 +1,304 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/george/Documents/GitHub/cap-store-api/CapStore.ApplicationServices/CapStore.ApplicationServices.csproj": {}
+  },
+  "projects": {
+    "/Users/george/Documents/GitHub/cap-store-api/CapStore.ApplicationServices/CapStore.ApplicationServices.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/george/Documents/GitHub/cap-store-api/CapStore.ApplicationServices/CapStore.ApplicationServices.csproj",
+        "projectName": "CapStore.ApplicationServices",
+        "projectPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.ApplicationServices/CapStore.ApplicationServices.csproj",
+        "packagesPath": "/Users/george/.nuget/packages/",
+        "outputPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.ApplicationServices/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/george/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Categories/CapStore.Domain.Categories.csproj": {
+                "projectPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Categories/CapStore.Domain.Categories.csproj"
+              },
+              "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Components/CapStore.Domain.Components.csproj": {
+                "projectPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Components/CapStore.Domain.Components.csproj"
+              },
+              "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Makers/CapStore.Domain.Makers.csproj": {
+                "projectPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Makers/CapStore.Domain.Makers.csproj"
+              },
+              "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Shareds/CapStore.Domain.Shareds.csproj": {
+                "projectPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Shareds/CapStore.Domain.Shareds.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Categories/CapStore.Domain.Categories.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Categories/CapStore.Domain.Categories.csproj",
+        "projectName": "CapStore.Domain.Categories",
+        "projectPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Categories/CapStore.Domain.Categories.csproj",
+        "packagesPath": "/Users/george/.nuget/packages/",
+        "outputPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Categories/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/george/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Shareds/CapStore.Domain.Shareds.csproj": {
+                "projectPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Shareds/CapStore.Domain.Shareds.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Components/CapStore.Domain.Components.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Components/CapStore.Domain.Components.csproj",
+        "projectName": "CapStore.Domain.Components",
+        "projectPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Components/CapStore.Domain.Components.csproj",
+        "packagesPath": "/Users/george/.nuget/packages/",
+        "outputPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Components/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/george/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Categories/CapStore.Domain.Categories.csproj": {
+                "projectPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Categories/CapStore.Domain.Categories.csproj"
+              },
+              "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Makers/CapStore.Domain.Makers.csproj": {
+                "projectPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Makers/CapStore.Domain.Makers.csproj"
+              },
+              "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Shareds/CapStore.Domain.Shareds.csproj": {
+                "projectPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Shareds/CapStore.Domain.Shareds.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Makers/CapStore.Domain.Makers.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Makers/CapStore.Domain.Makers.csproj",
+        "projectName": "CapStore.Domain.Makers",
+        "projectPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Makers/CapStore.Domain.Makers.csproj",
+        "packagesPath": "/Users/george/.nuget/packages/",
+        "outputPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Makers/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/george/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Shareds/CapStore.Domain.Shareds.csproj": {
+                "projectPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Shareds/CapStore.Domain.Shareds.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Shareds/CapStore.Domain.Shareds.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Shareds/CapStore.Domain.Shareds.csproj",
+        "projectName": "CapStore.Domain.Shareds",
+        "projectPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Shareds/CapStore.Domain.Shareds.csproj",
+        "packagesPath": "/Users/george/.nuget/packages/",
+        "outputPath": "/Users/george/Documents/GitHub/cap-store-api/CapStore.Domain.Shareds/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/george/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

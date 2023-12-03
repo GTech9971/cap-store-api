@@ -25,12 +25,6 @@
     <ProjectReference Include="..\CapStore.Domain.Components\CapStore.Domain.Components.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\CapStore.ApplicationService.Categories\CapStore.ApplicationService.Categories.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\CapStore.ApplicationServices.Makers\CapStore.ApplicationServices.Makers.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
     <ProjectReference Include="..\Akizuki.Infrastructure.Catalogs\Akizuki.Infrastructure.Catalogs.Html.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>

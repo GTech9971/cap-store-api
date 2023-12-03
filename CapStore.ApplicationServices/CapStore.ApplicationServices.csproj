@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Components\" />
+    <None Remove="Components\Data\" />
+    <None Remove="Components\Exceptions\" />
+    <None Remove="Categories\" />
+    <None Remove="Categories\Data\" />
+    <None Remove="Categories\Exceptions\" />
+    <None Remove="Makers\" />
+    <None Remove="Makers\Data\" />
+    <None Remove="Makers\Exceptions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\" />
+    <Folder Include="Components\Data\" />
+    <Folder Include="Components\Exceptions\" />
+    <Folder Include="Categories\" />
+    <Folder Include="Categories\Data\" />
+    <Folder Include="Categories\Exceptions\" />
+    <Folder Include="Makers\" />
+    <Folder Include="Makers\Data\" />
+    <Folder Include="Makers\Exceptions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapStore.Domain.Categories\CapStore.Domain.Categories.csproj" />
+    <ProjectReference Include="..\CapStore.Domain.Components\CapStore.Domain.Components.csproj" />
+    <ProjectReference Include="..\CapStore.Domain.Makers\CapStore.Domain.Makers.csproj" />
+    <ProjectReference Include="..\CapStore.Domain.Shareds\CapStore.Domain.Shareds.csproj" />
+  </ItemGroup>
+</Project>
