@@ -11,4 +11,10 @@
     <ProjectReference Include="..\CapStore.Domain.Makers\CapStore.Domain.Makers.csproj" />
     <ProjectReference Include="..\CapStore.Domain.Categories\CapStore.Domain.Categories.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
 </Project>
