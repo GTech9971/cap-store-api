@@ -1,9 +1,12 @@
 ﻿using Akizuki.Domain.Catalogs;
 using Akizuki.Infrastructure.Catalogs.Html;
+using cap_store_api.Filters;
 using CapStore.Domain.Categories;
+using CapStore.Domain.Components;
 using CapStore.Domain.Makers;
 using CapStore.Infrastructure.Ef;
 using CapStore.Infrastructure.Ef.Categories;
+using CapStore.Infrastructure.Ef.Components;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,11 +27,22 @@ builder.Services.AddDbContext<CapStoreDbContext>((_, options) =>
 //DI
 builder.Services.AddTransient<ICategoryRepository, EfCategoryRepository>();
 builder.Services.AddTransient<IMakerRepository, EfMakerRepository>();
+builder.Services.AddTransient<IComponentRepository, EfComponentRepository>();
 builder.Services.AddTransient<IAzikzukiPageRepository, AkizukiPageHtmlRepository>();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add(new CapExceptionFilter());
+});
 
 var app = builder.Build();
+
+//マイグレーション実行
+using (var scope = app.Services.CreateScope())
+using (var context = scope.ServiceProvider.GetRequiredService<CapStoreDbContext>())
+{
+    await context.Database.MigrateAsync();
+}
 
 // Configure the HTTP request pipeline.
 

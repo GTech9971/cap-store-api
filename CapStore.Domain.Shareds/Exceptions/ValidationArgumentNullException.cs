@@ -4,7 +4,7 @@ namespace CapStore.Domain.Shareds.Exceptions
 	/// <summary>
 	/// モデルの引数がNullの場合の例外
 	/// </summary>
-	public class ValidationArgumentNullException : ArgumentNullException
+	public class ValidationArgumentNullException : ValidationException
 	{
 		public ValidationArgumentNullException() : base() { }
 

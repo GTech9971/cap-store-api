@@ -48,6 +48,11 @@ namespace CapStore.Domain.Makers
 				return _id == UNDETECT_ID;
 			}
 		}
-	}
+
+        public override string ToString()
+        {
+			return $"メーカーID:{_id}";
+        }
+    }
 }
 

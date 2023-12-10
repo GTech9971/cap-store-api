@@ -48,6 +48,11 @@ namespace CapStore.Domain.Categories
                 return _id == UNDETECT_ID;
             }
 		}
-	}
+
+        public override string ToString()
+        {
+			return $"カテゴリーID:{_id}";
+        }
+    }
 }
 

@@ -4,7 +4,7 @@ namespace CapStore.Domain.Shareds.Exceptions
 	/// <summary>
 	/// モデルの引数の例外
 	/// </summary>
-	public class ValidationArgumentException : ArgumentException
+	public class ValidationArgumentException : ValidationException
 	{
 		public ValidationArgumentException() : base() { }
 

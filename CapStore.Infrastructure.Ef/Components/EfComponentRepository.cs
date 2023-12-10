@@ -67,6 +67,8 @@ namespace CapStore.Infrastructure.Ef.Components
         {
             ComponentData? found = await _context.ComponentDatas
                 .Where(x => x.ComponentId == component.Id.Value)
+                .Include(x => x.CategoryData)
+                .Include(x => x.MakerData)
                 .SingleOrDefaultAsync();
 
             ComponentData data;
@@ -74,6 +76,8 @@ namespace CapStore.Infrastructure.Ef.Components
             {                
                 data = new ComponentData(component);
                 await _context.ComponentDatas.AddAsync(data);
+                await _context.Entry(data).Reference(x => x.MakerData).LoadAsync();
+                await _context.Entry(data).Reference(x => x.CategoryData).LoadAsync();
             }
             else
             {

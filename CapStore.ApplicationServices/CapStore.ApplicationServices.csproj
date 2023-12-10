@@ -16,6 +16,8 @@
     <None Remove="Makers\" />
     <None Remove="Makers\Data\" />
     <None Remove="Makers\Exceptions\" />
+    <None Remove="Components\Data\Registry\" />
+    <None Remove="Components\Data\Registry\Response\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Components\" />
@@ -27,10 +29,15 @@
     <Folder Include="Makers\" />
     <Folder Include="Makers\Data\" />
     <Folder Include="Makers\Exceptions\" />
+    <Folder Include="Components\Data\Registry\" />
+    <Folder Include="Components\Data\Registry\Response\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.DynamicLinq" Version="7.3.7" />
+    <PackageReference Include="System.Text.Json" Version="7.0.4" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapStore.Domain.Categories\CapStore.Domain.Categories.csproj" />

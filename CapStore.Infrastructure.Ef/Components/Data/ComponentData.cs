@@ -1,7 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using CapStore.Domain.Categories;
 using CapStore.Domain.Components;
+using CapStore.Domain.Makers;
 using CapStore.Infrastructure.Ef.Categories.Data;
 using CapStore.Infrastructure.Ef.Makers.Data;
 
@@ -85,11 +87,11 @@ namespace CapStore.Infrastructure.Ef.Components.Data
 
 			//maker
 			MakerId = from.Maker.Id.Value;
-            //以下の変換を行うとEFエラーが発生するので、IDのみを変換させる
-            //MakerData = new MakerData(from.Maker);
+			//以下の変換を行うとEFエラーが発生するので、IDのみを変換させる
+			//MakerData = new MakerData(from.Maker);
 
-            //images
-            ComponentImageDatas = from.Images
+			//images
+			ComponentImageDatas = from.Images
 				.AsList()
 				.Select(x => new ComponentImageData(x))
 				.ToList();
@@ -97,17 +99,24 @@ namespace CapStore.Infrastructure.Ef.Components.Data
 
 		public Component ToModel()
 		{
-			return new Component(
-					new ComponentId(ComponentId),
-					new ComponentName(Name),
-					new ComponentModelName(ModelName),
-					new ComponentDescription(Description),
-					CategoryData.ToModel(),
-					MakerData.ToModel(),
-					new ComponentImageList(
-							ComponentImageDatas.Select(x => x.ToModel()))
+			ComponentId componentId = new ComponentId(ComponentId);
+			ComponentName componentName = new ComponentName(Name);
+			ComponentModelName componentModelName = new ComponentModelName(ModelName);
+			ComponentDescription componentDescription = new ComponentDescription(Description);
+			Category category = CategoryData.ToModel();
+			Maker maker = MakerData.ToModel();
+			ComponentImageList componentImageList = new ComponentImageList(
+						ComponentImageDatas.Select(x => x.ToModel())
 				);
+			return new Component(
+						componentId,
+						componentName,
+						componentModelName,
+						componentDescription,
+						category,
+						maker,
+						componentImageList
+				); ;
 		}
 	}
 }
-
