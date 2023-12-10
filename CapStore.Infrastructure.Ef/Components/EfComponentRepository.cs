@@ -17,6 +17,11 @@ namespace CapStore.Infrastructure.Ef.Components
             _context = context;
         }
 
+        public async Task<int> CountAsync()
+        {
+            return await _context.ComponentDatas.CountAsync();
+        }
+
         public async Task<Component?> Fetch(ComponentId componentId)
         {
             ComponentData? data = await _context.ComponentDatas

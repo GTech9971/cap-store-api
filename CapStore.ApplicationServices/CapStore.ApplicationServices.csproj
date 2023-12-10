@@ -18,6 +18,8 @@
     <None Remove="Makers\Exceptions\" />
     <None Remove="Components\Data\Registry\" />
     <None Remove="Components\Data\Registry\Response\" />
+    <None Remove="Components\Data\Fetch\" />
+    <None Remove="Components\Data\Fetch\Response\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Components\" />
@@ -31,13 +33,13 @@
     <Folder Include="Makers\Exceptions\" />
     <Folder Include="Components\Data\Registry\" />
     <Folder Include="Components\Data\Registry\Response\" />
+    <Folder Include="Components\Data\Fetch\" />
+    <Folder Include="Components\Data\Fetch\Response\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.DynamicLinq" Version="7.3.7" />
-    <PackageReference Include="System.Text.Json" Version="7.0.4" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapStore.Domain.Categories\CapStore.Domain.Categories.csproj" />

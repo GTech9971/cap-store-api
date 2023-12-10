@@ -9,6 +9,8 @@ using CapStore.ApplicationServices.Components.Exceptions;
 using CapStore.ApplicationServices.Components.Data.Registry.Response;
 using CapStore.ApplicationServices.Components.Data.Registry;
 using CapStore.Domain.Components.Services;
+using CapStore.ApplicationServices.Components.Data.Fetch;
+using CapStore.ApplicationServices.Components.Data.Fetch.Response;
 
 namespace cap_store_api.Controllers
 {
@@ -82,11 +84,42 @@ namespace cap_store_api.Controllers
 
 				return new RegistryComponentSuccessResponseDataDto(data);
             }
-			catch(AlreadyExistComponentException ex)
+			catch(AlreadyExistComponentException)
 			{
 				return new CRE0101Respose();
 			}
-            catch(Exception ex)
+            catch(Exception)
+			{
+				throw;
+			}
+		}
+
+		/// <summary>
+		/// 電子部品取得API
+		/// </summary>
+		/// <param name="pageIndex">ページ数 0~</param>
+		/// <param name="pageSize">ページサイズ</param>
+		/// <param name="sortColumn">TODO</param>
+		/// <param name="sortOrder">TODO</param>
+		/// <returns></returns>
+		[HttpGet]
+		public async Task<FetchComponentsPageResponseDataDto> FetchComponents(int pageIndex,
+																			  int pageSize,
+																			  string? sortColumn,
+																			  string? sortOrder)
+		{
+			try
+			{
+				FetchComponentListDataDto components =
+					await _applicationService.FetchComponents(pageIndex,
+															  pageSize,
+															  sortColumn,
+															  sortOrder);
+
+
+				return new FetchComponentsSuccessPageResponseDataDto(components, pageIndex, pageSize);
+			}
+			catch (Exception)
 			{
 				throw;
 			}
