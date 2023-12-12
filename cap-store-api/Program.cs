@@ -54,3 +54,10 @@ app.MapControllers();
 
 app.Run();
 
+/// <summary>
+/// テスト実施用に追加
+/// <see cref="https://zenn.dev/shimat/articles/372d16077ecdf6"/>
+/// </summary>
+public partial class Program
+{
+}
