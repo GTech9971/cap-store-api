@@ -9,6 +9,9 @@ namespace CapStore.Domain.Components
 
 		public Task<Component?> Fetch(ComponentId componentId);
 		public Task<Component?> Fetch(ComponentName componentName);
+
+		public Task<Component?> Fetch(ComponentModelName modelName);
+
 		public IQueryable<Component> FetchAll();
 		public Task<int> CountAsync();
 

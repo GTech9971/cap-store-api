@@ -33,7 +33,7 @@ namespace CapStore.ApplicationServices.Components
 		/// <exception cref="AlreadyExistComponentException"></exception>
 		public async Task<RegistryComponentDataDto> Registry(Component component)
 		{
-			if(await _service.Exists(component.Id))
+			if(await _service.Exists(component.Id) || await _service.Exists(component.ModelName))
 			{
 				throw new AlreadyExistComponentException(component, "電子部品がすでに存在するため登録できません");
 			}

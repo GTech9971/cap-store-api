@@ -25,6 +25,17 @@ namespace CapStore.Domain.Components.Services
 			return component != null;
 		}
 
+        /// <summary>
+        /// 電子部品が存在するか調べる
+        /// </summary>
+        /// <param name="modelName">モデル名</param>
+        /// <returns>true:存在する, false:存在しない</returns>
+        public async Task<bool> Exists(ComponentModelName modelName)
+		{
+            Component? component = await _repository.Fetch(modelName);
+            return component != null;
+        }
+
 	}
 }
 

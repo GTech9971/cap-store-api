@@ -58,6 +58,24 @@ namespace CapStore.Infrastructure.Ef.Components
             return data.ToModel();
         }
 
+        public async Task<Component?> Fetch(ComponentModelName modelName)
+        {
+            ComponentData? data = await _context.ComponentDatas
+                .AsNoTracking()
+                .Where(x => x.ModelName == modelName.Value)
+                .Include(x => x.CategoryData)
+                .Include(x => x.MakerData)
+                .Include(x => x.ComponentImageDatas)
+                .SingleOrDefaultAsync();
+
+            if (data == null)
+            {
+                return null;
+            }
+
+            return data.ToModel();
+        }
+
         public IQueryable<Component> FetchAll()
         {
             return _context.ComponentDatas
