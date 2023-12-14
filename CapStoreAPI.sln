@@ -39,6 +39,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.ApplicationService
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStoreAPI.Test", "CapStoreAPI.Test\CapStoreAPI.Test.csproj", "{A69ED019-76BA-4D99-8944-8CC678132025}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Seeds", "Akizuki.Seeds\Akizuki.Seeds.csproj", "{6CEBB0D5-BE4F-4360-9270-1C54AA583F11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Seeds.Test", "Akizuki.Seeds.Test\Akizuki.Seeds.Test.csproj", "{3441B0D0-BDD2-4DD5-BEEA-69824150263E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +121,14 @@ Global
 		{A69ED019-76BA-4D99-8944-8CC678132025}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A69ED019-76BA-4D99-8944-8CC678132025}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A69ED019-76BA-4D99-8944-8CC678132025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CEBB0D5-BE4F-4360-9270-1C54AA583F11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CEBB0D5-BE4F-4360-9270-1C54AA583F11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CEBB0D5-BE4F-4360-9270-1C54AA583F11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CEBB0D5-BE4F-4360-9270-1C54AA583F11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3441B0D0-BDD2-4DD5-BEEA-69824150263E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3441B0D0-BDD2-4DD5-BEEA-69824150263E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3441B0D0-BDD2-4DD5-BEEA-69824150263E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3441B0D0-BDD2-4DD5-BEEA-69824150263E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
