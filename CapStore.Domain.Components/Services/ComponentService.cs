@@ -17,24 +17,14 @@ namespace CapStore.Domain.Components.Services
 		/// <summary>
 		/// 電子部品が存在するか調べる
 		/// </summary>
-		/// <param name="componentId">電子部品ID</param>
+		/// <param name="component">電子部品</param>
 		/// <returns>true:存在する, false:存在しない</returns>
-		public async Task<bool> Exists(ComponentId componentId)
+		public async Task<bool> Exists(Component component)
 		{
-			Component? component = await _repository.Fetch(componentId);
-			return component != null;
+			Component? existsId = await _repository.Fetch(component.Id);
+			Component? existsModelName = await _repository.Fetch(component.ModelName);
+			return existsId != null && existsModelName != null;
 		}
-
-        /// <summary>
-        /// 電子部品が存在するか調べる
-        /// </summary>
-        /// <param name="modelName">モデル名</param>
-        /// <returns>true:存在する, false:存在しない</returns>
-        public async Task<bool> Exists(ComponentModelName modelName)
-		{
-            Component? component = await _repository.Fetch(modelName);
-            return component != null;
-        }
 
 	}
 }

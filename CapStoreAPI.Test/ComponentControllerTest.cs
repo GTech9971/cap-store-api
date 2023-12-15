@@ -67,9 +67,10 @@ namespace CapStoreAPI.Test
 
             public RegistryTest(ComponentControllerTest fixture)
             {
-                var clientOptions = new WebApplicationFactoryClientOptions();
-                clientOptions.AllowAutoRedirect = false;
-
+                var clientOptions = new WebApplicationFactoryClientOptions()
+                {
+                    AllowAutoRedirect = false
+                };
                 _webApplicationFactory = new CustomWebApplicationFactory(fixture);
                 _httpClient = _webApplicationFactory.CreateClient(clientOptions);
             }
@@ -81,7 +82,7 @@ namespace CapStoreAPI.Test
 
 
             [Fact]
-            public async Task TestA()
+            public async Task RegistryNotFoundTest()
             {
                 using StringContent jsonContent = new(
                                    JsonSerializer.Serialize(new
@@ -118,7 +119,6 @@ namespace CapStoreAPI.Test
                     _connectionString = fixture.CONTAINER.GetConnectionString();
                 }
 
-
                 protected override void ConfigureWebHost(IWebHostBuilder builder)
                 {
                     builder.ConfigureServices(services =>
@@ -126,11 +126,7 @@ namespace CapStoreAPI.Test
                         services.Remove(services.SingleOrDefault(service => typeof(DbContextOptions<CapStoreDbContext>) == service.ServiceType));
                         services.AddDbContext<CapStoreDbContext>((_, option) => option.UseNpgsql(_connectionString));
                     });
-
-
                 }
-
-
             }
         }
     }

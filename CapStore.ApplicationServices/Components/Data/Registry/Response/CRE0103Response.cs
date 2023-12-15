@@ -14,7 +14,13 @@ namespace CapStore.ApplicationServices.Components.Data.Registry.Response
 			base(new Error(new ErrorCode("CRE0103"),
 				new ErrorMessage($"{makerId}は存在しません")))
 		{
-            StatusCode = HttpStatusCode.NotFound;
-        }
+			StatusCode = HttpStatusCode.NotFound;
+		}
+		public CRE0103Response(NotFoundMakerIdException exception) :
+			base(new Error(new ErrorCode("CRE0103"),
+				new ErrorMessage(exception.Message)))
+		{
+			StatusCode = HttpStatusCode.NotFound;
+		}
 	}
 }

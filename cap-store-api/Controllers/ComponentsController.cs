@@ -1,38 +1,25 @@
 ﻿using System;
 using CapStore.ApplicationServices.Components;
 using Microsoft.AspNetCore.Mvc;
-using CapStore.Domain.Components;
-using CapStore.Domain.Categories;
-using CapStore.Domain.Makers;
-using CapStore.Domain.Shareds;
 using CapStore.ApplicationServices.Components.Exceptions;
 using CapStore.ApplicationServices.Components.Data.Registry.Response;
 using CapStore.ApplicationServices.Components.Data.Registry;
-using CapStore.Domain.Components.Services;
 using CapStore.ApplicationServices.Components.Data.Fetch;
 using CapStore.ApplicationServices.Components.Data.Fetch.Response;
+using CapStore.ApplicationServices;
+using System.Text.Json;
 
 namespace cap_store_api.Controllers
 {
 	[ApiController]
 	[Route("/api/v1/components")]
-	public class ComponentsController:ControllerBase
+	public class ComponentsController : ControllerBase
 	{
 		private readonly ComponentsApplicationService _applicationService;
-		private readonly IComponentRepository _componentRepository;
-		private readonly ICategoryRepository _categoryRepository;
-		private readonly IMakerRepository _makerRepository;
 
-		public ComponentsController(IComponentRepository componentRepository,
-			ICategoryRepository categoryRepository,
-			IMakerRepository makerRepository)
+		public ComponentsController(ComponentsApplicationService applicationService)
 		{
-			_componentRepository = componentRepository;
-			_categoryRepository = categoryRepository;
-			_makerRepository = makerRepository;
-
-			_applicationService = new ComponentsApplicationService(_componentRepository,
-				new ComponentService(_componentRepository));
+			_applicationService = applicationService;
 		}
 
 		/// <summary>
@@ -40,58 +27,33 @@ namespace cap_store_api.Controllers
 		/// </summary>
 		/// <param name="request"></param>
 		/// <returns></returns>
-		/// <exception cref="AlreadyExistComponentException"></exception>
 		[HttpPost]
-		public async Task<RegistryComponentResponseDataDto> RegistryComponent([FromBody]RegistryComponentRequestDataDto request)
+		public async Task<IActionResult> RegistryComponent([FromBody] RegistryComponentRequestDataDto request)
 		{
+			RegistryComponentResponseDataDto response;
 			try
 			{
-				CategoryId categoryId = new CategoryId(request.CategoryId);
-				Category? category = await _categoryRepository.Fetch(categoryId);
-				if(category == null)
-				{
-					return new CRE0102Response(categoryId);
-				}
-
-
-                MakerId makerId = new MakerId(request.MakerId);
-                Maker? maker = await _makerRepository.Fetch(makerId);
-				if(maker == null)
-				{
-					return new CRE0103Response(makerId);
-				}
-
-				ComponentImageList imageList = request.Images == null
-					? ComponentImageList.Empty()
-					: new ComponentImageList(request.Images.Select(x => {
-						return new ComponentImage(
-							ComponentImageId.UnDetectId(),
-							ComponentId.UnDetectId(),
-							new ImageUrl(x));
-					}));
-
-
-				Component component = new Component(
-					ComponentId.UnDetectId(),
-					new ComponentName(request.Name),
-					new ComponentModelName(request.ModelName),
-					new ComponentDescription(request.Description),
-					category,
-					maker,
-					imageList);
-
-				RegistryComponentDataDto data = await _applicationService.Registry(component);
-
-				return new RegistryComponentSuccessResponseDataDto(data);
-            }
-			catch(AlreadyExistComponentException)
-			{
-				return new CRE0101Respose();
+				RegistryComponentDataDto data = await _applicationService.Registry(request);
+				response = new RegistryComponentSuccessResponseDataDto(data);
 			}
-            catch(Exception)
+			catch (AlreadyExistComponentException)
 			{
-				throw;
+				response = new CRE0101Response();
 			}
+			catch (NotFoundCategoryIdException ex)
+			{
+				response = new CRE0102Response(ex);
+			}
+			catch (NotFoundMakerIdException ex)
+			{
+				response = new CRE0103Response(ex);
+			}
+
+			JsonResult result = new JsonResult(response)
+			{
+				StatusCode = (int?)response.StatusCode
+			};
+			return result;
 		}
 
 		/// <summary>

@@ -17,5 +17,13 @@ namespace CapStore.ApplicationServices.Components.Data.Registry.Response
 		{
 			StatusCode = HttpStatusCode.NotFound;
 		}
+
+		public CRE0102Response(NotFoundCategoryIdException exception) : base(
+			new Error(new ErrorCode("CRE0102"),
+				new ErrorMessage(exception.Message))
+			)
+		{
+			StatusCode = HttpStatusCode.NotFound;
+		}
 	}
 }
