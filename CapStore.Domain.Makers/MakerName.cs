@@ -26,6 +26,11 @@ namespace CapStore.Domain.Makers
 		/// メーカー名
 		/// </summary>
 		public string Value => _name;
+
+		public override string ToString()
+		{
+			return _name;
+		}
 	}
 }
 

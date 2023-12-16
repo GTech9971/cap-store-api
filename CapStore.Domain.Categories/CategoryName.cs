@@ -4,7 +4,7 @@ using CapStore.Domain.Shareds.Exceptions;
 namespace CapStore.Domain.Categories
 {
 	/// <summary>
-	/// モデル名
+	/// カテゴリー名
 	/// </summary>
 	public class CategoryName
 	{
@@ -14,16 +14,21 @@ namespace CapStore.Domain.Categories
 		{
 			if (string.IsNullOrWhiteSpace(name))
 			{
-                throw new ValidationArgumentNullException("カテゴリー名は必須です");
-            }
+				throw new ValidationArgumentNullException("カテゴリー名は必須です");
+			}
 
 			_name = name;
 		}
 
 		/// <summary>
-		/// モデル名
+		/// カテゴリー名
 		/// </summary>
 		public string Value => _name;
+
+		public override string ToString()
+		{
+			return _name;
+		}
 	}
 }
 

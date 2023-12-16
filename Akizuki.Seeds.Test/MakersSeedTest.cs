@@ -23,4 +23,15 @@ public class MakersSeedTest
 
         Assert.True(makerNames.Any());
     }
+
+    [Theory(DisplayName = "メーカー名保存")]
+    [Trait("Category", "Seeds")]
+    [InlineData("https://akizukidenshi.com/catalog/c/c/")]
+    public async Task SaveSuccessTest(string url)
+    {
+        AkizukiPageUrl akizukiPageUrl = new AkizukiPageUrl(url);
+        string path = await _seed.SaveAsync(akizukiPageUrl);
+
+        Assert.True(File.Exists(path));
+    }
 }

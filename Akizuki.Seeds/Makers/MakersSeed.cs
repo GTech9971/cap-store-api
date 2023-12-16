@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Text;
 using Akizuki.Domain.Catalogs;
 using AngleSharp;
 using AngleSharp.Dom;
@@ -9,6 +10,8 @@ namespace Akizuki.Seeds;
 
 public class MakersSeed
 {
+    private const string PATH = "../../../Assets/makers.txt";
+
     public MakersSeed() { }
 
     /// <summary>
@@ -43,4 +46,27 @@ public class MakersSeed
             return makerElements;
         }
     }
+
+    /// <summary>
+    /// 秋月電子から取得したメーカー名をファイルに書き込む
+    /// </summary>
+    /// <param name="url"></param>
+    /// <returns></returns>
+    public async Task<string> SaveAsync(AkizukiPageUrl url)
+    {
+        using (StreamWriter writer = new StreamWriter(PATH, false, Encoding.UTF8))
+        {
+            IEnumerable<MakerName> categoryNames = await FetchMakerNamesFromAkizukiPage(url);
+
+            List<MakerName> list = categoryNames.ToList();
+            foreach (var name in list)
+            {
+                await writer.WriteLineAsync(name.ToString());
+            }
+            await writer.FlushAsync();
+
+            return PATH;
+        }
+    }
+
 }

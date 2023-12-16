@@ -26,4 +26,8 @@
     <ProjectReference Include="..\Akizuki.Seeds\Akizuki.Seeds.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Assets/" />
+  </ItemGroup>
+
 </Project>

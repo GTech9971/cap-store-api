@@ -31,5 +31,6 @@
   <ItemGroup>
     <ProjectReference Include="..\cap-store-api\CapStoreAPI.csproj" />
     <ProjectReference Include="..\CapStore.Infrastructure.Ef\CapStore.Infrastructure.Ef.csproj" />
+    <ProjectReference Include="..\Akizuki.Seeds\Akizuki.Seeds.csproj" />
   </ItemGroup>
 </Project>

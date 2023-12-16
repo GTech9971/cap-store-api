@@ -1,0 +1,223 @@
+﻿Adapter Technology Co., Ltd.
+Go Forward Enterprise Corp.
+Li Tone Electronics Co., Ltd. (L.T.E)
+XIAMEN UME ELECTRONICS CO.，LTD.
+Adapter Technology Co., Ltd.アダプターテクノロジー
+Allegro MicroSystems Phil Inc.アレグロマイクロシステムズ
+ARIES ELECTRONICS,INC.アリエスエレクトロニクス（ICソケット）
+Atmel Corporationアトメルコーポレーション
+AVIOSYS International Inc.ｱﾋﾞｵｼｽｲﾝﾀｰﾅｼｮﾅﾙ（各種キット）
+BCD Semiconductor Manufacturing Ltd.
+BJB GmbH & Co. KG
+Bourns, Inc.バーンズ/ボーンズ（多回転ＶＲ他）
+Chyao Shiunn Electronic Industrial Ltd.(コネクタ・ICソケット)
+CHIP LINK SEMICONDUCTOR
+Cixi Borui Technology Co., Ltd.
+CIXI WANJIE ELECTRONICS
+Colluck Co. Ltd. コーラック・コーポレーション
+COMFORTABLE ELECTRONIC CO., LTDコンフォータブルエレクトロニック
+Cosland Co,. Ltd.コスランド（スイッチ）
+CREE,Inc
+CUI Inc
+Cypress Semiconductor Corporation      サイプレス（ＰＳoCマイコン等）
+DB Products LimitedＤＢプロダクト（ブザー）
+DER EE ELECTRICAL INSTRUMENT CO., LTD/ﾀﾞｰｲｰｴﾚｸﾄﾘｶﾙｲﾝｽﾂﾙﾒﾝﾄ
+DFROBOT
+DLP Design, Inc.
+EasySYNC Ltd.  イージーシンク（デジタルオシロ）
+E-CALL ENTERPRISE CO., LTD.イーコール（ブレッドボード）
+Elan Digital Systems Ltd.エランデジタルシステムズ(測定器)
+Eon Silicon Solution Inc.
+Everlight Electronics Co., Ltd.
+Everstep Development Ltd.エバーステップ・ディベロプメント
+Excel Cell Electronic Co., Ltd.     ｴｸｾﾙｾﾙｴﾚｸﾄﾛﾆｯｸ（DIPスイッチ）
+EZ Digital Co., Ltd. EZデジタル（デジタルオシロ）
+Fairchild Semiconductorﾌｪｱﾁｬｲﾙﾄﾞｾﾐｺﾝﾀﾞｸﾀｰ(半導体)
+FAITHFUL LINK INDUSTRIAL CORP.
+FLIR Systems, Inc.
+freescale
+FUJI ELECTRIC CO,LTD.
+Future Technology Devices International Ltd.FTDI(半導体)
+Gadget Factory
+Glory Mark Electronic Ltd. グローリーマーク(変換ケーブル)
+Go Forward Enterprise Corp.ゴーフォワードエンタープライズ（ACアダプタ）
+Golden Power Industries Ltd.ゴールデンパワー（電池）
+Grand Wing Servo-Tech Co., Ltd.グランドウィングサーボテック(サーボ)
+HAGISONIC CO.,LTD(株式会社ハギソニック)
+Herwell Asia Limited
+HONG KONG TEXAS CO., LTD.香港テキサス(オシロプローブ）
+HSIN DA PRECISION CO., LTD. シンダプレシジョン
+INNOVATIVE SENSOR TECHNOLOGY
+Interlink Electronics Inc.(インターリンク)
+International Rectifier
+Ｊ＆Ｒ（コネクタ）
+Joymax Electronics Co., Ltd.ｼﾞｮｲﾏｯｸｽｴﾚｸﾄﾛﾆｸｽ(アンテナ&RFケーブル）
+Kionix, Inc.
+Kitronik Ltd.
+KUNG LONG BATTERIES INDUSTRIAL CO.,LTD./ｸｰﾛﾝﾊﾞｯﾃﾘｰｽﾞｲﾝﾀﾞｽﾄﾘｱﾙ(鉛蓄電池)
+Lattice Semiconductor Corporation
+LEAP ELECTRONIC Co.,LTD.リープエレクトロニック
+Linear Technologyリニアテクノロジー（半導体）
+Lite-On Technology Corporation
+Ｍａｃｒｏｎ（ＣｄＳ）
+Measurement Specialties Inc.
+Melexis Microelectronic Systems
+MERCURY MOTOR
+MERCURY/マーキュリー（水晶）
+ＭＥＴＥＸ（測定器）
+Microchip Technology Inc.ﾏｲｸﾛﾁｯﾌﾟﾃｸﾉﾛｼﾞｰ(PICマイコン等)
+Milestone Electronics Co., Ltd.
+mini cirquit
+Mintron Enterprise Co., Ltd.  ﾐﾝﾄﾛﾝｴﾝﾀｰﾌﾟﾗｲｽﾞ（ＣＣＤカメラ）
+muse audio technology CO., Ltd
+Nanyang Senba Optical&Electronic Co.,Ltd.
+Neltron Industrial Co., Ltd.ﾈﾙﾄﾛﾝｲﾝﾀﾞｽﾄﾘｱﾙ （基板コネクタ）
+NGX Technologies
+NPOWERTEK COMPANY
+Nuvoton Technology Corp.
+OREGON SCIENTIFIC
+PANJIT INTERNATIONAL INC.ﾊﾟﾝｼﾞｯﾄｲﾝﾀｰﾅｼｮﾅﾙ（ダイオード）
+PARA LIGHT ELECTRONICS CO., LTD./パラライトエレクトロニクス（LED)
+Peak Electronic Design Limited
+ＰＩＣＡＸＥ（ピカクス）
+Pico Technology Limitedピコテクノロジ（デジタルオシロ）
+POLYTRONICS TECHNOLOGY CORPORATION/ﾎﾟﾘﾄﾛﾆｸｽﾃｸﾉﾛｼﾞｰ（リセッタブル・ヒューズ）
+Pulse Electronics Corporation
+QUARTA-RAD, Ltd.
+Rabbit Semiconductor ラビットｾﾐｺﾝﾀﾞｸﾀ(ＣＰＵボード）
+RECOM Electronic GmbH.
+SAGA ELECTRONIC ENTERPRISE CO., LTD./ｻｶﾞｴﾚｸﾄﾛﾆｯｸｴﾝﾀｰﾌﾟﾗｲｽﾞ（phｾﾝｻ）
+SAINT-GOBAIN CRYSTALS
+Saleae(サレア) LLC
+Samsung Electronics Co., Ltd.
+Savoxtech
+SELF-MAN INDUSTRIAL CO., LTD  ｾﾙﾌﾏﾝｲﾝﾀﾞｽﾄﾘｱﾙ（ＡＣコード）
+SINGATRON ENTERPRISE CO., LTDシンガトロンエンタープライズ (DCｼﾞｬｯｸ)
+SUNTAN TECHNOLOGY CO LTD
+SUPERTECH ELECTRONIC CO., LTD.ｽｰﾊﾟｰﾃｯｸｴﾚｸﾄﾛﾆｯｸ(CR部品)
+Supertex, Inc.
+SWITRONIC INDUSTRIAL CORP.ｽｲﾄﾛﾆｯｸｲﾝﾀﾞｽﾄﾘｱﾙ(押しボタンスイッチ)
+TAEJIN TECHNOLOGY CO., LTD.(HTC Korea)
+TAIMAG(Taiwan Magnetic)
+TECH TOOLSテックツールズ（開発関連）
+Technology Korea corporation Co., Ltd.(TKC)
+TENMARS ELECTRONICS CO., LTD.テンマースエレクトロニクス (テスタ)
+TI ( Burr Brown / NS )
+Top-Up Industry Corporation
+Tyco Electronics Corporation(Raychem)
+UNISONIC TECHNOLOGIES CO.,LTD
+UnitedAu-Vi (ULTIMAX)
+Ｕｎｉｔｅｒ（ＥＬパネル）
+Useconn Electronics Ltd.
+Vatronix
+VINA TECHNOLOGY CO.,LTD.ｳﾞｨﾅﾃｸﾉﾛｼﾞｰ（電気二重層コンデンサ）
+Vishay Intertechnology
+WBT GmbH
+WEN TAI ENTERPRISE CO., LTD
+ＷＥＮＳ
+WENZHOU HONLY INSTRUMENT ELECTRICAL CO.,LTD.
+Wittig Test Technology, Inc.
+ＷＴＥWON-TOP ELECTRONICS(半導体)
+WUXI XUYANG ELECTRONICS CO.,LTD
+XIAMEN UME ELECTRONICS CO.，LTD.
+YUECHUNG INTERNATIONAL CORP.ﾕｴﾁｬﾝｲﾝﾀｰﾅｼｮﾅﾙ(セラミック発振子)
+YUNG INTERNATIONAL INC.ヤングインターナショナル（つまみ）
+ZEROPLUS TECHNOLOGY CO.,LTD ｾﾞﾛﾌﾟﾗｽﾃｸﾉﾛｼﾞｰ（ロジックアナライザ）
+Zhangzhou WeiHua Electronic Co., Ltd.
+株式会社秋月電子通商(Akizukidenshi)
+株式会社アクエスト
+株式会社朝日ラバー
+アルプス電気株式会社(ALPS)
+ヴィストン株式会社（ロボット関連）
+ウイリアムテレコムジャパン株式会社
+株式会社ウェルパイン
+エプソントヨコム株式会社(EPSON TOYOCOM)
+エルナー株式会社(ELNA)
+株式会社エンジニア
+株式会社エンプラス(ENPLAS corporation)
+株式会社オーム社(OHM)
+オプトレックス株式会社
+オムロン アミューズメント株式会社
+北日本音響株式会社
+京セラ株式会社
+協和ハーモネット株式会社
+グローバル電子株式会社
+Km2Net株式会社
+株式会社ケンコー・トキナー(KenkoTokina)
+KOA株式会社
+コパル電子株式会社
+サン電子工業株式会社
+サンケン電気株式会社(Sanken)
+株式会社三才ブックス
+ＳａｎＲｅｘ 株式会社三社電機製作所  (ﾄﾗｲｱｯｸ)
+サンユー工業株式会社
+株式会社 ジーエス・ユアサ コーポレーション
+株式会社シーマ・ラボラトリー
+有限会社ジグボ
+慈渓博瑞テクノロジ株式会社（Cixi Borui Technology Co., Ltd.）
+有限会社システムロード
+シャープ株式会社(Sharp)
+上海精博工貿
+株式会社新亀製作所
+新電元工業株式会社（電源ＩＣ）
+新日本無線株式会社(New JRC)
+スタンレー電気株式会社(Stanley)
+千住金属工業株式会社
+住友電工ファインポリマー株式会社
+セイコーインスツル株式会社(SII)
+セイコーエプソン株式会社
+誠文堂新光社
+セミテック株式会社（Semitec 石塚電子株式会社)
+ソシム株式会社
+第一電子工業株式会社(DDK)
+株式会社大真空
+大東通信株式会社
+太洋電機産業株式会社
+太陽誘電株式会社（積セラ／インダクタ)
+立山科学工業株式会社
+谷口インキ製造株式会社
+TDK株式会社
+テイシン電機株式会社
+デンソー
+株式会社電波新聞社
+株式会社電菱 DENRYO CO., LTD.
+東京コーン紙製作所
+株式会社東芝セミコンダクター社(TOSHIBA)
+東邦亜鉛株式会社
+トップ工業株式会社
+豊田電子株式会社
+有限会社トライステート (Tristate)
+トレックスセミコンダクター株式会社(TOREX)
+株式会社ナカザ
+新潟精密株式会社（半導体）
+ニチコン株式会社
+ニッセイ電機株式会社（Nissei）
+日本航空電子工業株式会社
+日本セラミック株式会社
+日本電気株式会社(NEC)
+日本電産コパル株式会社
+日本パルスモーター株式会社（ＮＰＭ）
+株式会社ネクセル
+株式会社ネステック(NESTEK CO., LTD)
+パナソニック株式会社(Panasonic)
+浜松ホトニクス株式会社 (浜フォト)
+ヒロセ電機株式会社(Hirose）
+株式会社フジソク
+富士通セミコンダクター株式会社（半導体）
+富士電機
+ホシデン株式会社
+株式会社マルコ精密工業
+マル信無線電機株式会社
+株式会社マルワ(MARUWA)
+株式会社村田製作所(murata)
+メカノエレクトロニック(Mechano Electronic, Inc.)
+株式会社メディウエア
+株式会社矢島製作所
+ヤマハ株式会社
+ユニファイブ(UNIFIVE)(ACアダプター)
+Yueqing Fengxing Electric Factory
+株式会社ラトルズ(rutles)
+株式会社利久電器
+ルネサスエレクトロニクス株式会社(Renesas)
+ルビコン株式会社(Rubycon)
+ローム株式会社（Rohm）

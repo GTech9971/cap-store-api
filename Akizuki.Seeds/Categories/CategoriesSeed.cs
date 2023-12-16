@@ -1,4 +1,5 @@
-﻿using Akizuki.Domain.Catalogs;
+﻿using System.Text;
+using Akizuki.Domain.Catalogs;
 using AngleSharp;
 using AngleSharp.Dom;
 using AngleSharp.Html.Parser;
@@ -8,6 +9,9 @@ namespace Akizuki.Seeds;
 
 public class CategoriesSeed
 {
+
+    private const string PATH = "../../../Assets/categories.txt";
+
     public CategoriesSeed() { }
 
     /// <summary>
@@ -33,6 +37,29 @@ public class CategoriesSeed
                     );
 
             return categoryElements;
+        }
+    }
+
+
+    /// <summary>
+    /// 秋月電子から取得したカテゴリー名をファイルに書き込む
+    /// </summary>
+    /// <param name="url"></param>
+    /// <returns></returns>
+    public async Task<string> SaveAsync(AkizukiPageUrl url)
+    {
+        using (StreamWriter writer = new StreamWriter(PATH, false, Encoding.UTF8))
+        {
+            IEnumerable<CategoryName> categoryNames = await FetchCategoryNamesFromAkizukiPage(url);
+
+            List<CategoryName> list = categoryNames.ToList();
+            foreach (var name in list)
+            {
+                await writer.WriteLineAsync(name.ToString());
+            }
+            await writer.FlushAsync();
+
+            return PATH;
         }
     }
 }
