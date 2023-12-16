@@ -7,7 +7,6 @@ using CapStore.ApplicationServices.Components.Data.Registry;
 using CapStore.ApplicationServices.Components.Data.Fetch;
 using CapStore.ApplicationServices.Components.Data.Fetch.Response;
 using CapStore.ApplicationServices;
-using System.Text.Json;
 
 namespace cap_store_api.Controllers
 {
@@ -65,26 +64,25 @@ namespace cap_store_api.Controllers
 		/// <param name="sortOrder">TODO</param>
 		/// <returns></returns>
 		[HttpGet]
-		public async Task<FetchComponentsPageResponseDataDto> FetchComponents(int pageIndex,
-																			  int pageSize,
-																			  string? sortColumn,
-																			  string? sortOrder)
+		public async Task<IActionResult> FetchComponents(int pageIndex = 0,
+														 int pageSize = 10)
 		{
-			try
-			{
-				FetchComponentListDataDto components =
-					await _applicationService.FetchComponents(pageIndex,
-															  pageSize,
-															  sortColumn,
-															  sortOrder);
+			FetchComponentListDataDto components =
+				await _applicationService.FetchComponents(pageIndex,
+														  pageSize,
+														  null,
+														  null);
 
+			FetchComponentsSuccessPageResponseDataDto response =
+			 new FetchComponentsSuccessPageResponseDataDto(components, pageIndex, pageSize);
 
-				return new FetchComponentsSuccessPageResponseDataDto(components, pageIndex, pageSize);
-			}
-			catch (Exception)
+			JsonResult result = new JsonResult(response)
 			{
-				throw;
-			}
+				StatusCode = (int?)response.StatusCode
+			};
+
+			return result;
+
 		}
 	}
 }
