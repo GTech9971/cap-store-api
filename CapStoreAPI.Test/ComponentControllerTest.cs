@@ -3,7 +3,6 @@ using CapStore.Infrastructure.Ef;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
-using Testcontainers.PostgreSql;
 using Xunit;
 using Microsoft.Extensions.DependencyInjection;
 using System.Text;
@@ -13,121 +12,88 @@ using System.Net;
 namespace CapStoreAPI.Test
 {
     /// <summary>
-    /// コントローラー層のテスト
-    /// <see cref="https://testcontainers.com/guides/testing-an-aspnet-core-web-app/"/>
+    /// 登録テスト
     /// </summary>
-    public class ComponentControllerTest : IAsyncLifetime
+    public sealed class RegistryTest : IClassFixture<PostgreSqlTest>, IDisposable
     {
-        public readonly PostgreSqlContainer CONTAINER = new PostgreSqlBuilder()
-            .WithImage("postgres")
-            .WithDatabase("test_db")
-            .WithUsername("test")
-            .WithPassword("test")
-            .WithCleanUp(true)
-            .Build();
+        private readonly WebApplicationFactory<Program> _webApplicationFactory;
 
+        private readonly HttpClient _httpClient;
 
-        public async Task InitializeAsync()
+        public RegistryTest(PostgreSqlTest fixture)
         {
-            await CONTAINER.StartAsync();
-
-            //テーブル再作成
-            using (var context = CreateContext())
+            var clientOptions = new WebApplicationFactoryClientOptions()
             {
-                await context.Database.EnsureDeletedAsync();
-                await context.Database.EnsureCreatedAsync();
-            }
+                AllowAutoRedirect = false
+            };
+            _webApplicationFactory = new CustomWebApplicationFactory(fixture);
+            _httpClient = _webApplicationFactory.CreateClient(clientOptions);
         }
 
-        public Task DisposeAsync()
+        public void Dispose()
         {
-            return CONTAINER.DisposeAsync().AsTask();
+            _webApplicationFactory.Dispose();
         }
 
-        /// <summary>
-        /// DbContext作成
-        /// </summary>
-        /// <returns></returns>
-        protected CapStoreDbContext CreateContext()
+
+        [Fact(DisplayName = "電子部品登録")]
+        [Trait("Controller", "Component")]
+        public async Task RegistryNotFoundTest()
         {
-            return new CapStoreDbContext(
-            new DbContextOptionsBuilder<CapStoreDbContext>()
-                .UseNpgsql(CONTAINER.GetConnectionString())
-                .Options);
+            using StringContent jsonContent = new(
+                               JsonSerializer.Serialize(new
+                               {
+                                   name = "PIC16F1827",
+                                   modelName = "PIC16f1827",
+                                   description = "PICの説明",
+                                   categoryId = 1,
+                                   makerId = 1
+                               }),
+                               Encoding.UTF8,
+                               "application/json");
+
+            using HttpResponseMessage response = await _httpClient.PostAsync(
+                "/api/v1/components/",
+                jsonContent);
+
+
+
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+
+            // Assert
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
 
-        /// <summary>
-        /// 登録テスト
-        /// </summary>
-        public sealed class RegistryTest : IClassFixture<ComponentControllerTest>, IDisposable
+        [Fact(DisplayName = "電子部品取得API")]
+        [Trait("Controller", "Component")]
+        public async Task FetchComponentsEmptyTest()
         {
-            private readonly WebApplicationFactory<Program> _webApplicationFactory;
+            using HttpResponseMessage response = await _httpClient.GetAsync("/api/v1/components/");
 
-            private readonly HttpClient _httpClient;
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+            // Assert
+            Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
+        }
 
-            public RegistryTest(ComponentControllerTest fixture)
+
+        private sealed class CustomWebApplicationFactory : WebApplicationFactory<Program>
+        {
+            private readonly string _connectionString;
+
+            public CustomWebApplicationFactory(PostgreSqlTest fixture)
             {
-                var clientOptions = new WebApplicationFactoryClientOptions()
-                {
-                    AllowAutoRedirect = false
-                };
-                _webApplicationFactory = new CustomWebApplicationFactory(fixture);
-                _httpClient = _webApplicationFactory.CreateClient(clientOptions);
+                _connectionString = fixture.container.GetConnectionString();
             }
 
-            public void Dispose()
+            protected override void ConfigureWebHost(IWebHostBuilder builder)
             {
-                _webApplicationFactory.Dispose();
-            }
-
-
-            [Fact]
-            public async Task RegistryNotFoundTest()
-            {
-                using StringContent jsonContent = new(
-                                   JsonSerializer.Serialize(new
-                                   {
-                                       name = "PIC16F1827",
-                                       modelName = "PIC16f1827",
-                                       description = "PICの説明",
-                                       categoryId = 0,
-                                       makerId = 0
-                                   }),
-                                   Encoding.UTF8,
-                                   "application/json");
-
-                using HttpResponseMessage response = await _httpClient.PostAsync(
-                    "/api/v1/components/",
-                    jsonContent);
-
-
-
-                var jsonResponse = await response.Content.ReadAsStringAsync();
-                Console.WriteLine($"{jsonResponse}\n");
-
-                // Assert
-                Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
-            }
-
-
-            private sealed class CustomWebApplicationFactory : WebApplicationFactory<Program>
-            {
-                private readonly string _connectionString;
-
-                public CustomWebApplicationFactory(ComponentControllerTest fixture)
+                builder.ConfigureServices(services =>
                 {
-                    _connectionString = fixture.CONTAINER.GetConnectionString();
-                }
-
-                protected override void ConfigureWebHost(IWebHostBuilder builder)
-                {
-                    builder.ConfigureServices(services =>
-                    {
-                        services.Remove(services.SingleOrDefault(service => typeof(DbContextOptions<CapStoreDbContext>) == service.ServiceType));
-                        services.AddDbContext<CapStoreDbContext>((_, option) => option.UseNpgsql(_connectionString));
-                    });
-                }
+                    services.Remove(services.SingleOrDefault(service => typeof(DbContextOptions<CapStoreDbContext>) == service.ServiceType));
+                    services.AddDbContext<CapStoreDbContext>((_, option) => option.UseNpgsql(_connectionString));
+                });
             }
         }
     }
+
 }

@@ -34,4 +34,13 @@ public class MakersSeedTest
 
         Assert.True(File.Exists(path));
     }
+
+    [Fact(DisplayName = "メーカー取得(text)")]
+    [Trait("Category", "Seeds")]
+    public async Task FetchSuccessTest()
+    {
+        List<MakerName> makerNames = await _seed.FetchMakerFromTxtAsync();
+
+        Assert.True(makerNames.Any());
+    }
 }

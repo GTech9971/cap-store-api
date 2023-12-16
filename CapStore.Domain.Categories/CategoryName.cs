@@ -6,7 +6,7 @@ namespace CapStore.Domain.Categories
 	/// <summary>
 	/// カテゴリー名
 	/// </summary>
-	public class CategoryName
+	public class CategoryName : IEquatable<CategoryName>
 	{
 		private readonly string _name;
 
@@ -28,6 +28,21 @@ namespace CapStore.Domain.Categories
 		public override string ToString()
 		{
 			return _name;
+		}
+
+		public override bool Equals(object obj)
+		{
+			return Equals(obj as CategoryName);
+		}
+
+		public bool Equals(CategoryName other)
+		{
+			return other != null && _name == other.Value;
+		}
+
+		public override int GetHashCode()
+		{
+			return _name.GetHashCode();
 		}
 	}
 }

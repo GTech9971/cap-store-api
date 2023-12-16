@@ -9,7 +9,7 @@ namespace Akizuki.Seeds;
 
 public class MakersSeed
 {
-    private const string PATH = "../../../Assets/makers.txt";
+    private const string PATH = "../../../../Akizuki.Seeds/Assets/makers.txt";
 
     public MakersSeed() { }
 
@@ -66,6 +66,27 @@ public class MakersSeed
 
             return PATH;
         }
+    }
+
+
+    /// <summary>
+    /// テキストからメーカー名を取得する
+    /// </summary>
+    /// <returns></returns>
+    public async Task<List<MakerName>> FetchMakerFromTxtAsync()
+    {
+        List<MakerName> makerNames = new List<MakerName>();
+        using (StreamReader reader = new StreamReader(PATH, Encoding.UTF8))
+        {
+            string? line;
+            while ((line = await reader.ReadLineAsync()) != null)
+            {
+                MakerName makerName = new MakerName(line);
+                makerNames.Add(makerName);
+            }
+        }
+
+        return makerNames;
     }
 
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 namespace CapStore.ApplicationServices.Components.Data.Registry.Response
 {
     /// <summary>
@@ -10,6 +11,7 @@ namespace CapStore.ApplicationServices.Components.Data.Registry.Response
         public RegistryComponentSuccessResponseDataDto(RegistryComponentDataDto dto) : base(dto)
         {
             Success = true;
+            StatusCode = HttpStatusCode.OK;
         }
     }
 }

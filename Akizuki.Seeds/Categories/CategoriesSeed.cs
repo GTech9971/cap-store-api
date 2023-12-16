@@ -10,7 +10,7 @@ namespace Akizuki.Seeds;
 public class CategoriesSeed
 {
 
-    private const string PATH = "../../../Assets/categories.txt";
+    private const string PATH = "../../../../Akizuki.Seeds/Assets/categories.txt";
 
     public CategoriesSeed() { }
 
@@ -38,7 +38,16 @@ public class CategoriesSeed
                         )
                     );
 
-            return categoryElements;
+            IReadOnlyCollection<CategoryName> ignoreList = new List<CategoryName>(){
+                new CategoryName("ﾍﾞｽﾄｾﾗｰﾊﾟｰﾂ"),
+                new CategoryName("新商品"),
+                new CategoryName("会社別"),
+                new CategoryName("会社別(旧版)"),
+                new CategoryName("目的別"),
+                new CategoryName("再入荷商品")
+            }.AsReadOnly();
+
+            return categoryElements.Where(x => ignoreList.Contains(x) == false);
         }
     }
 
@@ -62,5 +71,25 @@ public class CategoriesSeed
 
             return PATH;
         }
+    }
+
+    /// <summary>
+    /// テキストからカテゴリー名を取得する
+    /// </summary>
+    /// <returns></returns>
+    public async Task<List<CategoryName>> FetchCategoriesFromTxtAsync()
+    {
+        List<CategoryName> categoryNames = new List<CategoryName>();
+        using (StreamReader reader = new StreamReader(PATH, Encoding.UTF8))
+        {
+            string? line;
+            while ((line = await reader.ReadLineAsync()) != null)
+            {
+                CategoryName categoryName = new CategoryName(line);
+                categoryNames.Add(categoryName);
+            }
+        }
+
+        return categoryNames;
     }
 }

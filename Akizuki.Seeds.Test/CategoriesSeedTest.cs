@@ -22,7 +22,6 @@ public class CategoriesSeedTest
         IEnumerable<CategoryName> categoryNames = await _seed.FetchCategoryNamesFromAkizukiPage(akizukiPageUrl);
 
         Assert.True(categoryNames.Any());
-        Assert.Equal(24, categoryNames.Count());
     }
 
 
@@ -35,5 +34,14 @@ public class CategoriesSeedTest
         string path = await _seed.SaveAsync(akizukiPageUrl);
 
         Assert.True(File.Exists(path));
+    }
+
+    [Fact(DisplayName = "カテゴリー取得(text)")]
+    [Trait("Category", "Seeds")]
+    public async Task FetchSuccessTest()
+    {
+        List<CategoryName> categoryNames = await _seed.FetchCategoriesFromTxtAsync();
+
+        Assert.True(categoryNames.Any());
     }
 }
