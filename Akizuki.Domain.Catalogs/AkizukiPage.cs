@@ -1,6 +1,5 @@
 ﻿using System;
 using CapStore.Domain.Components;
-using CapStore.Domain.Shareds.Exceptions;
 
 namespace Akizuki.Domain.Catalogs
 {
@@ -12,7 +11,7 @@ namespace Akizuki.Domain.Catalogs
 
 		private readonly AkizukiCatalogPageUrl _url;
 		private readonly Component _component;
-		
+
 		public AkizukiPage(AkizukiCatalogPageUrl url, Component component)
 		{
 			_url = url;

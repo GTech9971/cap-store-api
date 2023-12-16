@@ -30,10 +30,21 @@ namespace Akizuki.Domain.Catalogs
 
 			_url = url.Value;
 
-            int startIndex = $"{AkizukiPageUrlDomain.Value}/catalog/g/g".Length;
+			int startIndex = $"{AkizukiPageUrlDomain.Value}/catalog/g/g".Length;
 			int length = (_url.Length - startIndex) - 1;
-            _catalogId = new CatalogId(_url.Substring(startIndex, length));
-        }
+			_catalogId = new CatalogId(_url.Substring(startIndex, length));
+		}
+
+		public AkizukiCatalogPageUrl(CatalogId catalogId)
+		{
+			if (catalogId == null)
+			{
+				throw new ValidationArgumentNullException("カタログIDは必須です");
+			}
+
+			_catalogId = catalogId;
+			_url = $"{AkizukiPageUrlDomain.Value}/catalog/g/g{_catalogId.Value}/";
+		}
 
 		/// <summary>
 		/// 秋月電子のページURL
@@ -44,7 +55,7 @@ namespace Akizuki.Domain.Catalogs
 		/// カタログID(通販コード)
 		/// </summary>
 		public CatalogId CatalogId => _catalogId;
-		
+
 	}
 }
 

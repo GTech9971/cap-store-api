@@ -1,4 +1,5 @@
-﻿using Akizuki.Domain.Catalogs;
+﻿using Akizuki.ApplicationService.Catalogs;
+using Akizuki.Domain.Catalogs;
 using Akizuki.Infrastructure.Catalogs.Html;
 using cap_store_api.Filters;
 using CapStore.ApplicationServices.Components;
@@ -35,6 +36,7 @@ builder.Services.AddTransient<IAzikzukiPageRepository, AkizukiPageHtmlRepository
 //services
 builder.Services.AddScoped<ComponentService>();
 builder.Services.AddScoped<ComponentsApplicationService>();
+builder.Services.AddScoped<CatalogApplicationService>();
 
 builder.Services.AddControllers(options =>
 {

@@ -20,31 +20,48 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 
 		private ComponentModelName ParseModelName(IDocument document)
 		{
-            INode modelNameNode = document.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td");
+			INode? modelNameNode = document.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td");
+			if (modelNameNode == null)
+			{
+				throw new AkizukiPageHtmlParseException();
+			}
 
 			int startIndex = modelNameNode.TextContent.IndexOf("[") + 1;
-			int length =  modelNameNode.TextContent.IndexOf("]") - startIndex;
+			int length = modelNameNode.TextContent.IndexOf("]") - startIndex;
 			string modelNameStr = modelNameNode.TextContent.Substring(startIndex, length);
-            ComponentModelName modelName = new ComponentModelName(modelNameStr);
+			ComponentModelName modelName = new ComponentModelName(modelNameStr);
 
 			return modelName;
-        }
+		}
 
 		private ComponentDescription PartseDescription(IDocument document)
 		{
-            //説明
-            INode descriptionHeadNode = document.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/text()");
-            string descriptionHeadStr = descriptionHeadNode.TextContent.Replace("\t", "").Replace("\n", "");
+			//説明
+			INode? descriptionHeadNode = document.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/text()");
+			if (descriptionHeadNode == null)
+			{
+				throw new AkizukiPageHtmlParseException();
+			}
+			string descriptionHeadStr = descriptionHeadNode.TextContent.Replace("\t", "").Replace("\n", "");
 
-            INode descriptionBodyNode = document.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[4]/td");
-            string descriptionBodyStr = descriptionBodyNode.TextContent.Replace("\t","").Replace("\n", "");
-            ComponentDescription description = new ComponentDescription($"{descriptionHeadStr}\n{descriptionBodyStr}");
+			INode? descriptionBodyNode = document.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[4]/td");
+			if (descriptionBodyNode == null)
+			{
+				throw new AkizukiPageHtmlParseException();
+			}
+			string descriptionBodyStr = descriptionBodyNode.TextContent.Replace("\t", "").Replace("\n", "");
+			ComponentDescription description = new ComponentDescription($"{descriptionHeadStr}\n{descriptionBodyStr}");
 
 			return description;
-        }
+		}
 
 		private ComponentImageList PartseComponentImages(IDocument document, CatalogId catalogId)
 		{
+			if (document.Body == null)
+			{
+				throw new AkizukiPageHtmlParseException();
+			}
+
 			//画像
 			IEnumerable<ComponentImage> imageUrls = document.Body.GetElementsByTagName("img")
 												.Select(x => x.GetAttribute("src"))
@@ -59,18 +76,28 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 			return new ComponentImageList(imageUrls);
 		}
 
-        public async Task<AkizukiPage> FetchAkizukiPageAsync(AkizukiCatalogPageUrl url)
-        {			
+		/// <summary>
+		/// 秋月電子のページを解析する
+		/// </summary>
+		/// <param name="url"></param>
+		/// <returns></returns>
+		/// <exception cref="AkizukiPageHtmlParseException"></exception>
+		public async Task<AkizukiPage> FetchAkizukiPageAsync(AkizukiCatalogPageUrl url)
+		{
 			using (IBrowsingContext context = BrowsingContext.New(Configuration.Default.WithDefaultLoader()))
-			{				
+			{
 				IDocument document = await context.OpenAsync(url.Value);
 				HtmlParser parser = new HtmlParser();
 				IDocument parsedDocument = await parser.ParseDocumentAsync(document);
 
 				//電子部品名
-				INode titleNode = parsedDocument.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/h6");
+				INode? titleNode = parsedDocument.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/h6");
+				if (titleNode == null)
+				{
+					throw new AkizukiPageHtmlParseException(url);
+				}
 				string componentNameStr = titleNode.TextContent;
-                ComponentName name = new ComponentName(componentNameStr);
+				ComponentName name = new ComponentName(componentNameStr);
 
 				//モデル名
 				ComponentModelName modelName = ParseModelName(parsedDocument);
@@ -80,14 +107,22 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 
 
 				//カテゴリー
-				INode categoryNameNode = parsedDocument.Body.SelectSingleNode("/html/body/div/div[2]/div[1]/div/a[2]");
+				INode? categoryNameNode = parsedDocument.Body.SelectSingleNode("/html/body/div/div[2]/div[1]/div/a[2]");
+				if (categoryNameNode == null)
+				{
+					throw new AkizukiPageHtmlParseException(url);
+				}
 				string categoryNameStr = categoryNameNode.TextContent;
 				CategoryName categoryName = new CategoryName(categoryNameStr);
 				Category category = new Category(CategoryId.UnDetectId(), categoryName, null);
 
 				//メーカー
-				INode makerNameNode = parsedDocument.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/span/a");
-				string makerNameStr = makerNameNode.TextContent;				
+				INode? makerNameNode = parsedDocument.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/span/a");
+				if (makerNameNode == null)
+				{
+					throw new AkizukiPageHtmlParseException(url);
+				}
+				string makerNameStr = makerNameNode.TextContent;
 				MakerName makerName = new MakerName(makerNameStr);
 				Maker maker = new Maker(MakerId.UnDetect(), makerName, null);
 
@@ -104,7 +139,18 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 
 				return new AkizukiPage(url, component);
 			}
-        }
-    }
+		}
+
+		/// <summary>
+		/// 秋月電子のページを解析する
+		/// </summary>
+		/// <param name="catalogId"></param>
+		/// <returns></returns>
+		/// <exception cref="AkizukiPageHtmlParseException"></exception>
+		public Task<AkizukiPage> FetchAkizukiPageAsync(CatalogId catalogId)
+		{
+			return FetchAkizukiPageAsync(new AkizukiCatalogPageUrl(catalogId));
+		}
+	}
 }
 

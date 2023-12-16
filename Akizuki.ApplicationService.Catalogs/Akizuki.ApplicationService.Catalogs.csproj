@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Exceptions/" />
+  </ItemGroup>
+
 </Project>

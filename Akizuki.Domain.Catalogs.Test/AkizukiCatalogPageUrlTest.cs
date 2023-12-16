@@ -3,24 +3,25 @@ using CapStore.Domain.Shareds.Exceptions;
 
 namespace Akizuki.Domain.Catalogs.Test
 {
-	[TestClass]
-	public class AkizukiCatalogPageUrlTest
-	{
+    [TestClass]
+    public class AkizukiCatalogPageUrlTest
+    {
 
-		private const string CATEGORY = "秋月電子カタログページURL";
+        private const string CATEGORY = "秋月電子カタログページURL";
 
-		[TestMethod]
-		[TestCategory(CATEGORY)]
-		[ExpectedException(typeof(ValidationArgumentNullException))]
-		public void TestNullException()
-		{
-			new AkizukiCatalogPageUrl(null);
-		}
+        [TestMethod]
+        [TestCategory(CATEGORY)]
+        [ExpectedException(typeof(ValidationArgumentNullException))]
+        public void TestNullException()
+        {
+            CatalogId catalogId = null;
+            new AkizukiCatalogPageUrl(catalogId);
+        }
 
 
         [TestMethod]
         [TestCategory(CATEGORY)]
-        [ExpectedException(typeof(ValidationArgumentException))]        
+        [ExpectedException(typeof(ValidationArgumentException))]
         [DataRow("https://akizukidenshi.com/catalog/top.aspx")]
         [DataRow("https://akizukidenshi.com/catalog/e/enewall_dT")]
         public void TestExceptions(string url)
@@ -40,6 +41,9 @@ namespace Akizuki.Domain.Catalogs.Test
             AkizukiCatalogPageUrl akizukiPageUrl = new AkizukiCatalogPageUrl(new AkizukiPageUrl(url));
             Assert.AreEqual(url, akizukiPageUrl.Value);
             Assert.AreEqual(akizukiPageUrl.CatalogId.Value, catalogId);
+
+            AkizukiCatalogPageUrl urlFromCatalogId = new AkizukiCatalogPageUrl(new CatalogId(catalogId));
+            Assert.AreEqual(url, urlFromCatalogId.Value);
         }
     }
 }

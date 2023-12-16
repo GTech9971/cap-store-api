@@ -1,10 +1,6 @@
 ﻿using System;
-using CapStore.Infrastructure.Ef;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.EntityFrameworkCore;
 using Xunit;
-using Microsoft.Extensions.DependencyInjection;
 using System.Text;
 using System.Text.Json;
 using System.Net;
@@ -100,26 +96,6 @@ namespace CapStoreAPI.Test
             // Assert
             Assert.Equal(HttpStatusCode.OK, registryResponse.StatusCode);
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-        }
-
-
-        private sealed class CustomWebApplicationFactory : WebApplicationFactory<Program>
-        {
-            private readonly string _connectionString;
-
-            public CustomWebApplicationFactory(PostgreSqlTest fixture)
-            {
-                _connectionString = fixture.container.GetConnectionString();
-            }
-
-            protected override void ConfigureWebHost(IWebHostBuilder builder)
-            {
-                builder.ConfigureServices(services =>
-                {
-                    services.Remove(services.SingleOrDefault(service => typeof(DbContextOptions<CapStoreDbContext>) == service.ServiceType));
-                    services.AddDbContext<CapStoreDbContext>((_, option) => option.UseNpgsql(_connectionString));
-                });
-            }
         }
     }
 

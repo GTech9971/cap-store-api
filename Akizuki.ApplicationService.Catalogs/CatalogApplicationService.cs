@@ -1,11 +1,5 @@
-﻿using Akizuki.ApplicationService.Catalogs.Data;
-using Akizuki.ApplicationService.Catalogs.Exceptions;
+﻿using Akizuki.ApplicationService.Catalogs.Data.Fetch;
 using Akizuki.Domain.Catalogs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Akizuki.ApplicationService.Catalogs
 {
@@ -14,11 +8,11 @@ namespace Akizuki.ApplicationService.Catalogs
     /// </summary>
     public class CatalogApplicationService
     {
-        private readonly IAzikzukiPageRepository _repository;        
+        private readonly IAzikzukiPageRepository _repository;
 
         public CatalogApplicationService(IAzikzukiPageRepository repository)
         {
-            _repository = repository;            
+            _repository = repository;
         }
 
         /// <summary>
@@ -26,19 +20,12 @@ namespace Akizuki.ApplicationService.Catalogs
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        /// <exception cref="FetchAkizukiCatalogPageException"></exception>
-        public async Task<FetchAkizukiPageDataDto> FetchAkizukiPage(AkizukiCatalogPageUrl url)
+        /// <exception cref="AkizukiPageHtmlParseException"></exception>
+        public async Task<FetchAkizukiPageDataDto> FetchComponentFromAkizukiCatalogIdAsync(string catalogIdStr)
         {
-            try
-            {
-                AkizukiPage akizukiPage = await _repository.FetchAkizukiPageAsync(url);
-                return new FetchAkizukiPageDataDto(akizukiPage);
-            }
-            catch (Exception ex)
-            {
-                throw new FetchAkizukiCatalogPageException(url, ex.Message);
-            }
-            
+            CatalogId catalogId = new CatalogId(catalogIdStr);
+            AkizukiPage akizukiPage = await _repository.FetchAkizukiPageAsync(catalogId);
+            return new FetchAkizukiPageDataDto(akizukiPage);
         }
 
     }
