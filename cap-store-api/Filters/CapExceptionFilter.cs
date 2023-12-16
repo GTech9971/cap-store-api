@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Text.Json;
-using CapStore.ApplicationServices.Shareds;
+using CapStore.Domain.Shareds;
 using CapStore.Domain.Shareds.Exceptions;
+using CapStore.Domain.Shareds.Responses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
@@ -11,10 +12,10 @@ namespace cap_store_api.Filters
     /// 例外発生時のフィルター
     /// </summary>
 	public class CapExceptionFilter : IExceptionFilter
-	{
-		public CapExceptionFilter()
-		{
-		}
+    {
+        public CapExceptionFilter()
+        {
+        }
 
         public void OnException(ExceptionContext context)
         {
@@ -24,7 +25,7 @@ namespace cap_store_api.Filters
 
             BaseResponse<Object> response;
 
-            if(isC400)
+            if (isC400)
             {
                 response = new C400Response(exception as ValidationException);
             }

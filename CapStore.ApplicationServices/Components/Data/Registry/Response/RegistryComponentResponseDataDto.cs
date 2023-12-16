@@ -1,5 +1,5 @@
 ﻿using System;
-using CapStore.ApplicationServices.Shareds;
+using CapStore.Domain.Shareds.Responses;
 
 namespace CapStore.ApplicationServices.Components.Data.Registry.Response
 {

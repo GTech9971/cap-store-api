@@ -1,5 +1,5 @@
 ﻿using System;
-namespace CapStore.ApplicationServices.Shareds
+namespace CapStore.Domain.Shareds
 {
 	/// <summary>
 	/// エラーコード
@@ -17,12 +17,12 @@ namespace CapStore.ApplicationServices.Shareds
 				throw new ArgumentNullException("エラーコードは必須です");
 			}
 
-			if(code.Length < MIN_LENGTH)
+			if (code.Length < MIN_LENGTH)
 			{
 				throw new ArgumentException($"エラーコードが短すぎます。最小{MIN_LENGTH}桁です。");
 			}
 
-			if(code.Length > MAX_LENGTH)
+			if (code.Length > MAX_LENGTH)
 			{
 				throw new ArgumentException($"エラーコードが長すぎます。最大{MAX_LENGTH}桁です。");
 			}

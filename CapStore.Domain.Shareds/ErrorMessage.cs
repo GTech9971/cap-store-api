@@ -1,5 +1,5 @@
 ﻿using System;
-namespace CapStore.ApplicationServices.Shareds
+namespace CapStore.Domain.Shareds
 {
 	/// <summary>
 	/// エラーメッセージ

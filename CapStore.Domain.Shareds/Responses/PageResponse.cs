@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace CapStore.ApplicationServices.Shareds
+namespace CapStore.Domain.Shareds.Responses
 {
     /// <summary>
     /// ページネーション付きレスポンス
@@ -18,7 +18,7 @@ namespace CapStore.ApplicationServices.Shareds
             PageIndex = pageIndex;
             PageSize = pageSize;
             TotalCount = count;
-            TotalPages = (int)Math.Ceiling(count / (double)pageSize);          
+            TotalPages = (int)Math.Ceiling(count / (double)pageSize);
         }
 
 

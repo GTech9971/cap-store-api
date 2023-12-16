@@ -2,7 +2,7 @@
 using System.Net;
 using CapStore.Domain.Shareds.Exceptions;
 
-namespace CapStore.ApplicationServices.Shareds
+namespace CapStore.Domain.Shareds.Responses
 {
 
 	/// <summary>
@@ -13,7 +13,7 @@ namespace CapStore.ApplicationServices.Shareds
 
 		private readonly ErrorCode CODE = new ErrorCode("C400");
 
-		public C400Response(ValidationException exception):base()
+		public C400Response(ValidationException exception) : base()
 		{
 			Success = false;
 			StatusCode = HttpStatusCode.BadRequest;

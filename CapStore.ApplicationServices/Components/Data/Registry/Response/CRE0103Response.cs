@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
-using CapStore.ApplicationServices.Shareds;
 using CapStore.Domain.Makers;
+using CapStore.Domain.Shareds;
 
 namespace CapStore.ApplicationServices.Components.Data.Registry.Response
 {
