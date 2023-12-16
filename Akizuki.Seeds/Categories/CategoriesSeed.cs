@@ -27,10 +27,12 @@ public class CategoriesSeed
             HtmlParser parser = new HtmlParser();
             IDocument parsedDocument = await parser.ParseDocumentAsync(document);
 
-            IHtmlCollection<IElement> elements = parsedDocument.GetElementsByTagName("div");
+            IHtmlCollection<IElement> elements = parsedDocument.GetElementsByClassName("sidenv_tree1_");
             IEnumerable<CategoryName> categoryElements =
                 elements
-                    .Where(x => x.Id == "cate-01" && x.InnerHtml.Contains("<a href="))
+                    .Where(x => x.ChildElementCount > 0)
+                    .Select(x => x.Children.FirstOrDefault())
+                    .Where(x => string.IsNullOrWhiteSpace(x.TextContent) == false)
                     .Select(x => new CategoryName(
                         x.TextContent.Replace("\n", "").Replace("\t", "")
                         )
@@ -51,7 +53,6 @@ public class CategoriesSeed
         using (StreamWriter writer = new StreamWriter(PATH, false, Encoding.UTF8))
         {
             IEnumerable<CategoryName> categoryNames = await FetchCategoryNamesFromAkizukiPage(url);
-
             List<CategoryName> list = categoryNames.ToList();
             foreach (var name in list)
             {

@@ -15,7 +15,7 @@ public class CategoriesSeedTest
 
     [Theory(DisplayName = "カテゴリー取得")]
     [Trait("Category", "Seeds")]
-    [InlineData("https://akizukidenshi.com/catalog/c/c/")]
+    [InlineData("https://akizukidenshi.com/catalog/")]
     public async Task SuccessTest(string url)
     {
         AkizukiPageUrl akizukiPageUrl = new AkizukiPageUrl(url);
@@ -28,7 +28,7 @@ public class CategoriesSeedTest
 
     [Theory(DisplayName = "カテゴリー保存")]
     [Trait("Category", "Seeds")]
-    [InlineData("https://akizukidenshi.com/catalog/c/c/")]
+    [InlineData("https://akizukidenshi.com/catalog/")]
     public async Task SaveSuccessTest(string url)
     {
         AkizukiPageUrl akizukiPageUrl = new AkizukiPageUrl(url);
