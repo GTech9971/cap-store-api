@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CapStore.Domain.Shareds\CapStore.Domain.Shareds.csproj" />
+    <ProjectReference Include="..\Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
