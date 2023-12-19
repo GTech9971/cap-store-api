@@ -7,11 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Catalogs/" />
+    <Folder Include="Catalogs/Exceptions/" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Exceptions/" />
+    <PackageReference Include="AngleSharp" Version="1.0.7" />
+    <PackageReference Include="AngleSharp.XPath" Version="2.0.3" />
   </ItemGroup>
 
 </Project>
