@@ -31,8 +31,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Categories.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Infrastructure.Ef.Test", "CapStore.Infrastructure.Ef.Test\CapStore.Infrastructure.Ef.Test.csproj", "{1164D8AC-AA1C-48D3-9BF8-00EF098B795A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.ApplicationService.Catalogs", "Akizuki.ApplicationService.Catalogs\Akizuki.ApplicationService.Catalogs.csproj", "{C7FB891E-289B-41C9-866F-FFFA32775A37}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Infrastructure.Ef", "CapStore.Infrastructure.Ef\CapStore.Infrastructure.Ef.csproj", "{4D672553-05F3-408F-B216-A3CE7E3084A1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.ApplicationServices", "CapStore.ApplicationServices\CapStore.ApplicationServices.csproj", "{6C588009-9EC6-4C90-9059-26CF5C1B7B2B}"
@@ -46,6 +44,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Domain.Orders", "Akizuki.Domain.Orders\Akizuki.Domain.Orders.csproj", "{84057C02-01FC-49B9-948A-2D855AB7C755}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Domain.Test", "Akizuki.Domain.Test\Akizuki.Domain.Test.csproj", "{3F640958-4C9A-4212-84F8-799F45318E23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.ApplicationServices", "Akizuki.ApplicationServices\Akizuki.ApplicationServices.csproj", "{319CE3B1-F8EA-42A3-957B-1A08CF84421C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,10 +109,6 @@ Global
 		{1164D8AC-AA1C-48D3-9BF8-00EF098B795A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1164D8AC-AA1C-48D3-9BF8-00EF098B795A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1164D8AC-AA1C-48D3-9BF8-00EF098B795A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C7FB891E-289B-41C9-866F-FFFA32775A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C7FB891E-289B-41C9-866F-FFFA32775A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C7FB891E-289B-41C9-866F-FFFA32775A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C7FB891E-289B-41C9-866F-FFFA32775A37}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4D672553-05F3-408F-B216-A3CE7E3084A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4D672553-05F3-408F-B216-A3CE7E3084A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D672553-05F3-408F-B216-A3CE7E3084A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -141,6 +137,10 @@ Global
 		{3F640958-4C9A-4212-84F8-799F45318E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F640958-4C9A-4212-84F8-799F45318E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F640958-4C9A-4212-84F8-799F45318E23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{319CE3B1-F8EA-42A3-957B-1A08CF84421C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{319CE3B1-F8EA-42A3-957B-1A08CF84421C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{319CE3B1-F8EA-42A3-957B-1A08CF84421C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{319CE3B1-F8EA-42A3-957B-1A08CF84421C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

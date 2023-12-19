@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Catalogs/" />
+    <Folder Include="Catalogs/Data/" />
+    <Folder Include="Catalogs/Data/Fetch/" />
+    <Folder Include="Catalogs/Data/Fetch/Response/" />
+    <Folder Include="Catalogs/Exceptions/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj" />
+  </ItemGroup>
+
+</Project>

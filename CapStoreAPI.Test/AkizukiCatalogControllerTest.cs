@@ -4,12 +4,12 @@ using Xunit;
 
 namespace CapStoreAPI.Test;
 
-public class AkizukiControllerTest : IClassFixture<PostgreSqlTest>, IDisposable
+public class AkizukiCatalogControllerTest : IClassFixture<PostgreSqlTest>, IDisposable
 {
     private readonly WebApplicationFactory<Program> _webApplicationFactory;
     private readonly HttpClient _httpClient;
 
-    public AkizukiControllerTest(PostgreSqlTest fixture)
+    public AkizukiCatalogControllerTest(PostgreSqlTest fixture)
     {
         var clientOptions = new WebApplicationFactoryClientOptions()
         {

@@ -7,11 +7,11 @@ namespace cap_store_api;
 
 [ApiController]
 [Route("/api/v1/akizuki/catalogs")]
-public class AkizukiController
+public class AkizukiCatalogController
 {
     private readonly CatalogApplicationService _applicationService;
 
-    public AkizukiController(CatalogApplicationService applicationService)
+    public AkizukiCatalogController(CatalogApplicationService applicationService)
     {
         _applicationService = applicationService;
     }

@@ -9,10 +9,7 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
-  <ItemGroup>
-    <ProjectReference Include="..\Akizuki.ApplicationService.Catalogs\Akizuki.ApplicationService.Catalogs.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
+  <ItemGroup>    
     <ProjectReference Include="..\Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
@@ -34,6 +31,7 @@
     <ProjectReference Include="..\CapStore.ApplicationServices\CapStore.ApplicationServices.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\Akizuki.ApplicationServices\Akizuki.ApplicationServices.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
