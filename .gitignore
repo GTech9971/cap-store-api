@@ -398,3 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 .DS_Store
+Akizuki.Infrastructure.Html.Test/Orders/Assets/*.html

@@ -3,28 +3,21 @@
 namespace Akizuki.Domain.Orders;
 
 /// <summary>
-/// 秋月電子の注文モデル
+/// キャンセルした注文
 /// </summary>
-public class Order : IOrder
+public class CancelOrder : IOrder
 {
     private readonly OrderId _orderId;
-    private readonly SlipNumber _slipNumber;
     private readonly OrderDate _orderDate;
     private readonly IReadOnlyList<AkizukiComponent> _components;
 
-    public Order(OrderId orderId,
-                SlipNumber slipNumber,
+    public CancelOrder(OrderId orderId,
                 OrderDate orderDate,
                 IEnumerable<AkizukiComponent> components)
     {
         if (orderId == null)
         {
             throw new ValidationArgumentNullException("注文IDは必須です");
-        }
-
-        if (slipNumber == null)
-        {
-            throw new ValidationArgumentNullException("伝票番号は必須です");
         }
 
         if (orderDate == null)
@@ -43,7 +36,6 @@ public class Order : IOrder
         }
 
         _orderId = orderId;
-        _slipNumber = slipNumber;
         _orderDate = orderDate;
         _components = components.ToList().AsReadOnly();
     }
@@ -54,9 +46,16 @@ public class Order : IOrder
     public OrderId OrderId => _orderId;
 
     /// <summary>
-    /// 伝票番号
+    /// キャンセルした注文には伝票番号は存在しません、例外が発生します
     /// </summary>
-    public SlipNumber SlipNumber => _slipNumber;
+    /// <exception cref="InvalidOperationException"></exception>
+    public SlipNumber SlipNumber
+    {
+        get
+        {
+            throw new InvalidOperationException("キャンセルした注文には伝票番号は存在しません");
+        }
+    }
 
     /// <summary>
     /// 注文日

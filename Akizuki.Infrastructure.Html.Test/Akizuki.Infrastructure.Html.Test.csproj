@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <Folder Include="Catalogs/" />
+    <Folder Include="Orders/Assets/" />
   </ItemGroup>
 
   <ItemGroup>

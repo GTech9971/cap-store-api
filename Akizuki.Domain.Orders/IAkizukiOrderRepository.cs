@@ -5,5 +5,5 @@
 /// </summary>
 public interface IAkizukiOrderRepository
 {
-    //TODO
+    Task<IEnumerable<IOrder>> Fetch(string source);
 }

@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj" />
+    <ProjectReference Include="..\Akizuki.Domain.Orders\Akizuki.Domain.Orders.csproj" />
   </ItemGroup>
 
   <ItemGroup>
