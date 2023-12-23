@@ -12,12 +12,12 @@
     <Folder Include="Catalogs/Data/Fetch/" />
     <Folder Include="Catalogs/Data/Fetch/Response/" />
     <Folder Include="Catalogs/Exceptions/" />
-    <Folder Include="Orders/Data/" />
     <Folder Include="Orders/Exceptions/" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj" />
+    <ProjectReference Include="..\Akizuki.Domain.Orders\Akizuki.Domain.Orders.csproj" />
   </ItemGroup>
 
 </Project>
