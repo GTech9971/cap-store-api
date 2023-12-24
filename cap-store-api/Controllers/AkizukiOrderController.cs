@@ -30,7 +30,7 @@ public class AkizukiOrderController
     /// </summary>
     /// <param name="file">秋月電子の購入履歴詳細ページのHtmlファイル</param>
     /// <returns></returns>
-    [HttpPost("details")]
+    [HttpPost("details/upload")]
     public async Task<IActionResult> FetchOrderDetails(IFormFile file)
     {
         FetchAkizukiOrderDetailResponseData response;

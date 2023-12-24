@@ -42,7 +42,7 @@ public class AkizukiOrderControllerTest : IClassFixture<PostgreSqlTest>, IDispos
         httpContent.Add(fileContent, "file", file.Name);
 
 
-        using HttpResponseMessage response = await _httpClient.PostAsync($"/api/v1/akizuki/orders/details", httpContent);
+        using HttpResponseMessage response = await _httpClient.PostAsync($"/api/v1/akizuki/orders/details/upload", httpContent);
 
         var jsonResponse = await response.Content.ReadAsStringAsync();
         // Assert
@@ -64,7 +64,7 @@ public class AkizukiOrderControllerTest : IClassFixture<PostgreSqlTest>, IDispos
         httpContent.Add(fileContent, "file", file.Name);
 
 
-        using HttpResponseMessage response = await _httpClient.PostAsync($"/api/v1/akizuki/orders/details", httpContent);
+        using HttpResponseMessage response = await _httpClient.PostAsync($"/api/v1/akizuki/orders/details/upload", httpContent);
 
         string jsonResponse = await response.Content.ReadAsStringAsync();
         // Assert
@@ -87,7 +87,7 @@ public class AkizukiOrderControllerTest : IClassFixture<PostgreSqlTest>, IDispos
         httpContent.Add(fileContent, "file", file.Name + ".txt");
 
 
-        using HttpResponseMessage response = await _httpClient.PostAsync($"/api/v1/akizuki/orders/details", httpContent);
+        using HttpResponseMessage response = await _httpClient.PostAsync($"/api/v1/akizuki/orders/details/upload", httpContent);
 
         var jsonResponse = await response.Content.ReadAsStringAsync();
         // Assert
@@ -114,7 +114,7 @@ public class AkizukiOrderControllerTest : IClassFixture<PostgreSqlTest>, IDispos
         httpContent.Add(fileContent, "file", file.Name + ".txt");
 
 
-        using HttpResponseMessage response = await _httpClient.PostAsync($"/api/v1/akizuki/orders/details", httpContent);
+        using HttpResponseMessage response = await _httpClient.PostAsync($"/api/v1/akizuki/orders/details/upload", httpContent);
 
         var jsonResponse = await response.Content.ReadAsStringAsync();
         // Assert
