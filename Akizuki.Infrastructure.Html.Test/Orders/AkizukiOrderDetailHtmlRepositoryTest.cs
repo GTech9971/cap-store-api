@@ -21,7 +21,9 @@ public class AkizukiOrderDetailHtmlRepositoryTest
             await File.ReadAllTextAsync("../../../../Akizuki.Infrastructure.Html.Test/Orders/Assets/orders-detail.html",
             Encoding.GetEncoding("SHIFT_JIS"));
 
-        IOrderDetail orderDetail = await _repository.Fetch(html);
+        AkizukiOrderDetailSource source = new AkizukiOrderDetailSource(html);
+
+        IOrderDetail orderDetail = await _repository.Fetch(source);
 
         Assert.True(html.Any());
         Assert.Equal("E230617-031873-01", orderDetail.OrderId.Value);

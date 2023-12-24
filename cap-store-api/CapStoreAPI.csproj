@@ -32,6 +32,7 @@
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
     <ProjectReference Include="..\Akizuki.ApplicationServices\Akizuki.ApplicationServices.csproj" />
+    <ProjectReference Include="..\Akizuki.Infrastructure.Html\Akizuki.Infrastructure.Html.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">

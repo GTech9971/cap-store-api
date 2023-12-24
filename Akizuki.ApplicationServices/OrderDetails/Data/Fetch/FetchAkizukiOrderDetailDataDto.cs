@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 using Akizuki.Domain.Orders;
 
-namespace Akizuki.ApplicationServices;
+namespace Akizuki.ApplicationServices.Data.Fetch;
 
 /// <summary>
 /// 秋月電子の注文詳細のデータ

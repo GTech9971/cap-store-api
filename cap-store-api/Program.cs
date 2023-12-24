@@ -1,6 +1,9 @@
 ﻿using Akizuki.ApplicationService.Catalogs;
+using Akizuki.ApplicationServices.OrderDetails;
 using Akizuki.Domain.Catalogs;
+using Akizuki.Domain.Orders;
 using Akizuki.Infrastructure.Catalogs.Html;
+using Akizuki.Infrastructure.Html;
 using cap_store_api.Filters;
 using CapStore.ApplicationServices.Components;
 using CapStore.Domain.Categories;
@@ -32,11 +35,13 @@ builder.Services.AddTransient<ICategoryRepository, EfCategoryRepository>();
 builder.Services.AddTransient<IMakerRepository, EfMakerRepository>();
 builder.Services.AddTransient<IComponentRepository, EfComponentRepository>();
 builder.Services.AddTransient<IAzikzukiPageRepository, AkizukiPageHtmlRepository>();
+builder.Services.AddTransient<IAkizukiOrderDetailRepository, AkizukiOrderDetailHtmlRepository>();
 
 //services
 builder.Services.AddScoped<ComponentService>();
 builder.Services.AddScoped<ComponentsApplicationService>();
 builder.Services.AddScoped<CatalogApplicationService>();
+builder.Services.AddScoped<OrderDetailApplicationService>();
 
 builder.Services.AddControllers(options =>
 {

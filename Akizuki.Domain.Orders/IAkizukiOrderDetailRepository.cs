@@ -5,5 +5,5 @@
 /// </summary>
 public interface IAkizukiOrderDetailRepository
 {
-    Task<IOrderDetail> Fetch(string source);
+    Task<IOrderDetail> Fetch(AkizukiOrderDetailSource source);
 }

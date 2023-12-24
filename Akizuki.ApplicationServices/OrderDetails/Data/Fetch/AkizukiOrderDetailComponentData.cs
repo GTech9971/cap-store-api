@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 using Akizuki.Domain.Orders;
 
-namespace Akizuki.ApplicationServices;
+namespace Akizuki.ApplicationServices.Data.Fetch;
 
 /// <summary>
 ///  秋月電子注文詳細内容のデータ
@@ -16,6 +16,7 @@ public class AkizukiOrderDetailComponentData
         CatalogId = from.CatalogId.Value;
         ComponentId = from.ComponentId.Value;
         ComponentName = from.ComponentName.Value;
+        Registered = from.Registered;
     }
 
     [JsonPropertyName("quantity")]
@@ -32,4 +33,7 @@ public class AkizukiOrderDetailComponentData
 
     [JsonPropertyName("name")]
     public string ComponentName { get; }
+
+    [JsonPropertyName("registered")]
+    public bool Registered { get; }
 }

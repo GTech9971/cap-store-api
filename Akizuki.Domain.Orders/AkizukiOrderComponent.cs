@@ -16,11 +16,14 @@ public class AkizukiOrderComponent
     private readonly ComponentId _componentId;
     private readonly ComponentName _componentName;
 
+    private readonly bool _registered;
+
     public AkizukiOrderComponent(Quantity quantity,
                                  Unit unit,
                                 CatalogId catalogId,
                                 ComponentId componentId,
-                                ComponentName componentName)
+                                ComponentName componentName,
+                                bool registered)
     {
         if (quantity == null)
         {
@@ -52,6 +55,7 @@ public class AkizukiOrderComponent
         _catalogId = catalogId;
         _componentId = componentId;
         _componentName = componentName;
+        _registered = registered;
     }
 
     /// <summary>
@@ -78,4 +82,9 @@ public class AkizukiOrderComponent
     /// 電子部品名
     /// </summary>
     public ComponentName ComponentName => _componentName;
+
+    /// <summary>
+    /// true:電子部品マスターに登録ずみ, false:電子部品マスターに登録されていない
+    /// </summary>
+    public bool Registered => _registered;
 }

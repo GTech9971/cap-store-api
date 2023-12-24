@@ -9,10 +9,10 @@ namespace Akizuki.Infrastructure.Html;
 
 public class AkizukiOrderDetailHtmlRepository : IAkizukiOrderDetailRepository
 {
-    public async Task<IOrderDetail> Fetch(string source)
+    public async Task<IOrderDetail> Fetch(AkizukiOrderDetailSource source)
     {
         HtmlParser parser = new HtmlParser();
-        IDocument parsedDocument = await parser.ParseDocumentAsync(source);
+        IDocument parsedDocument = await parser.ParseDocumentAsync(source.Value);
 
         //オーダーID
         IElement? orderIDRootElement = parsedDocument
@@ -127,11 +127,14 @@ public class AkizukiOrderDetailHtmlRepository : IAkizukiOrderDetailRepository
                 if (int.TryParse(quantityStr, out quantityVal) == false) { throw new AkizukiOrderDetailHtmlParseException(); }
                 Quantity quantity = new Quantity(quantityVal);
 
+                //マスタ登録されているかどうかの判断はここではしない固定でfalse
+                const bool registered = false;
                 return new AkizukiOrderComponent(quantity,
                                 unit,
                                 catalogId,
                                 ComponentId.UnDetectId(),
-                                componentName);
+                                componentName,
+                                registered);
             });
     }
 }
