@@ -1,4 +1,7 @@
 ﻿using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Json;
+using System.Text.Unicode;
 using Akizuki.Domain.Orders;
 
 namespace Akizuki.Infrastructure.Html.Test;
@@ -24,6 +27,13 @@ public class AkizukiOrderDetailHtmlRepositoryTest
         AkizukiOrderDetailSource source = new AkizukiOrderDetailSource(html);
 
         IOrderDetail orderDetail = await _repository.Fetch(source);
+
+        var options = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
+            WriteIndented = true
+        };
+        string json = JsonSerializer.Serialize(orderDetail, options);
 
         Assert.True(html.Any());
         Assert.Equal("E230617-031873-01", orderDetail.OrderId.Value);

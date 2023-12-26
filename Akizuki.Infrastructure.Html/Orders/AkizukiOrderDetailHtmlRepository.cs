@@ -83,6 +83,8 @@ public class AkizukiOrderDetailHtmlRepository : IAkizukiOrderDetailRepository
         return new OrderDetail(orderId, slipNumber, orderDate, components);
     }
 
+
+
     private IEnumerable<AkizukiOrderComponent> CreateOrderDetailList(IElement tableElement)
     {
         IEnumerable<IElement> trElementList = tableElement.GetElementsByTagName("tr");
@@ -136,5 +138,16 @@ public class AkizukiOrderDetailHtmlRepository : IAkizukiOrderDetailRepository
                                 componentName,
                                 registered);
             });
+    }
+
+    /// <summary>
+    /// 不要なので実装しない
+    /// </summary>
+    /// <param name="orderDetail"></param>
+    /// <returns></returns>
+    /// <exception cref="NotImplementedException"></exception>
+    public Task Save(IOrderDetail orderDetail)
+    {
+        throw new NotImplementedException();
     }
 }

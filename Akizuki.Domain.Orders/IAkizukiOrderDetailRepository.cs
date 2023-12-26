@@ -6,4 +6,6 @@
 public interface IAkizukiOrderDetailRepository
 {
     Task<IOrderDetail> Fetch(AkizukiOrderDetailSource source);
+
+    Task Save(IOrderDetail orderDetail);
 }
