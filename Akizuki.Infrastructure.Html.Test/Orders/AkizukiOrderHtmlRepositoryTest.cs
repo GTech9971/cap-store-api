@@ -20,6 +20,12 @@ public class AkizukiOrderHtmlRepositoryTest
         string html = await File.ReadAllTextAsync("../../../../Akizuki.Infrastructure.Html.Test/Orders/Assets/orders.html", Encoding.GetEncoding("SHIFT_JIS"));
         IEnumerable<IOrder> orders = await _repository.Fetch(html);
 
+        IEnumerable<string> catalogs = orders
+                                        .SelectMany(x => x.Components.Select(y => y.CatalogId.Value)
+                                        .Distinct())
+                                        .ToList();
+        await File.WriteAllLinesAsync("../../../../Akizuki.Infrastructure.Html.Test/Orders/Assets/order-catalogs.txt", catalogs);
+
         Assert.True(html.Any());
         Assert.True(orders.Any());
         Assert.Equal(15, orders.Count());
