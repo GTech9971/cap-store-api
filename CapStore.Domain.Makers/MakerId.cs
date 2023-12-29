@@ -8,7 +8,14 @@ namespace CapStore.Domain.Makers
 	/// </summary>
 	public class MakerId
 	{
+		/// <summary>
+		/// メーカーが存在しない
+		/// </summary>
+		private const int NONE_ID = 999990;
 
+		/// <summary>
+		/// メーカー未確定
+		/// </summary>
 		private const int UNDETECT_ID = 999999;
 
 		/// <summary>
@@ -20,11 +27,20 @@ namespace CapStore.Domain.Makers
 			return new MakerId(UNDETECT_ID);
 		}
 
+		/// <summary>
+		/// メーカーなし
+		/// </summary>
+		/// <returns></returns>
+		public static MakerId None()
+		{
+			return new MakerId(NONE_ID);
+		}
+
 		private readonly int _id;
 
 		public MakerId(int id)
 		{
-			if(id < 0)
+			if (id < 0)
 			{
 				throw new ValidationArgumentException("メーカーIDがマイナスです");
 			}
@@ -49,10 +65,21 @@ namespace CapStore.Domain.Makers
 			}
 		}
 
-        public override string ToString()
-        {
+		/// <summary>
+		/// メーカーが存在しないかどうか
+		/// </summary>
+		public bool IsNone
+		{
+			get
+			{
+				return _id == NONE_ID;
+			}
+		}
+
+		public override string ToString()
+		{
 			return $"メーカーID:{_id}";
-        }
-    }
+		}
+	}
 }
 

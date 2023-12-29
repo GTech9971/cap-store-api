@@ -9,6 +9,15 @@ namespace CapStore.Domain.Makers
 	/// </summary>
 	public class Maker
 	{
+		/// <summary>
+		/// メーカーなし
+		/// </summary>
+		/// <returns></returns>
+		public static Maker None()
+		{
+			return new Maker(MakerId.None(), new MakerName("なし"), null);
+		}
+
 		private readonly MakerId _id;
 
 		private readonly MakerName _name;
@@ -17,12 +26,12 @@ namespace CapStore.Domain.Makers
 
 		public Maker(MakerId id, MakerName name, ImageUrl? image)
 		{
-			if(id == null)
+			if (id == null)
 			{
 				throw new ValidationArgumentNullException("メーカーIDは必須です");
 			}
 
-			if(name == null)
+			if (name == null)
 			{
 				throw new ValidationArgumentNullException("メーカー名は必須です");
 			}

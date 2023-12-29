@@ -7,9 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Catalogs/" />
     <Folder Include="Catalogs/Assets/" />
-    <Folder Include="Catalogs/Exceptions/" />
   </ItemGroup>
 
   <ItemGroup>

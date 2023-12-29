@@ -10,6 +10,7 @@ using CapStore.Domain.Makers;
 using CapStore.Domain.Categories;
 using CapStore.Domain.Shareds;
 using System.Text;
+using Akizuki.Infrastructure.Html;
 
 namespace Akizuki.Infrastructure.Catalogs.Html
 {
@@ -33,9 +34,10 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 
 			int startIndex = modelNameNode.TextContent.IndexOf("[") + 1;
 			int length = modelNameNode.TextContent.IndexOf("]") - startIndex;
+			//モデル名が存在しない
 			if (length < 0)
 			{
-				throw new AkizukiPageHtmlParseException();
+				return ComponentModelName.None();
 			}
 
 			string modelNameStr = modelNameNode.TextContent.Substring(startIndex, length);
@@ -97,6 +99,16 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 			await File.WriteAllTextAsync(path, html, Encoding.GetEncoding("SHIFT_JIS"));
 		}
 
+		private void DeleteHtml(CatalogId catalogId)
+		{
+			string path = Path.Combine(ROOT_PATH, $"{catalogId.Value}.html");
+
+			if (File.Exists(path))
+			{
+				File.Delete(path);
+			}
+		}
+
 		private async Task<string?> LoadHtmlAsync(CatalogId catalogId)
 		{
 			string path = Path.Combine(ROOT_PATH, $"{catalogId.Value}.html");
@@ -136,6 +148,19 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 				INode? titleNode = parsedDocument.Body.SelectSingleNode("//*[@id='maincontents']/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/h6");
 				if (titleNode == null)
 				{
+					if (parsedDocument.Body == null)
+					{
+						throw new AkizukiPageHtmlParseException(url);
+					}
+
+					//販売終了の可能性あり
+					if (parsedDocument.Body.TextContent.Contains("ご指定の商品は販売終了か、ただ今お取扱いできない商品です。"))
+					{
+						DeleteHtml(url.CatalogId);
+						throw new AkizukiCatalogIdUnAvailableException(url.CatalogId, "販売終了または、取り扱い不可能");
+					}
+
+					//それ以外の場合は例外終了
 					throw new AkizukiPageHtmlParseException(url);
 				}
 				string componentNameStr = titleNode.TextContent;
@@ -160,14 +185,9 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 
 				//メーカー
 				INode? makerNameNode = parsedDocument.Body.SelectSingleNode("//*[@id='maincontents']/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/span/a");
-				if (makerNameNode == null)
-				{
-					throw new AkizukiPageHtmlParseException(url);
-				}
-				string makerNameStr = makerNameNode.TextContent;
-				MakerName makerName = new MakerName(makerNameStr);
-				Maker maker = new Maker(MakerId.UnDetect(), makerName, null);
-
+				Maker maker = makerNameNode == null
+					? Maker.None()
+					: new Maker(MakerId.UnDetect(), new MakerName(makerNameNode.TextContent), null);
 
 				ComponentImageList componentImages = PartseComponentImages(parsedDocument, url.CatalogId);
 
@@ -189,6 +209,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 		/// <param name="catalogId"></param>
 		/// <returns></returns>
 		/// <exception cref="AkizukiPageHtmlParseException"></exception>
+		/// <exception cref="AkizukiCatalogIdUnAvailableException"></exception>
 		public Task<AkizukiPage> FetchAkizukiPageAsync(CatalogId catalogId)
 		{
 			return FetchAkizukiPageAsync(new AkizukiCatalogPageUrl(catalogId));

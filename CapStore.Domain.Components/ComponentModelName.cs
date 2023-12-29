@@ -8,6 +8,15 @@ namespace CapStore.Domain.Components
 	/// </summary>
 	public class ComponentModelName
 	{
+		private const string NONE = "なし";
+		/// <summary>
+		/// モデル名が存在しない
+		/// </summary>
+		/// <returns></returns>
+		public static ComponentModelName None()
+		{
+			return new ComponentModelName(NONE);
+		}
 
 		private readonly string _modelName;
 
@@ -19,6 +28,14 @@ namespace CapStore.Domain.Components
 			}
 
 			_modelName = modelName;
+		}
+
+		/// <summary>
+		/// モデル名が存在しないかどうか
+		/// </summary>
+		public bool IsNone
+		{
+			get { return _modelName == NONE; }
 		}
 
 		/// <summary>

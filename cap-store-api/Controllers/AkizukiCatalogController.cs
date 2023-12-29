@@ -1,6 +1,8 @@
 ﻿using Akizuki.ApplicationService.Catalogs;
 using Akizuki.ApplicationService.Catalogs.Data.Fetch;
+using Akizuki.ApplicationServices;
 using Akizuki.Infrastructure.Catalogs.Html;
+using Akizuki.Infrastructure.Html;
 using Microsoft.AspNetCore.Mvc;
 
 namespace cap_store_api;
@@ -28,6 +30,10 @@ public class AkizukiCatalogController
         catch (AkizukiPageHtmlParseException)
         {
             response = new AKE0102Response();
+        }
+        catch (AkizukiCatalogIdUnAvailableException ex)
+        {
+            response = new AKE0101Response(ex);
         }
 
         JsonResult result = new JsonResult(response)
