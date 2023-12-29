@@ -1,4 +1,6 @@
-﻿using Akizuki.ApplicationService.Catalogs;
+﻿using System.Text.Encodings.Web;
+using System.Text.Unicode;
+using Akizuki.ApplicationService.Catalogs;
 using Akizuki.ApplicationServices.OrderDetails;
 using Akizuki.Domain.Catalogs;
 using Akizuki.Domain.Orders;
@@ -46,6 +48,12 @@ builder.Services.AddScoped<OrderDetailApplicationService>();
 builder.Services.AddControllers(options =>
 {
     options.Filters.Add(new CapExceptionFilter());
+}).AddJsonOptions(options =>
+{
+    //インデント有効
+    options.JsonSerializerOptions.WriteIndented = true;
+    //日本語有効か
+    options.JsonSerializerOptions.Encoder = JavaScriptEncoder.Create(UnicodeRanges.All);
 });
 
 var app = builder.Build();

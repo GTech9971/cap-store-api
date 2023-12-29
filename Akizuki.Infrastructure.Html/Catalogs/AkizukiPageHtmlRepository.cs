@@ -9,13 +9,18 @@ using System.Text.RegularExpressions;
 using CapStore.Domain.Makers;
 using CapStore.Domain.Categories;
 using CapStore.Domain.Shareds;
+using System.Text;
 
 namespace Akizuki.Infrastructure.Catalogs.Html
 {
 	public class AkizukiPageHtmlRepository : IAzikzukiPageRepository
 	{
+		private readonly HtmlParser parser;
+		private const string ROOT_PATH = "../../../../Akizuki.Infrastructure.Html/Catalogs/Assets";
+
 		public AkizukiPageHtmlRepository()
 		{
+			parser = new HtmlParser();
 		}
 
 		private ComponentModelName ParseModelName(IDocument document)
@@ -76,6 +81,28 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 			return new ComponentImageList(imageUrls);
 		}
 
+
+		private async Task SaveHtmlAsync(IDocument document, CatalogId catalogId)
+		{
+			string path = Path.Combine(ROOT_PATH, $"{catalogId.Value}.html");
+
+			if (File.Exists(path)) { return; }
+
+			string html = document.Source.Text;
+			await File.WriteAllTextAsync(path, html, Encoding.GetEncoding("SHIFT_JIS"));
+		}
+
+		private async Task<string?> LoadHtmlAsync(CatalogId catalogId)
+		{
+			string path = Path.Combine(ROOT_PATH, $"{catalogId.Value}.html");
+			if (File.Exists(path) == false)
+			{
+				return null;
+			}
+
+			return await File.ReadAllTextAsync(path, Encoding.GetEncoding("SHIFT_JIS"));
+		}
+
 		/// <summary>
 		/// 秋月電子のページを解析する
 		/// </summary>
@@ -86,9 +113,17 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 		{
 			using (IBrowsingContext context = BrowsingContext.New(Configuration.Default.WithDefaultLoader()))
 			{
-				IDocument document = await context.OpenAsync(url.Value);
-				HtmlParser parser = new HtmlParser();
+
+				string? html = await LoadHtmlAsync(url.CatalogId);
+
+				IDocument document = html == null
+					? await context.OpenAsync(url.Value)
+					: await context.OpenAsync(req => req.Content(html));
+
+				await SaveHtmlAsync(document, url.CatalogId);
+
 				IDocument parsedDocument = await parser.ParseDocumentAsync(document);
+
 
 				//電子部品名
 				INode? titleNode = parsedDocument.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/h6");
