@@ -25,7 +25,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 
 		private ComponentModelName ParseModelName(IDocument document)
 		{
-			INode? modelNameNode = document.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td");
+			INode? modelNameNode = document.Body.SelectSingleNode("//*[@id='maincontents']/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td");
 			if (modelNameNode == null)
 			{
 				throw new AkizukiPageHtmlParseException();
@@ -33,6 +33,11 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 
 			int startIndex = modelNameNode.TextContent.IndexOf("[") + 1;
 			int length = modelNameNode.TextContent.IndexOf("]") - startIndex;
+			if (length < 0)
+			{
+				throw new AkizukiPageHtmlParseException();
+			}
+
 			string modelNameStr = modelNameNode.TextContent.Substring(startIndex, length);
 			ComponentModelName modelName = new ComponentModelName(modelNameStr);
 
@@ -42,14 +47,14 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 		private ComponentDescription PartseDescription(IDocument document)
 		{
 			//説明
-			INode? descriptionHeadNode = document.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/text()");
+			INode? descriptionHeadNode = document.Body.SelectSingleNode("//*[@id='maincontents']/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/text()");
 			if (descriptionHeadNode == null)
 			{
 				throw new AkizukiPageHtmlParseException();
 			}
 			string descriptionHeadStr = descriptionHeadNode.TextContent.Replace("\t", "").Replace("\n", "");
 
-			INode? descriptionBodyNode = document.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[4]/td");
+			INode? descriptionBodyNode = document.Body.SelectSingleNode("//*[@id='maincontents']/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[4]/td");
 			if (descriptionBodyNode == null)
 			{
 				throw new AkizukiPageHtmlParseException();
@@ -122,11 +127,13 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 
 				await SaveHtmlAsync(document, url.CatalogId);
 
-				IDocument parsedDocument = await parser.ParseDocumentAsync(document);
+				IDocument parsedDocument = html == null
+					? await parser.ParseDocumentAsync(document)
+					: await parser.ParseDocumentAsync(html);
 
 
 				//電子部品名
-				INode? titleNode = parsedDocument.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/h6");
+				INode? titleNode = parsedDocument.Body.SelectSingleNode("//*[@id='maincontents']/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/h6");
 				if (titleNode == null)
 				{
 					throw new AkizukiPageHtmlParseException(url);
@@ -142,7 +149,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 
 
 				//カテゴリー
-				INode? categoryNameNode = parsedDocument.Body.SelectSingleNode("/html/body/div/div[2]/div[1]/div/a[2]");
+				INode? categoryNameNode = parsedDocument.Body.SelectSingleNode("//*[@id='div']/a[2]");
 				if (categoryNameNode == null)
 				{
 					throw new AkizukiPageHtmlParseException(url);
@@ -152,7 +159,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 				Category category = new Category(CategoryId.UnDetectId(), categoryName, null);
 
 				//メーカー
-				INode? makerNameNode = parsedDocument.Body.SelectSingleNode("/html/body/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/span/a");
+				INode? makerNameNode = parsedDocument.Body.SelectSingleNode("//*[@id='maincontents']/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/span/a");
 				if (makerNameNode == null)
 				{
 					throw new AkizukiPageHtmlParseException(url);
