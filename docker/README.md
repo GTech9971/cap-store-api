@@ -43,7 +43,7 @@ COPY public.makers FROM '/tmp/init_data/makers.csv' DELIMITER ',' CSV HEADER;
 3. Dockerfileビルド
 
 ```bash
-docker build -t cap-store-db:0.0.1 .
+docker build -t cap-store-db:0.0.2 .
 ```
 
 ## 参考文献
