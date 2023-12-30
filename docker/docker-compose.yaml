@@ -3,7 +3,7 @@
 version: "3"
 services:
   ef-postgres:
-    image: cap-store-db:0.0.1
+    image: cap-store-db:0.0.2
     restart: always
     environment:
       TZ: "Asia/Tokyo"
