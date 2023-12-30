@@ -163,7 +163,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 					//それ以外の場合は例外終了
 					throw new AkizukiPageHtmlParseException(url);
 				}
-				string componentNameStr = titleNode.TextContent;
+				string componentNameStr = titleNode.TextContent.Replace("　", " ");
 				ComponentName name = new ComponentName(componentNameStr);
 
 				//モデル名
@@ -187,7 +187,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 				INode? makerNameNode = parsedDocument.Body.SelectSingleNode("//*[@id='maincontents']/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/span/a");
 				Maker maker = makerNameNode == null
 					? Maker.None()
-					: new Maker(MakerId.UnDetect(), new MakerName(makerNameNode.TextContent), null);
+					: new Maker(MakerId.UnDetect(), new MakerName(makerNameNode.TextContent.Replace("&", "and")), null);
 
 				ComponentImageList componentImages = PartseComponentImages(parsedDocument, url.CatalogId);
 

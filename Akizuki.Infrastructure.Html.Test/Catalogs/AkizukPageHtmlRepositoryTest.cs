@@ -23,7 +23,7 @@ namespace Akizuki.Infrastructure.Html.Catalogs.Test
             AkizukiPage akizukiPage = await _repository.FetchAkizukiPageAsync(pageUrl);
             Assert.Equal(url, akizukiPage.Url.Value);
 
-            Assert.Equal("ＳｉＣショットキーバリアダイオード　６５０Ｖ６Ａ　ＴＲＳ６Ｅ６５Ｈ", akizukiPage.Component.Name.Value);
+            Assert.Equal("ＳｉＣショットキーバリアダイオード ６５０Ｖ６Ａ ＴＲＳ６Ｅ６５Ｈ", akizukiPage.Component.Name.Value);
             Assert.Equal("TRS6E65H", akizukiPage.Component.ModelName.Value);
             Assert.True(akizukiPage.Component.Description.Value.Any());
             Assert.Equal("株式会社東芝セミコンダクター社(TOSHIBA)", akizukiPage.Component.Maker.Name.Value);
@@ -40,7 +40,7 @@ namespace Akizuki.Infrastructure.Html.Catalogs.Test
             AkizukiPage akizukiPage = await _repository.FetchAkizukiPageAsync(pageUrl);
             Assert.Equal(url, akizukiPage.Url.Value);
 
-            Assert.Equal("マイクロチップ　ＰＩＣｋｉｔ５", akizukiPage.Component.Name.Value);
+            Assert.Equal("マイクロチップ ＰＩＣｋｉｔ５", akizukiPage.Component.Name.Value);
             Assert.Equal("PG164150", akizukiPage.Component.ModelName.Value);
             Assert.True(akizukiPage.Component.Description.Value.Any());
             Assert.Equal("Microchip Technology Inc.(マイクロチップ)/Atmel Corporation(アトメル)", akizukiPage.Component.Maker.Name.Value);
@@ -57,7 +57,7 @@ namespace Akizuki.Infrastructure.Html.Catalogs.Test
             AkizukiPage akizukiPage = await _repository.FetchAkizukiPageAsync(pageUrl);
             Assert.Equal(url, akizukiPage.Url.Value);
 
-            Assert.Equal("ＰＩＣマイコン　ＰＩＣ１２Ｆ６２９－Ｉ／Ｐ", akizukiPage.Component.Name.Value);
+            Assert.Equal("ＰＩＣマイコン ＰＩＣ１２Ｆ６２９－Ｉ／Ｐ", akizukiPage.Component.Name.Value);
             Assert.Equal("PIC12F629-I/P", akizukiPage.Component.ModelName.Value);
             Assert.True(akizukiPage.Component.Description.Value.Any());
             Assert.Equal("Microchip Technology Inc.(マイクロチップ)/Atmel Corporation(アトメル)", akizukiPage.Component.Maker.Name.Value);
@@ -74,7 +74,7 @@ namespace Akizuki.Infrastructure.Html.Catalogs.Test
             AkizukiPage akizukiPage = await _repository.FetchAkizukiPageAsync(pageUrl);
             Assert.Equal(url, akizukiPage.Url.Value);
 
-            Assert.Equal("ＰＩＣマイコン　ＰＩＣ１６Ｆ１８２７－Ｉ／Ｐ", akizukiPage.Component.Name.Value);
+            Assert.Equal("ＰＩＣマイコン ＰＩＣ１６Ｆ１８２７－Ｉ／Ｐ", akizukiPage.Component.Name.Value);
             Assert.Equal("PIC16F1827-I/P", akizukiPage.Component.ModelName.Value);
             Assert.True(akizukiPage.Component.Description.Value.Any());
             Assert.Equal("Microchip Technology Inc.(マイクロチップ)/Atmel Corporation(アトメル)", akizukiPage.Component.Maker.Name.Value);
@@ -92,7 +92,7 @@ namespace Akizuki.Infrastructure.Html.Catalogs.Test
             AkizukiPage akizukiPage = await _repository.FetchAkizukiPageAsync(pageUrl);
             Assert.Equal(url, akizukiPage.Url.Value);
 
-            Assert.Equal("ＡＥ－ＡＴＭＥＧＡ３２８－ＭＩＮＩ　（Ａｒｄｕｉｎｏ　Ｐｒｏ　Ｍｉｎｉ上位互換）", akizukiPage.Component.Name.Value);
+            Assert.Equal("ＡＥ－ＡＴＭＥＧＡ３２８－ＭＩＮＩ （Ａｒｄｕｉｎｏ Ｐｒｏ Ｍｉｎｉ上位互換）", akizukiPage.Component.Name.Value);
             Assert.Equal("AE-ATMEGA-328 MINI", akizukiPage.Component.ModelName.Value);
             Assert.True(akizukiPage.Component.Description.Value.Any());
             Assert.Equal("株式会社秋月電子通商", akizukiPage.Component.Maker.Name.Value);
@@ -109,7 +109,7 @@ namespace Akizuki.Infrastructure.Html.Catalogs.Test
             AkizukiPage akizukiPage = await _repository.FetchAkizukiPageAsync(pageUrl);
             Assert.Equal(url, akizukiPage.Url.Value);
 
-            Assert.Equal("ブレッドボード　ＢＢ－８０１", akizukiPage.Component.Name.Value);
+            Assert.Equal("ブレッドボード ＢＢ－８０１", akizukiPage.Component.Name.Value);
             Assert.Equal("BB-801", akizukiPage.Component.ModelName.Value);
             Assert.True(akizukiPage.Component.Description.Value.Any());
             Assert.Equal("Cixi Wanjie Electronic Co.,Ltd(慈渓市万捷電子有限公司)", akizukiPage.Component.Maker.Name.Value);

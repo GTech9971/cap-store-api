@@ -97,6 +97,35 @@ namespace CapStoreAPI.Test
             Assert.Equal(HttpStatusCode.OK, registryResponse.StatusCode);
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
+
+        [Theory(DisplayName = "電子部品登録API成功 複数")]
+        [Trait("Category", "Component")]
+        [MemberData(nameof(FetchRegistryComponentJsonFileList))]
+        public async Task RegistryComponentsListSuccessTest(string jsonFile)
+        {
+            string json = await File.ReadAllTextAsync(jsonFile);
+
+            using StringContent jsonContent = new(json, Encoding.UTF8, "application/json");
+            using HttpResponseMessage response = await _httpClient.PostAsync("/api/v1/components/", jsonContent);
+
+            // Assert
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
+
+
+        /// <summary>
+        /// 電子部品登録jsonリスト
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<object[]> FetchRegistryComponentJsonFileList()
+        {
+            const string PATH = "../../../../CapStoreAPI.Test/Assets/RegistryComponents/";
+            string[] files = Directory.GetFiles(PATH, "*.json");
+            foreach (string file in files)
+            {
+                yield return new object[] { file };
+            }
+        }
     }
 
 }
