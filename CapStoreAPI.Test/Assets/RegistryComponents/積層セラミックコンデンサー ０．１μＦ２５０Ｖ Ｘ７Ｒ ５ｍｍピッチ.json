@@ -1,0 +1,13 @@
+﻿{
+  "name": "積層セラミックコンデンサー ０．１μＦ２５０Ｖ Ｘ７Ｒ ５ｍｍピッチ",
+  "modelName": "RDER72E104K2K1H03B",
+  "description": "絶縁型ラジアルリードタイプの積層セラミックコンデンサーです。アルミ電解コンデンサに近い容量容積比(10μF/立方cm)で小型・大容量です。ESR、ESLが小さく、高い周波数まで使用できます。極性はありません。250V品ですから50V以下で使用すれば静電容量の低下はごくわずかです。詳しくはデータシートのDCバイアス特性をご参照ください。\n■主な仕様・種類：積層セラミック・静電容量：0.1μF・定格電圧：250V・許容誤差：±10%・シリーズ：RD・動作温度：-55～125℃・極性：無・リード間隔：5mm・実装タイプ：スルーホール・温度特性：X7R・静電容量変化率：±15%・CLASS：II(高誘電率系)",
+  "categoryId": 3,
+  "makerId": 14,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/P-10147.jpg",
+    "https://akizukidenshi.com/img/goods/2/P-10147.jpg",
+    "https://akizukidenshi.com/img/goods/3/P-10147.jpg",
+    "https://akizukidenshi.com/img/goods/4/P-10147.jpg"
+  ]
+}

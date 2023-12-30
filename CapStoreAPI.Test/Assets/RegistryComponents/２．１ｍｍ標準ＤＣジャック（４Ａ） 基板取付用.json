@@ -1,0 +1,13 @@
+﻿{
+  "name": "２．１ｍｍ標準ＤＣジャック（４Ａ） 基板取付用",
+  "modelName": "18742",
+  "description": "基板取付用のDCジャックです。大電流を考慮したDCジャック(最大4A)です。2.54mmピッチに合わせて設計されていませんが足を曲げると入ります(写真4枚目)。\n■主な仕様・対応規格：内径2.1mm、外径5.5mm・定格：DC20V、4A■適合プラグ・20400(C-09311)・MP-121CF(C-06712)",
+  "categoryId": 3,
+  "makerId": 22,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/C-09408.jpg",
+    "https://akizukidenshi.com/img/goods/2/C-09408.jpg",
+    "https://akizukidenshi.com/img/goods/3/C-09408.jpg",
+    "https://akizukidenshi.com/img/goods/4/C-09408.jpg"
+  ]
+}

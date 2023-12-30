@@ -1,0 +1,14 @@
+﻿{
+  "name": "２回路入ＨｉＦｉオペアンプ ローノイズ選別品 ＮＪＭ４５８０ＤＤ",
+  "modelName": "NJM4580DD",
+  "description": "オーディオ用デュアルオペアンプ、オーディオ用として特に音質向上を図っています。市販のオーディオ機器でもよく使われています。オーディオ用ですが、工業計測用としても最適です。低雑音・低ひずみ、高出力電流、汎用オペアンプとしても使用できます。ローノイズ選別品(最大1.4μVrms)です。\n■主な仕様・入力構造：バイポーラ・特長：オーディオ用・回路数：2回路・電源：両電源・動作電圧：±2～±18V・出力方式：プッシュプル・電圧利得：110dB・スルーレート：5V/us・利得帯域幅積（GB積）：15MHz・歪率(dB)：-106dB・歪率(%)：0.0005%・実装タイプ：スルーホール・ピン数：8・パッケージ：DIP8・入力オフセット電圧：\u003C3mV・入力オフセット電流：\u003C200nA・入力バイアス電流：\u003C500nA・CMRR：80dB以上・同相入力電圧範囲：±12V以上",
+  "categoryId": 4,
+  "makerId": 6,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/I-00069.jpg",
+    "https://akizukidenshi.com/img/goods/1/I-00069.jpg",
+    "https://akizukidenshi.com/img/goods/2/I-00069.jpg",
+    "https://akizukidenshi.com/img/goods/3/I-00069.jpg",
+    "https://akizukidenshi.com/img/goods/4/I-00069.jpg"
+  ]
+}

@@ -1,0 +1,10 @@
+﻿{
+  "name": "赤外線リモコン受信モジュール ＯＳＲＢ３８Ｃ９ＢＸ－Ｗ１５０ＣＭ",
+  "modelName": "OSRB38C9BX-W150CM",
+  "description": "赤外リモコン受光モジュールにケーブルと3.5mm3極ミニプラグがついたものです。\n仕様(Ta=25℃、Typ.)・中心周波数(F0)：37.9kHz・電源電圧(VCC)：3.0V・到達距離(d)：20m(200±5Lux、VCC=3V)・ピーク波長(λP)：940nm・半値角(Δθ)：90°・出力：オープンコレクタ・ケーブル長さ：1.5m・端子：3.5mmステレオミニプラグ(3極ミニプラグ)",
+  "categoryId": 6,
+  "makerId": 2,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/M-08628.jpg"
+  ]
+}

@@ -97,6 +97,54 @@ namespace CapStoreAPI.Test
             Assert.Equal(HttpStatusCode.OK, registryResponse.StatusCode);
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
+
+        [Theory(DisplayName = "電子部品登録API成功 複数")]
+        [Trait("Category", "Component")]
+        [MemberData(nameof(FetchRegistryComponentJsonFileList))]
+        public async Task RegistryComponentsListSuccessTest(string jsonFile)
+        {
+            string json = await File.ReadAllTextAsync(jsonFile);
+
+            using StringContent jsonContent = new(json, Encoding.UTF8, "application/json");
+            using HttpResponseMessage response = await _httpClient.PostAsync("/api/v1/components/", jsonContent);
+
+            // Assert
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
+
+        /// <summary>
+        /// DB出力用
+        /// </summary>
+        /// <returns></returns>
+        [Fact(DisplayName = "電子部品登録API成功 複数一括")]
+        [Trait("Category", "Component")]
+        public async Task RegistryComponentsListBulkSuccessTest()
+        {
+            IEnumerable<string> jsonList =
+                FetchRegistryComponentJsonFileList()
+                .Select(x => File.ReadAllText(x[0].ToString()));
+
+            foreach (var json in jsonList)
+            {
+                using StringContent jsonContent = new(json, Encoding.UTF8, "application/json");
+                using HttpResponseMessage response = await _httpClient.PostAsync("/api/v1/components/", jsonContent);
+            }
+        }
+
+
+        /// <summary>
+        /// 電子部品登録jsonリスト
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<object[]> FetchRegistryComponentJsonFileList()
+        {
+            const string PATH = "../../../../CapStoreAPI.Test/Assets/RegistryComponents/";
+            string[] files = Directory.GetFiles(PATH, "*.json");
+            foreach (string file in files)
+            {
+                yield return new object[] { file };
+            }
+        }
     }
 
 }

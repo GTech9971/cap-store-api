@@ -1,0 +1,14 @@
+﻿{
+  "name": "トランジスタ ２ＳＡ１０１５ＧＲ ５０Ｖ１５０ｍＡ （１０個入）",
+  "modelName": "2SA1015GR",
+  "description": "低周波電圧増幅用の汎用トランジスタです。励振段増幅用。高耐圧でしかも電流容量が大きいです。電流増幅率の電流依存性が優れています。\n■主な仕様・接合構造：PNP・コレクタ・ベース間電圧：-50V・コレクタ電流：-150mA・直流電流増幅率：200～400・トランジション周波数：80MHz・コレクタ損失：400mW・パッケージ：TO-92",
+  "categoryId": 4,
+  "makerId": 16,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/I-00882.jpg",
+    "https://akizukidenshi.com/img/goods/1/I-00882.jpg",
+    "https://akizukidenshi.com/img/goods/2/I-00882.jpg",
+    "https://akizukidenshi.com/img/goods/3/I-00882.jpg",
+    "https://akizukidenshi.com/img/goods/4/I-00882.jpg"
+  ]
+}

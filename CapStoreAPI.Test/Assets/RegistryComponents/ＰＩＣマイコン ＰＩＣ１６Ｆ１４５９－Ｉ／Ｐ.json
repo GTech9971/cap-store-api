@@ -1,0 +1,13 @@
+﻿{
+  "name": "ＰＩＣマイコン ＰＩＣ１６Ｆ１４５９－Ｉ／Ｐ",
+  "modelName": "PIC16F1459-I/P",
+  "description": "拡張ミッドレンジコア、USB内蔵、20ピンタイプのPICマイコンです。\n■主な仕様・シリーズ：PIC16F・電源電圧：2.3～5.5V・コアサイズ：8bit・命令長：14bit・クロック：48MHz・プログラムメモリ：8kW・RAM：1kB・GPIO：17pin・ADC：9Ch・DAC：1Ch・UART/USART：1Ch・I2C：1Ch・SPI：1Ch・USB：Function・タイマ：3Ch・オシレータ：内蔵/外付・パッケージ：DIP20",
+  "categoryId": 1,
+  "makerId": 1,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/I-10651.jpg",
+    "https://akizukidenshi.com/img/goods/1/I-10651.jpg",
+    "https://akizukidenshi.com/img/goods/2/I-10651.jpg",
+    "https://akizukidenshi.com/img/goods/3/I-10651.jpg"
+  ]
+}

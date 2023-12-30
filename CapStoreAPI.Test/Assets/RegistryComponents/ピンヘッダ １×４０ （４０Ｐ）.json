@@ -1,0 +1,13 @@
+﻿{
+  "name": "ピンヘッダ １×４０ （４０Ｐ）",
+  "modelName": "PH-1x40SG",
+  "description": "2.54mmピッチタイプです。シングルインラインタイプ(1列タイプ)。\nピン長さ(端から端まで)は約11.6mm(実測)あります。",
+  "categoryId": 3,
+  "makerId": 4,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/C-00167.jpg",
+    "https://akizukidenshi.com/img/goods/1/C-00167.jpg",
+    "https://akizukidenshi.com/img/goods/3/C-00167.jpg",
+    "https://akizukidenshi.com/img/goods/4/C-00167.jpg"
+  ]
+}

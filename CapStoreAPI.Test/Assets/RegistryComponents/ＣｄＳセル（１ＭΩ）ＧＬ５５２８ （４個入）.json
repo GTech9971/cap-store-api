@@ -1,0 +1,14 @@
+﻿{
+  "name": "ＣｄＳセル（１ＭΩ）ＧＬ５５２８ （４個入）",
+  "modelName": "GL5528",
+  "description": "CdS(硫化カドミウム)を使用した光センサーで、光の強さに応じて電気抵抗が低下する抵抗器です。人の目の特性に近い特性(緑色の光に対して高感度)を持っていますので、各種明るさセンサーに最適です。\n・外形寸法：直径5mm・ピーク波長：540nm・最大電圧：150VDC・最大電力：100mW・明抵抗：10~20kΩ(10Lux時)・暗抵抗：1MΩ",
+  "categoryId": 3,
+  "makerId": 20,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/I-05886.jpg",
+    "https://akizukidenshi.com/img/goods/1/I-05886.jpg",
+    "https://akizukidenshi.com/img/goods/2/I-05886.jpg",
+    "https://akizukidenshi.com/img/goods/3/I-05886.jpg",
+    "https://akizukidenshi.com/img/goods/4/I-05886.jpg"
+  ]
+}

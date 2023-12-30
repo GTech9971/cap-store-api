@@ -1,0 +1,14 @@
+﻿{
+  "name": "三端子レギュレーター ５Ｖ１．５Ａ ＮＪＭ７８０５ＦＡ",
+  "modelName": "NJM7805FA",
+  "description": "7805は定番の5V用三端子レギュレーターICです。様々な回路の電源電圧の安定化に使われています。入力側、出力側にコンデンサーをそれぞれ並列に接続して使用します。\n■主な仕様・出力方式：シリーズ・出力正負：正電源・入力電圧：～35V・出力電圧：5V・最大出力電流：1.5A・許容損失：16W・リップル除去比(PSRR)：78dB・パッケージ：TO-220F",
+  "categoryId": 4,
+  "makerId": 6,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/I-08678.jpg",
+    "https://akizukidenshi.com/img/goods/1/I-08678.jpg",
+    "https://akizukidenshi.com/img/goods/2/I-08678.jpg",
+    "https://akizukidenshi.com/img/goods/3/I-08678.jpg",
+    "https://akizukidenshi.com/img/goods/4/I-08678.jpg"
+  ]
+}

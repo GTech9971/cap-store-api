@@ -1,0 +1,14 @@
+﻿{
+  "name": "８ビットシフトレジスタ Ｕ７４ＨＣ５９５ＡＧ－Ｄ１６－Ｔ",
+  "modelName": "U74HC595AG-D16-T",
+  "description": "汎用CMOSロジックICです。ドットマトリクス表示回路やシリアルパラレル変換に使われます。TIのSN74HC595N(取扱終了)相当品。\n■主な仕様・ロジックタイプ：レジスタ・回路数：1・入力数：1・電源電圧：2~6V・静的消費電流：4μA以下・出力電流 L：35mA以下・出力電流 H：35mA以下・入力電圧 L：1.35V以下・入力電圧 H：3.15V以上・伝播遅延時間：40ns以下・動作温度：-40~125℃・実装タイプ：スルーホール・パッケージ：DIP",
+  "categoryId": 4,
+  "makerId": 17,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/I-14053.jpg",
+    "https://akizukidenshi.com/img/goods/1/I-14053.jpg",
+    "https://akizukidenshi.com/img/goods/2/I-14053.jpg",
+    "https://akizukidenshi.com/img/goods/3/I-14053.jpg",
+    "https://akizukidenshi.com/img/goods/4/I-14053.jpg"
+  ]
+}

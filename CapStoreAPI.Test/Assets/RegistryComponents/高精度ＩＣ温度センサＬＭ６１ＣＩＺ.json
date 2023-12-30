@@ -1,0 +1,10 @@
+﻿{
+  "name": "高精度ＩＣ温度センサＬＭ６１ＣＩＺ",
+  "modelName": "LM61CIZ",
+  "description": "・汎用の高精度IC温度センサーです \n・測定範囲：-30℃~100℃ ・温度係数：\u002B10mV/℃ ・動作電圧範囲：\u002B2.7~\u002B10V ・出力インピーダンス：800Ω ・Vo=(\u002B10mV/℃×T℃)\u002B600mV  \u002B100℃/\u002B1600mV \u002B85℃/\u002B1450mV  \u002B25℃/\u002B850mV  0℃/\u002B600mV  -25℃/\u002B350mV -30℃/\u002B300mV",
+  "categoryId": 6,
+  "makerId": 18,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/I-11160.jpg"
+  ]
+}

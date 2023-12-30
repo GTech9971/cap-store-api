@@ -1,0 +1,14 @@
+﻿{
+  "name": "８ビットシフトレジスタ ＴＣ７４ＨＣ１６５ＡＰ",
+  "modelName": "TC74HC165AP",
+  "description": "東芝のCMOSロジックIC、シフトレジスタです。\n■主な仕様・ロジックタイプ：シフトレジスタ・回路数：1・入力数：1・電源電圧：2~6V・静的消費電流：4.0μAtyp(Vcc=6.0V)・伝播遅延時間：~26ns(CL=15pF、Vcc=5V、Ta=25℃)・動作温度：-40~85℃・実装タイプ：スルーホール・パッケージ：DIP16",
+  "categoryId": 4,
+  "makerId": 16,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/I-14679.jpg",
+    "https://akizukidenshi.com/img/goods/1/I-14679.jpg",
+    "https://akizukidenshi.com/img/goods/2/I-14679.jpg",
+    "https://akizukidenshi.com/img/goods/3/I-14679.jpg",
+    "https://akizukidenshi.com/img/goods/4/I-14679.jpg"
+  ]
+}
