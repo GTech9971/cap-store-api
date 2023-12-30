@@ -1,0 +1,12 @@
+﻿{
+  "name": "基板用スライドスイッチ ＳＳ－１２Ｄ００－Ｇ５",
+  "modelName": "SS-12D00-G5",
+  "description": "基板取付用の小型スライドスイッチです。\n■主な仕様・種別：スライドスイッチ・表記：ON-ON・回路数：1回路・接点：2接点・定格開閉電圧：50VDC・定格開閉電流：0.5A・接触抵抗：30mΩ以下・切替タイミング：ノンショート・取付タイプ：基板取付・電気的接続：スルーホール実装・ピン数：3",
+  "categoryId": 3,
+  "makerId": 23,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/P-08790.jpg",
+    "https://akizukidenshi.com/img/goods/3/P-08790.jpg",
+    "https://akizukidenshi.com/img/goods/4/P-08790.jpg"
+  ]
+}

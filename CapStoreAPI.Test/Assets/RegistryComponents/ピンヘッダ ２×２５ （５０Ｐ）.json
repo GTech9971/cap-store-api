@@ -1,0 +1,14 @@
+﻿{
+  "name": "ピンヘッダ ２×２５ （５０Ｐ）",
+  "modelName": "PH-2x25SG",
+  "description": "2.54mmピッチタイプ、ピンヘッダです。\n■主な仕様・種類：ピンヘッダ・極数：50・列数：2・ピッチ：2.54mm・実装方向：垂直・実装タイプ：スルーホール・取付穴径：Φ1.02mm・定格電流：3A・接触抵抗：20mΩ・コンタクト材質：黄銅・コンタクト仕上：金めっき・ベース色：黒・使用温度範囲：-40～\u002B105℃・全長：11.6mm・コンタクト長：6.1mm・リード長：3.00mm・実装高さ：8.6mm",
+  "categoryId": 3,
+  "makerId": 4,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/C-00081.jpg",
+    "https://akizukidenshi.com/img/goods/1/C-00081.jpg",
+    "https://akizukidenshi.com/img/goods/2/C-00081.jpg",
+    "https://akizukidenshi.com/img/goods/3/C-00081.jpg",
+    "https://akizukidenshi.com/img/goods/4/C-00081.jpg"
+  ]
+}

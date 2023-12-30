@@ -1,0 +1,14 @@
+﻿{
+  "name": "Ｉ２Ｃ シリアルＥＥＰＲＯＭ ２４ＬＣ６４－Ｉ／Ｐ",
+  "modelName": "24LC64-I/P",
+  "description": "マイクロチップ製 64kビットEEPROM\n■64Kビット(8kx8)EEPROM■2線式I2Cインターフェース■バススピード：400kHz■動作電圧：2.5~5.5V■8ピンDIP",
+  "categoryId": 1,
+  "makerId": 1,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/I-00194.jpg",
+    "https://akizukidenshi.com/img/goods/1/I-00194.jpg",
+    "https://akizukidenshi.com/img/goods/2/I-00194.jpg",
+    "https://akizukidenshi.com/img/goods/3/I-00194.jpg",
+    "https://akizukidenshi.com/img/goods/4/I-00194.jpg"
+  ]
+}

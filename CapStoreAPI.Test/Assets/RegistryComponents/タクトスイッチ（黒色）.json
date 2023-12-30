@@ -1,0 +1,14 @@
+﻿{
+  "name": "タクトスイッチ（黒色）",
+  "modelName": "DTS-63-N-V-BLK(TS-0606-F-N-BLK",
+  "description": "基板取付用のタクトスイッチ(押しボタンスイッチ)です。2.54mmピッチの基板に使用できます。\n■主な仕様・種別：タクトスイッチ・表記：A接点・回路数：1回路・接点：1接点・定格印加電圧：30VDC・定格開閉電圧：12VDC・定格開閉電流：50mA・定格通電電流：300mA・定格開閉皮相電力：9W・接触抵抗：100mΩ以下・動作：モーメンタリ・取付タイプ：基板取付・電気的接続：スルーホール実装・色：黒・ピン数：4",
+  "categoryId": 3,
+  "makerId": 15,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/P-03647.jpg",
+    "https://akizukidenshi.com/img/goods/1/P-03647.jpg",
+    "https://akizukidenshi.com/img/goods/2/P-03647.jpg",
+    "https://akizukidenshi.com/img/goods/3/P-03647.jpg",
+    "https://akizukidenshi.com/img/goods/4/P-03647.jpg"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "オプトサプライ１０バーＬＥＤアレイ ３色（緑５黄３赤２）タイプ",
+  "modelName": "OSX10201-GYR1",
+  "description": "3色のLEDが内蔵されたLEDアレイです。レベルメーター・パワーメータとしても楽しめる配色です。各LEDは、独立した配線になっていますのでわかりやすく、設計の自由度も高いです。※各色で明るさが異なりますので抵抗やマイコンのプログラムなどで適宜調整してください。\n主な仕様◆順方向電圧降下(VF)(20mAにおける標準値) 赤：2.1V 黄：2.1V 緑(黄緑)：2.1V◆逆耐圧：5V◆ドミナント波長(20mAにおける標準値)： 赤：632nm 黄：587nm 緑(黄緑)：570nm◆輝度(20mAにおける標準値)： 赤：35mcd 黄：35mcd 緑(黄緑)：35mcd◆バー形状：1.74xx5.0mm◆外形寸法：25.5x10.2x7.9mm (足含まず)",
+  "categoryId": 8,
+  "makerId": 2,
+  "images": [
+    "https://akizukidenshi.com/img/goods/1/I-05347.jpg",
+    "https://akizukidenshi.com/img/goods/2/I-05347.jpg",
+    "https://akizukidenshi.com/img/goods/3/I-05347.jpg",
+    "https://akizukidenshi.com/img/goods/4/I-05347.jpg"
+  ]
+}

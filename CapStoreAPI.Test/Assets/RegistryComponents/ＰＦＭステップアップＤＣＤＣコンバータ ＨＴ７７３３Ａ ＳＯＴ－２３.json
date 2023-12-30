@@ -1,0 +1,13 @@
+﻿{
+  "name": "ＰＦＭステップアップＤＣＤＣコンバータ ＨＴ７７３３Ａ ＳＯＴ－２３",
+  "modelName": "HT7733A",
+  "description": "HOLTEK(ホルテックセミコンダクタ)のDC/DCコンバーターICです。\n■主な仕様・出力方式：制御IC・出力正負：正電源・入力電圧：0.7～6V・出力電圧：3.3V・許容損失：0.33W・変換効率：0.85・発振周波数：200kHz・入出力絶縁：非絶縁・パッケージ：SOT-23",
+  "categoryId": 7,
+  "makerId": 13,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/I-12554.jpg",
+    "https://akizukidenshi.com/img/goods/1/I-12554.jpg",
+    "https://akizukidenshi.com/img/goods/2/I-12554.jpg",
+    "https://akizukidenshi.com/img/goods/3/I-12554.jpg"
+  ]
+}

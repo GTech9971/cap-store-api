@@ -1,0 +1,14 @@
+﻿{
+  "name": "ＡＮ７１７３Ｋ使用 ステレオオーディオパワーアンプキット",
+  "modelName": "AE-AN7173K",
+  "description": "PanasonicのAN7173Kを使用したステレオアンプキットです、BTL接続で充分な放熱をすれば最大12.5W×2ch出力になります。電源ON/OFF時のショック音が少なく、各種保護回路を内蔵しています。端子はターミナルブロックが使用できるよう配慮しています。\n■主な仕様・電源電圧：DC8～16V・消費電流：約130mA(12V、無信号時、実測)・利得：52.5dB・出力：12.5Wx2(13.2V、4Ω)・基板寸法：72mm×47mm・保護回路：温度、過電圧、出力-GND間短絡、負荷短絡、出力-Vcc間短絡",
+  "categoryId": 5,
+  "makerId": 8,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/K-10240.jpg",
+    "https://akizukidenshi.com/img/goods/1/K-10240.jpg",
+    "https://akizukidenshi.com/img/goods/2/K-10240.jpg",
+    "https://akizukidenshi.com/img/goods/3/K-10240.jpg",
+    "https://akizukidenshi.com/img/goods/4/K-10240.jpg"
+  ]
+}

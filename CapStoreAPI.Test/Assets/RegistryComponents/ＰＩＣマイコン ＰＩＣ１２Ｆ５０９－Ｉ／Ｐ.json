@@ -1,0 +1,14 @@
+﻿{
+  "name": "ＰＩＣマイコン ＰＩＣ１２Ｆ５０９－Ｉ／Ｐ",
+  "modelName": "PIC12F509-I/P",
+  "description": "PIC12F509-I/P\n■主な仕様・シリーズ：PIC12F・電源電圧：2.0～5.5V・コアサイズ：8bit・命令長：12bit・クロック：4MHz・プログラムメモリ：1kW・RAM：41B・GPIO：6pin・タイマ：1Ch・オシレータ：内蔵/外付・パッケージ：DIP8",
+  "categoryId": 1,
+  "makerId": 1,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/I-01262.jpg",
+    "https://akizukidenshi.com/img/goods/1/I-01262.jpg",
+    "https://akizukidenshi.com/img/goods/2/I-01262.jpg",
+    "https://akizukidenshi.com/img/goods/3/I-01262.jpg",
+    "https://akizukidenshi.com/img/goods/4/I-01262.jpg"
+  ]
+}

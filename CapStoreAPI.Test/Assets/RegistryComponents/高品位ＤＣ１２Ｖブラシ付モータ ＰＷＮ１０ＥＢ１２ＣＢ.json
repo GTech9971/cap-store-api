@@ -1,0 +1,14 @@
+﻿{
+  "name": "高品位ＤＣ１２Ｖブラシ付モータ ＰＷＮ１０ＥＢ１２ＣＢ",
+  "modelName": "PWN10EB12CB",
+  "description": "角型・小型・軽量・高トルクのミネベア製のDCブラシ付モータです。2mmピッチのコネクタがケーブルに付いています。\n■主な使用・駆動電圧：12V(typ)・コイル抵抗：約20Ω(実測値)・インダクタンス：約12.5mH(実測値@100Hz)・シャフト径：Φ2.0mm・付属ケーブル長：120mm・重量：約25.5g(ケーブル・コネクタ含む)",
+  "categoryId": 3,
+  "makerId": 999990,
+  "images": [
+    "https://akizukidenshi.com/img/goods/L/P-10024.jpg",
+    "https://akizukidenshi.com/img/goods/1/P-10024.jpg",
+    "https://akizukidenshi.com/img/goods/2/P-10024.jpg",
+    "https://akizukidenshi.com/img/goods/3/P-10024.jpg",
+    "https://akizukidenshi.com/img/goods/4/P-10024.jpg"
+  ]
+}
