@@ -62,13 +62,13 @@ namespace CapStoreAPI.Test
 
         [Fact(DisplayName = "電子部品取得API")]
         [Trait("Controller", "Component")]
-        public async Task FetchComponentsEmptyTest()
+        public async Task FetchComponentsSuccessTest()
         {
             using HttpResponseMessage response = await _httpClient.GetAsync("/api/v1/components/");
 
             var jsonResponse = await response.Content.ReadAsStringAsync();
             // Assert
-            Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
 
 

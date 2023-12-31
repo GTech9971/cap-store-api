@@ -2,6 +2,7 @@
 using CapStore.Infrastructure.Ef;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -10,9 +11,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace cap_store_api.Migrations
 {
     [DbContext(typeof(CapStoreDbContext))]
-    partial class CapStoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231231221208_fix-component-image-foregin-key")]
+    partial class fixcomponentimageforeginkey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
