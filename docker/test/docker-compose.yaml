@@ -1,0 +1,15 @@
+# 参考サイトは以下
+# https://casualdevelopers.com/tech-tips/how-to-set-up-docker-compose-for-mysql-postgres-mongodb/
+version: "3"
+services:
+  ef-postgres:
+    image: postgres
+    restart: always
+    environment:
+      TZ: "Asia/Tokyo"
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: test_db
+    ports:
+      - 5432:5432
+      

@@ -22,8 +22,11 @@ namespace CapStore.Infrastructure.Ef.Components.Data
 		/// <summary>
 		/// 電子部品ID
 		/// </summary>
-		[Column("component_id")]
+		[Column("component_id_fk")]
 		public int ComponentId { get; set; }
+
+		[ForeignKey(nameof(ComponentId))]
+		public ComponentData Component { get; set; } = null!;
 
 		/// <summary>
 		/// 電子部品画像URL
@@ -37,16 +40,16 @@ namespace CapStore.Infrastructure.Ef.Components.Data
 
 		public ComponentImageData(ComponentImage from)
 		{
-			if(from.ComponentImageId.IsUnDetect == false)
+			if (from.ComponentImageId.IsUnDetect == false)
 			{
-                Id = from.ComponentImageId.Value;
-            }
+				Id = from.ComponentImageId.Value;
+			}
 
-			if(from.ComponentId.IsUnDetect == false)
+			if (from.ComponentId.IsUnDetect == false)
 			{
-                ComponentId = from.ComponentId.Value;
-            }
-			
+				ComponentId = from.ComponentId.Value;
+			}
+
 			ImageUrl = from.Image.Value;
 		}
 
