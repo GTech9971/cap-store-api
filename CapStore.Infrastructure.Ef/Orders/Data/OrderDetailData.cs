@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Akizuki.Domain.Orders;
 using CapStore.Infrastructure.Ef.Components.Data;
 
-namespace Akizuki.Infrastructure.Ef;
+namespace CapStore.Infrastructure.Ef;
 
 /// <summary>
 /// efで使用する秋月電子の注文詳細データモデル
@@ -12,14 +12,23 @@ namespace Akizuki.Infrastructure.Ef;
 public class OrderDetailData
 {
     /// <summary>
+    /// 主キー
+    /// </summary>
+    [Key]
+    [Required]
+    [Column("id")]
+    public int Id { get; set; }
+
+    /// <summary>
     /// オーダーID
     /// 外部キー
     /// </summary>
     [Required]
-    [ForeignKey(nameof(OrderData))]
     [Column("order_id")]
     public string OrderId { get; set; } = null!;
 
+
+    [ForeignKey(nameof(OrderId))]
     public OrderData OrderData { get; set; } = null!;
 
     /// <summary>
@@ -52,10 +61,11 @@ public class OrderDetailData
     /// 外部キー
     /// </summary>
     [Required]
-    [ForeignKey(nameof(Component))]
     [Column("component_id")]
     public int ComponentId { get; set; }
 
+
+    [ForeignKey(nameof(ComponentId))]
     public ComponentData Component { get; set; } = null!;
 
 

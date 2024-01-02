@@ -1,7 +1,7 @@
 ﻿using Akizuki.Domain.Orders;
 using Microsoft.EntityFrameworkCore;
 
-namespace Akizuki.Infrastructure.Ef;
+namespace CapStore.Infrastructure.Ef;
 
 /// <summary>
 /// EFを使用した秋月電子の注文の永続化を行う
@@ -9,9 +9,9 @@ namespace Akizuki.Infrastructure.Ef;
 public class EfOrderRepository : IAkizukiOrderDetailRepository
 {
 
-    private readonly AkizukiDbContext _context;
+    private readonly CapStoreDbContext _context;
 
-    public EfOrderRepository(AkizukiDbContext context)
+    public EfOrderRepository(CapStoreDbContext context)
     {
         _context = context;
     }

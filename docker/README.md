@@ -43,10 +43,118 @@ COPY public.makers FROM '/tmp/init_data/makers.csv' DELIMITER ',' CSV HEADER;
 3. Dockerfileビルド
 
 ```bash
-docker build -t cap-store-db:0.0.2 .
+docker build -t cap-store-db:0.0.5 .
 ```
+
+以上.
+
+## PostgreSQLシーケンス
+
+## データ追加済のDocker Imageを使用して新規にデータ登録した際に発生するエラー
+
+<details>
+<summary>
+Npgsql.PostgresException : 23505: duplicate key value violates unique constraint "PK_makers"
+</summary>
+
+```log
+Microsoft.EntityFrameworkCore.DbUpdateException : An error occurred while saving the entity changes. See the inner exception for details.
+---- Npgsql.PostgresException : 23505: duplicate key value violates unique constraint "PK_makers"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at CapStore.Infrastructure.Ef.EfMakerRepository.Save(Maker maker) in /Users/george/Documents/GitHub/cap-store-api/CapStore.Infrastructure.Ef/Makers/EfMakerRepository.cs:line 66
+   at CapStore.Infrastructure.Ef.Test.EfMakerRepositoryTest.SaveSuccessTest(String name) in /Users/george/Documents/GitHub/cap-store-api/CapStore.Infrastructure.Ef.Test/EfMakerRepositoryTest.cs:line 29
+--- End of stack trace from previous location ---
+----- Inner Stack Trace -----
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|234_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+```
+
+</details>
+
+### シーケンス確認
+
+以下のSQLを実行する
+
+```sql
+SELECT
+     s.sequencename AS sequence_name
+    ,c.oid AS oid
+    ,s.start_value AS start_value
+    ,s.min_value AS min_value
+    ,s.max_value AS max_value
+    ,s.increment_by AS increment_by
+    ,s.cycle AS cycle
+    ,s.last_value AS last_value
+    ,s.data_type AS data_type
+    ,s.cache_size AS cache
+    ,s.sequencename AS key
+FROM
+    pg_sequences AS s
+    LEFT OUTER JOIN pg_class AS c ON
+        s.sequencename = c.relname
+WHERE
+    s.schemaname=current_schema()
+ORDER BY
+    s.sequencename
+```
+
+結果
+
+```sql
+categories_id_seq 16390 1 1 2147483647 1 false  integer 1 categories_id_seq
+component_images_id_seq 16428 1 1 2147483647 1 false  integer 1 component_images_id_seq
+components_component_id_seq 16408 1 1 2147483647 1 false  integer 1 components_component_id_seq
+makers_id_seq 16399 1 1 2147483647 1 false  integer 1 makers_id_seq
+order_details_id_seq 16448 1 1 2147483647 1 false  integer 1 order_details_id_seq
+```
+
+### シーケンス修正
+
+以下のsqlを実行して次のシーケンス値を確認する
+
+```sql
+SELECT nextval('categories_id_seq');
+```
+
+結果
+値が1になっているので修正が必要
+
+```sql
+1
+```
+
+以下のsqlを実行してシーケンス値を修正
+
+```sql
+SELECT setval('categories_id_seq', (SELECT MAX(id) FROM public.categories));
+```
+
+以上.
 
 ## 参考文献
 
 DockerでPostgreSQLを立ててCSV取り込みするまで
 <https://qiita.com/yo16/items/742f9b883cd978b9b75e>
+
+シーケンスの確認
+<https://lightgauge.net/database/postgresql/11496>
+
+自動採番の修正
+<https://qiita.com/gekkoukisi/items/1a621522f34e902511c2>

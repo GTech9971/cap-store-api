@@ -1,55 +1,37 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Testcontainers.PostgreSql;
+using Xunit;
 
 namespace CapStore.Infrastructure.Ef.Test
 {
-	public abstract class BaseEfRepositoryTest : DbContext
-	{
-        protected readonly PostgreSqlContainer _container;
+    public class BaseEfRepositoryTest : IAsyncLifetime
+    {
+        protected readonly PostgreSqlContainer _container = new PostgreSqlBuilder()
+            .WithImage("cap-store-db:0.0.6")
+            .WithPortBinding(5431, 5432)
+            .WithDatabase("test_db")
+            .WithUsername("test")
+            .WithPassword("test")
+            .WithCleanUp(true)
+            .Build();
 
-        public BaseEfRepositoryTest()
-		{
-            _container = new EfPostgreSqlContainer().CONTAINER;
-		}
+        public CapStoreDbContext _context;
 
-        /// <summary>
-        /// コンテナ起動と、DBの再作成
-        /// </summary>
-        /// <returns></returns>
-        [TestInitialize]
-        public virtual async Task Setup()
+        public async Task InitializeAsync()
         {
             //コンテナ起動
             await _container.StartAsync();
-            //テーブル再作成
-            using (var context = CreateContext())
-            {
-                await context.Database.EnsureDeletedAsync();
-                await context.Database.EnsureCreatedAsync();
-            }
+            _context = new CapStoreDbContext(
+                        new DbContextOptionsBuilder<CapStoreDbContext>()
+                        .UseNpgsql(_container.GetConnectionString())
+                        .Options);
         }
 
-        /// <summary>
-        /// コンテナ終了
-        /// </summary>
-        /// <returns></returns>
-        [TestCleanup]
-        public async Task CleanUp()
+        public async Task DisposeAsync()
         {
+            await _context.DisposeAsync();
             await _container.DisposeAsync();
-        }
-
-        /// <summary>
-        /// DbContext作成
-        /// </summary>
-        /// <returns></returns>
-        protected CapStoreDbContext CreateContext()
-        {
-            return new CapStoreDbContext(
-            new DbContextOptionsBuilder<CapStoreDbContext>()
-                .UseNpgsql(_container.GetConnectionString())
-                .Options);
         }
     }
 }

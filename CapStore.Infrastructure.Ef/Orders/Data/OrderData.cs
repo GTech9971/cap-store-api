@@ -7,7 +7,7 @@ using CapStore.Domain.Components;
 using CapStore.Domain.Inventories;
 using Microsoft.EntityFrameworkCore;
 
-namespace Akizuki.Infrastructure.Ef;
+namespace CapStore.Infrastructure.Ef;
 
 /// <summary>
 /// efで使用する秋月電子の注文データモデル
