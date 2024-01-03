@@ -19,21 +19,23 @@ public class AkizukiOrderDetailComponentData
         Registered = from.Registered;
     }
 
+    public AkizukiOrderDetailComponentData() { }
+
     [JsonPropertyName("quantity")]
-    public int Quantity { get; }
+    public int Quantity { get; set; }
 
     [JsonPropertyName("unit")]
-    public string Unit { get; }
+    public string Unit { get; set; } = null!;
 
     [JsonPropertyName("catalogId")]
-    public string CatalogId { get; }
+    public string CatalogId { get; set; } = null!;
 
     [JsonPropertyName("componentId")]
-    public int ComponentId { get; }
+    public int ComponentId { get; set; }
 
     [JsonPropertyName("name")]
-    public string ComponentName { get; }
+    public string ComponentName { get; set; } = null!;
 
     [JsonPropertyName("registered")]
-    public bool Registered { get; }
+    public bool Registered { get; set; }
 }

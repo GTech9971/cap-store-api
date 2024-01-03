@@ -1,6 +1,13 @@
 ﻿using System.Net;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Text.Json;
+using Akizuki.ApplicationServices.Data.Fetch;
+using Akizuki.ApplicationServices.Registry.Request;
+using Akizuki.Domain.Catalogs;
+using Akizuki.Domain.Orders;
+using CapStore.Domain.Components;
+using CapStore.Domain.Inventories;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;
 
@@ -120,5 +127,45 @@ public class AkizukiOrderControllerTest : IClassFixture<PostgreSqlTest>, IDispos
         // Assert
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
         Assert.Contains("AKE0301", jsonResponse);
+    }
+
+    [Fact(DisplayName = "注文登録成功テスト")]
+    [Trait("Controller", "Akizuki")]
+    public async Task RegistryOrderDetailSuccessTest()
+    {
+
+        RegistryAkizukiOrderRequestData request = new RegistryAkizukiOrderRequestData()
+        {
+            OrderId = "E230617-031873-01",
+            SlipNumber = 569321486926,
+            OrderDate = "2023-06-19",
+            Components = new List<AkizukiOrderDetailComponentData>()
+            {
+                new AkizukiOrderDetailComponentData(new AkizukiOrderComponent(
+                    new Quantity(10),
+                    new Unit("個"),
+                    new CatalogId("P-01306"),
+                    new ComponentId(5),
+                    new ComponentName("ターミナルブロック ２Ｐ 青 縦 小"),
+                    true
+                )),
+                new AkizukiOrderDetailComponentData(new AkizukiOrderComponent(
+                    new Quantity(5),
+                    new Unit("個"),
+                    new CatalogId("C-05779"),
+                    new ComponentId(32),
+                    new ComponentName("分割ロングピンソケット １×４２ （４２Ｐ）"),
+                    true
+                ))
+            }
+        };
+        using StringContent jsonContent = new(JsonSerializer.Serialize(request), Encoding.UTF8, "application/json");
+
+        using HttpResponseMessage response = await _httpClient.PostAsync("/api/v1/akizuki/orders", jsonContent);
+
+        var jsonResponse = await response.Content.ReadAsStringAsync();
+
+        // Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }
 }

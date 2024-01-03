@@ -36,14 +36,14 @@ public class EfOrderRepository : IAkizukiOrderDetailRepository
     }
 
 
-    /// <summary>
-    /// 不要なので実装しない
-    /// </summary>
-    /// <param name="source"></param>
-    /// <returns></returns>
-    /// <exception cref="NotImplementedException"></exception>
-    public Task<IOrderDetail> Fetch(AkizukiOrderDetailSource source)
+    public async Task<IOrderDetail?> Fetch(OrderId orderId)
     {
-        throw new NotImplementedException();
+        OrderData? found = await _context.OrderDatas
+                               .AsNoTracking()
+                               .Include(x => x.OrderDetailDatas)
+                               .Where(x => x.OrderId == orderId.Value)
+                               .SingleOrDefaultAsync();
+
+        return found == null ? null : found.ToModel();
     }
 }

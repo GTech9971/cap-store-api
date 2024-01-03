@@ -33,16 +33,21 @@ builder.Services.AddDbContext<CapStoreDbContext>((_, options) =>
 
 
 //DI
+//マスター
 builder.Services.AddTransient<ICategoryRepository, EfCategoryRepository>();
 builder.Services.AddTransient<IMakerRepository, EfMakerRepository>();
 builder.Services.AddTransient<IComponentRepository, EfComponentRepository>();
+//
 builder.Services.AddTransient<IAzikzukiPageRepository, AkizukiPageHtmlRepository>();
-builder.Services.AddTransient<IAkizukiOrderDetailRepository, AkizukiOrderDetailHtmlRepository>();
+//発注
+builder.Services.AddTransient<IAkizukiOrderDetailSourceRepository, AkizukiOrderDetailHtmlRepository>();
+builder.Services.AddTransient<IAkizukiOrderDetailRepository, EfOrderRepository>();
 
 //services
 builder.Services.AddScoped<ComponentService>();
 builder.Services.AddScoped<ComponentsApplicationService>();
 builder.Services.AddScoped<CatalogApplicationService>();
+builder.Services.AddScoped<OrderDetailService>();
 builder.Services.AddScoped<OrderDetailApplicationService>();
 
 builder.Services.AddControllers(options =>

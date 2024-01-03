@@ -1,6 +1,10 @@
 ﻿using Akizuki.ApplicationServices.Data.Fetch;
+using Akizuki.ApplicationServices.Registry;
+using Akizuki.ApplicationServices.Registry.Exceptions;
 using Akizuki.Domain.Orders;
 using CapStore.Domain.Components;
+using CapStore.Domain.Components.Services;
+using System.Linq;
 
 namespace Akizuki.ApplicationServices.OrderDetails;
 
@@ -10,13 +14,24 @@ namespace Akizuki.ApplicationServices.OrderDetails;
 public class OrderDetailApplicationService
 {
     private readonly IAkizukiOrderDetailRepository _repository;
+    private readonly IAkizukiOrderDetailSourceRepository _orderDetailSourceRepository;
     private readonly IComponentRepository _componentRepository;
 
+    private readonly OrderDetailService _orderDetailService;
+    private readonly ComponentService _componentService;
+
+
     public OrderDetailApplicationService(IAkizukiOrderDetailRepository repository,
-                                            IComponentRepository componentRepository)
+                                            IAkizukiOrderDetailSourceRepository orderDetailSourceRepository,
+                                            IComponentRepository componentRepository,
+                                            OrderDetailService orderDetailService,
+                                            ComponentService componentService)
     {
         _repository = repository;
+        _orderDetailSourceRepository = orderDetailSourceRepository;
         _componentRepository = componentRepository;
+        _orderDetailService = orderDetailService;
+        _componentService = componentService;
     }
 
     /// <summary>
@@ -28,7 +43,7 @@ public class OrderDetailApplicationService
     public async Task<FetchAkizukiOrderDetailDataDto> FetchAkizukiOrderDetailAsync(AkizukiOrderDetailSource source)
     {
 
-        IOrderDetail orderDetail = await _repository.Fetch(source);
+        IOrderDetail orderDetail = await _orderDetailSourceRepository.Fetch(source);
         //電子部品マスターに登録済みかどうか確認する
         List<AkizukiOrderComponent> applyRegisteredOrderComponents = await ApplyRegisteredOrderComponentsAsync(orderDetail.Components);
 
@@ -62,6 +77,34 @@ public class OrderDetailApplicationService
         }
 
         return list;
+    }
+
+    /// <summary>
+    /// 注文を登録する
+    /// </summary>
+    /// <param name="orderDetail"></param>
+    /// <returns></returns>
+    /// <exception cref="AlreadyRegisteredOrderException"></exception>
+    /// <exception cref="NotRegisteredComponentIdException"></exception>
+    public async Task<RegistryAkizukiOrderData> RegistryOrderAsync(IOrderDetail orderDetail)
+    {
+        //注文の2重登録チェック
+        if (await _orderDetailService.Exists(orderDetail))
+        {
+            throw new AlreadyRegisteredOrderException(orderDetail.OrderId);
+        }
+
+        //ComponentId登録確認
+        IEnumerable<ComponentId> idList = orderDetail.Components.Select(x => x.ComponentId);
+
+        if (await _componentService.ExistsAll(idList) == false)
+        {
+            throw new NotRegisteredComponentIdException();
+        }
+
+        await _repository.Save(orderDetail);
+
+        return new RegistryAkizukiOrderData();
     }
 
 }

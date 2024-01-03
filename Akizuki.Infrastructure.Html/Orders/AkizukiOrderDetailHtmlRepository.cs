@@ -7,7 +7,7 @@ using CapStore.Domain.Inventories;
 
 namespace Akizuki.Infrastructure.Html;
 
-public class AkizukiOrderDetailHtmlRepository : IAkizukiOrderDetailRepository
+public class AkizukiOrderDetailHtmlRepository : IAkizukiOrderDetailSourceRepository
 {
     public async Task<IOrderDetail> Fetch(AkizukiOrderDetailSource source)
     {
@@ -138,16 +138,5 @@ public class AkizukiOrderDetailHtmlRepository : IAkizukiOrderDetailRepository
                                 componentName,
                                 registered);
             });
-    }
-
-    /// <summary>
-    /// 不要なので実装しない
-    /// </summary>
-    /// <param name="orderDetail"></param>
-    /// <returns></returns>
-    /// <exception cref="NotImplementedException"></exception>
-    public Task Save(IOrderDetail orderDetail)
-    {
-        throw new NotImplementedException();
     }
 }

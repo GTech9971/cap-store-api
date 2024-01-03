@@ -7,9 +7,6 @@ using System.Text.Unicode;
 using Akizuki.Domain.Catalogs;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;
-using System.Text.Json;
-using System.Text.Encodings.Web;
-using System.Text.Unicode;
 
 namespace CapStoreAPI.Test;
 
@@ -157,10 +154,10 @@ public class AkizukiCatalogControllerTest : IClassFixture<PostgreSqlTest>, IDisp
         public bool Success { get; set; }
 
         [JsonPropertyName("data")]
-        public Datum[] Data { get; set; }
+        public Datum[] Data { get; set; } = null!;
 
         [JsonPropertyName("errors")]
-        public object Errors { get; set; }
+        public object Errors { get; set; } = null!;
     }
 
     public partial class Datum
@@ -169,22 +166,22 @@ public class AkizukiCatalogControllerTest : IClassFixture<PostgreSqlTest>, IDisp
         public long ComponentId { get; set; }
 
         [JsonPropertyName("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
 
         [JsonPropertyName("modelName")]
-        public string ModelName { get; set; }
+        public string ModelName { get; set; } = null!;
 
         [JsonPropertyName("description")]
-        public string Description { get; set; }
+        public string Description { get; set; } = null!;
 
         [JsonPropertyName("category")]
-        public Category Category { get; set; }
+        public Category Category { get; set; } = null!;
 
         [JsonPropertyName("maker")]
-        public Category Maker { get; set; }
+        public Category Maker { get; set; } = null!;
 
         [JsonPropertyName("images")]
-        public Uri[] Images { get; set; }
+        public Uri[] Images { get; set; } = null!;
     }
 
     public partial class Category
@@ -193,9 +190,9 @@ public class AkizukiCatalogControllerTest : IClassFixture<PostgreSqlTest>, IDisp
         public long Id { get; set; }
 
         [JsonPropertyName("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
 
         [JsonPropertyName("image")]
-        public object Image { get; set; }
+        public object Image { get; set; } = null!;
     }
 }

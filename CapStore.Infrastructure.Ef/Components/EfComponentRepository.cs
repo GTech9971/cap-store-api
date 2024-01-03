@@ -27,12 +27,12 @@ namespace CapStore.Infrastructure.Ef.Components
             ComponentData? data = await _context.ComponentDatas
                 .AsNoTracking()
                 .Where(x => x.ComponentId == componentId.Value)
-                .Include(x=>x.CategoryData)
-                .Include(x=>x.MakerData)
-                .Include(x=>x.ComponentImageDatas)
+                .Include(x => x.CategoryData)
+                .Include(x => x.MakerData)
+                .Include(x => x.ComponentImageDatas)
                 .SingleOrDefaultAsync();
 
-            if(data == null)
+            if (data == null)
             {
                 return null;
             }
@@ -50,7 +50,7 @@ namespace CapStore.Infrastructure.Ef.Components
                 .Include(x => x.ComponentImageDatas)
                 .SingleOrDefaultAsync();
 
-            if(data == null)
+            if (data == null)
             {
                 return null;
             }
@@ -95,8 +95,8 @@ namespace CapStore.Infrastructure.Ef.Components
                 .SingleOrDefaultAsync();
 
             ComponentData data;
-            if(found == null)
-            {                
+            if (found == null)
+            {
                 data = new ComponentData(component);
                 await _context.ComponentDatas.AddAsync(data);
                 await _context.Entry(data).Reference(x => x.MakerData).LoadAsync();

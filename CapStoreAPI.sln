@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Infrastructure.Html
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Domain.Inventories", "CapStore.Domain.Inventories\CapStore.Domain.Inventories.csproj", "{338A0BF9-E567-44FC-977D-06B22D9F85D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMapper.Tests", "AutoMapper.Tests\AutoMapper.Tests.csproj", "{D066D4C0-B4B9-4034-8AF4-425100D69AC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,10 @@ Global
 		{338A0BF9-E567-44FC-977D-06B22D9F85D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{338A0BF9-E567-44FC-977D-06B22D9F85D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{338A0BF9-E567-44FC-977D-06B22D9F85D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D066D4C0-B4B9-4034-8AF4-425100D69AC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D066D4C0-B4B9-4034-8AF4-425100D69AC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D066D4C0-B4B9-4034-8AF4-425100D69AC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D066D4C0-B4B9-4034-8AF4-425100D69AC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

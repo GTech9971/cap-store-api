@@ -3,9 +3,15 @@ using Akizuki.ApplicationServices;
 using Akizuki.ApplicationServices.Data.Fetch;
 using Akizuki.ApplicationServices.Data.Fetch.Response;
 using Akizuki.ApplicationServices.OrderDetails;
+using Akizuki.ApplicationServices.Registry;
+using Akizuki.ApplicationServices.Registry.Exceptions;
+using Akizuki.ApplicationServices.Registry.Request;
+using Akizuki.Domain.Catalogs;
 using Akizuki.Domain.Orders;
 using Akizuki.Domain.Orders.Exceptions;
 using Akizuki.Infrastructure.Html;
+using CapStore.Domain.Components;
+using CapStore.Domain.Inventories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace cap_store_api;
@@ -81,4 +87,45 @@ public class AkizukiOrderController
         };
         return result;
     }
+
+    [HttpPost]
+    [Route("")]
+    public async Task<IActionResult> RegistryOrder([FromBody] RegistryAkizukiOrderRequestData request)
+    {
+        RegistryAkizukiOrderResponseData response;
+
+        try
+        {
+            IOrderDetail orderDetail = new OrderDetail(
+                new OrderId(request.OrderId),
+                new SlipNumber(request.SlipNumber),
+                new OrderDate(DateOnly.Parse(request.OrderDate)),
+                request.Components.Select(x => new AkizukiOrderComponent(
+                    new Quantity(x.Quantity),
+                    new Unit(x.Unit),
+                    new CatalogId(x.CatalogId),
+                    new ComponentId(x.ComponentId),
+                    new ComponentName(x.ComponentName),
+                    true
+                ))
+            );
+            RegistryAkizukiOrderData data = await _orderDetailApplicationService.RegistryOrderAsync(orderDetail);
+            response = new RegistryAkizukiOrderSuccessResponseData(data);
+        }
+        catch (AlreadyRegisteredOrderException ex)
+        {
+            response = new AKE0401Response(ex);
+        }
+        catch (NotRegisteredComponentIdException)
+        {
+            response = new AKE0402Response();
+        }
+
+        JsonResult result = new JsonResult(response)
+        {
+            StatusCode = (int?)response.StatusCode
+        };
+        return result;
+    }
+
 }

@@ -9,7 +9,7 @@ namespace CapStore.Infrastructure.Ef.Test;
 public class EfOrderRepositoryTest : IClassFixture<BaseEfRepositoryTest>
 {
     private readonly CapStoreDbContext _context;
-    private readonly IAkizukiOrderDetailRepository _repository;
+    private readonly IAkizukiOrderDetailSourceRepository _repository;
 
     public EfOrderRepositoryTest(BaseEfRepositoryTest fixture) : base()
     {

@@ -5,7 +5,7 @@
 /// </summary>
 public interface IAkizukiOrderDetailRepository
 {
-    Task<IOrderDetail> Fetch(AkizukiOrderDetailSource source);
+    Task<IOrderDetail?> Fetch(OrderId orderId);
 
     Task Save(IOrderDetail orderDetail);
 }
