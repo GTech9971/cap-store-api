@@ -67,7 +67,10 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 using (var context = scope.ServiceProvider.GetRequiredService<CapStoreDbContext>())
 {
-    await context.Database.MigrateAsync();
+    if (await context.CategoryDatas.AnyAsync() == false)
+    {
+        await context.Database.MigrateAsync();
+    }
 }
 
 // Configure the HTTP request pipeline.
