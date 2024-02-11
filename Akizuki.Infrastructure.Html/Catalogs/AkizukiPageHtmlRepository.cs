@@ -14,10 +14,15 @@ using Akizuki.Infrastructure.Html;
 
 namespace Akizuki.Infrastructure.Catalogs.Html
 {
-	public class AkizukiPageHtmlRepository : IAzikzukiPageRepository
+	public class AkizukiPageHtmlRepository : IAkizukiPageRepository
 	{
 		private readonly HtmlParser parser;
-		private const string ROOT_PATH = "../../../../Akizuki.Infrastructure.Html/Catalogs/Assets";
+		private readonly string ROOT_PATH = Path.Combine(
+			Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+			 "CapStore",
+			  "Akizuki",
+			   "Catalogs",
+				"Assets");
 
 		public AkizukiPageHtmlRepository()
 		{
@@ -26,37 +31,34 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 
 		private ComponentModelName ParseModelName(IDocument document)
 		{
-			INode? modelNameNode = document.Body.SelectSingleNode("//*[@id='maincontents']/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td");
+			INode? modelNameNode = document.Body.SelectSingleNode("//*[@id='spec_number']");
 			if (modelNameNode == null)
 			{
 				throw new AkizukiPageHtmlParseException();
 			}
 
-			int startIndex = modelNameNode.TextContent.IndexOf("[") + 1;
-			int length = modelNameNode.TextContent.IndexOf("]") - startIndex;
-			//モデル名が存在しない
-			if (length < 0)
+			string modelNameStr = modelNameNode.TextContent;
+			if (string.IsNullOrWhiteSpace(modelNameStr))
 			{
 				return ComponentModelName.None();
 			}
-
-			string modelNameStr = modelNameNode.TextContent.Substring(startIndex, length);
-			ComponentModelName modelName = new ComponentModelName(modelNameStr);
-
-			return modelName;
+			else
+			{
+				return new ComponentModelName(modelNameStr);
+			}
 		}
 
-		private ComponentDescription PartseDescription(IDocument document)
+		private ComponentDescription ParseDescription(IDocument document)
 		{
 			//説明
-			INode? descriptionHeadNode = document.Body.SelectSingleNode("//*[@id='maincontents']/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/text()");
+			INode? descriptionHeadNode = document.Body.SelectSingleNode("/html/body/div[1]/div[2]/div/main/div/div[4]/div[1]");
 			if (descriptionHeadNode == null)
 			{
 				throw new AkizukiPageHtmlParseException();
 			}
 			string descriptionHeadStr = descriptionHeadNode.TextContent.Replace("\t", "").Replace("\n", "");
 
-			INode? descriptionBodyNode = document.Body.SelectSingleNode("//*[@id='maincontents']/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[4]/td");
+			INode? descriptionBodyNode = document.Body.SelectSingleNode("/html/body/div[1]/div[2]/div/main/div/div[4]/div[5]");
 			if (descriptionBodyNode == null)
 			{
 				throw new AkizukiPageHtmlParseException();
@@ -67,22 +69,53 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 			return description;
 		}
 
-		private ComponentImageList PartseComponentImages(IDocument document, CatalogId catalogId)
+		private Maker ParseMaker(IDocument document)
+		{
+			if (document.Body == null)
+			{
+				throw new AkizukiPageHtmlParseException();
+			}
+			//メーカー
+			var maker = document.Body.GetElementsByClassName("goods-detail-description block-goods-detail-maker");
+			if (maker == null || maker.Any() == false)
+			{
+				return Maker.None();
+			}
+			string? makerNameStr = maker
+								.First()
+								.GetElementsByTagName("a")
+								.FirstOrDefault()
+								?.TextContent;
+
+			if (makerNameStr == null)
+			{
+				throw new AkizukiPageHtmlParseException();
+			}
+			return new Maker(MakerId.UnDetect(), new MakerName(makerNameStr), null);
+		}
+
+		private ComponentImageList ParseComponentImages(IDocument document, CatalogId catalogId)
 		{
 			if (document.Body == null)
 			{
 				throw new AkizukiPageHtmlParseException();
 			}
 
-			//画像
-			IEnumerable<ComponentImage> imageUrls = document.Body.GetElementsByTagName("img")
-												.Select(x => x.GetAttribute("src"))
-												.Where(x => x.Contains(catalogId.Value))
+			var gallery = document.Body.GetElementsByClassName("block-goods-gallery");
+			if (gallery == null || gallery.Any() == false)
+			{
+				throw new AkizukiPageHtmlParseException();
+			}
+
+			IEnumerable<ComponentImage> imageUrls = gallery
+												.First()
+												.GetElementsByTagName("a")
+												.Select(x => x.GetAttribute("href"))
+												.Where(x => x != null)
 												.Distinct()
-												.Select(x => new AkizukiPageUrl(x))
+												.Select(x => new AkizukiPageUrl(x!))
 												.Where(x => Regex.IsMatch(x.Value, AkizukiImageUrl.PATTERN))
 												.Select(x => ComponentImage.UnDetectId(new ImageUrl(x.Value)));
-
 
 
 			return new ComponentImageList(imageUrls);
@@ -91,12 +124,16 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 
 		private async Task SaveHtmlAsync(IDocument document, CatalogId catalogId)
 		{
+			if (Directory.Exists(ROOT_PATH) == false)
+			{
+				Directory.CreateDirectory(ROOT_PATH);
+			}
 			string path = Path.Combine(ROOT_PATH, $"{catalogId.Value}.html");
 
 			if (File.Exists(path)) { return; }
 
 			string html = document.Source.Text;
-			await File.WriteAllTextAsync(path, html, Encoding.GetEncoding("SHIFT_JIS"));
+			await File.WriteAllTextAsync(path, html, Encoding.UTF8);
 		}
 
 		private void DeleteHtml(CatalogId catalogId)
@@ -117,7 +154,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 				return null;
 			}
 
-			return await File.ReadAllTextAsync(path, Encoding.GetEncoding("SHIFT_JIS"));
+			return await File.ReadAllTextAsync(path, Encoding.UTF8);
 		}
 
 		/// <summary>
@@ -145,7 +182,7 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 
 
 				//電子部品名
-				INode? titleNode = parsedDocument.Body.SelectSingleNode("//*[@id='maincontents']/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/h6");
+				INode? titleNode = parsedDocument.Body.SelectSingleNode("/html/body/div[1]/div[2]/div/main/div/div[1]/div[1]/h1");
 				if (titleNode == null)
 				{
 					if (parsedDocument.Body == null)
@@ -170,11 +207,11 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 				ComponentModelName modelName = ParseModelName(parsedDocument);
 
 				//説明
-				ComponentDescription description = PartseDescription(parsedDocument);
+				ComponentDescription description = ParseDescription(parsedDocument);
 
 
 				//カテゴリー
-				INode? categoryNameNode = parsedDocument.Body.SelectSingleNode("//*[@id='div']/a[2]");
+				INode? categoryNameNode = parsedDocument.Body.SelectSingleNode("//*[@id='bread-crumb-list']/li[2]/a/span");
 				if (categoryNameNode == null)
 				{
 					throw new AkizukiPageHtmlParseException(url);
@@ -184,12 +221,9 @@ namespace Akizuki.Infrastructure.Catalogs.Html
 				Category category = new Category(CategoryId.UnDetectId(), categoryName, null);
 
 				//メーカー
-				INode? makerNameNode = parsedDocument.Body.SelectSingleNode("//*[@id='maincontents']/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/span/a");
-				Maker maker = makerNameNode == null
-					? Maker.None()
-					: new Maker(MakerId.UnDetect(), new MakerName(makerNameNode.TextContent.Replace("&", "and")), null);
+				Maker maker = ParseMaker(parsedDocument);
 
-				ComponentImageList componentImages = PartseComponentImages(parsedDocument, url.CatalogId);
+				ComponentImageList componentImages = ParseComponentImages(parsedDocument, url.CatalogId);
 
 				Component component = new Component(ComponentId.UnDetectId(),
 													name,

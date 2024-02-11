@@ -41,7 +41,7 @@ public class AkizukiCatalogControllerTest : IClassFixture<PostgreSqlTest>, IDisp
 
     [Theory(DisplayName = "電子部品取得API")]
     [Trait("Controller", "Akizuki")]
-    [InlineData("I-18237")]
+    [InlineData("118237")]
     public async Task FetchComponentsFromCatalogId(string catalogId)
     {
         using HttpResponseMessage response = await _httpClient.GetAsync($"/api/v1/akizuki/catalogs/{catalogId}");
@@ -58,7 +58,7 @@ public class AkizukiCatalogControllerTest : IClassFixture<PostgreSqlTest>, IDisp
         IEnumerable<CatalogId> catalogIds =
             CreateCatalogIds()
             .ToList()
-            .Select(x => x[0].ToString())
+            .Select(x => x.First().ToString()!)
             .Select(x => new CatalogId(x));
 
         List<string> jsonList = new List<string>(catalogIds.Count());
@@ -74,7 +74,8 @@ public class AkizukiCatalogControllerTest : IClassFixture<PostgreSqlTest>, IDisp
 
         IEnumerable<RegistryComponent> documents = jsonList
             .Select(x => JsonSerializer.Deserialize<ComponentData>(x))
-            .Select(x => new RegistryComponent(x))
+            .Where(x => x != null)
+            .Select(x => new RegistryComponent(x!))
             .ToList();
 
         IEnumerable<long> makerIdList = documents.Select(x => x.makerId).ToList();

@@ -38,7 +38,7 @@ builder.Services.AddTransient<ICategoryRepository, EfCategoryRepository>();
 builder.Services.AddTransient<IMakerRepository, EfMakerRepository>();
 builder.Services.AddTransient<IComponentRepository, EfComponentRepository>();
 //
-builder.Services.AddTransient<IAzikzukiPageRepository, AkizukiPageHtmlRepository>();
+builder.Services.AddTransient<IAkizukiPageRepository, AkizukiPageHtmlRepository>();
 //発注
 builder.Services.AddTransient<IAkizukiOrderDetailSourceRepository, AkizukiOrderDetailHtmlRepository>();
 builder.Services.AddTransient<IAkizukiOrderDetailRepository, EfOrderRepository>();

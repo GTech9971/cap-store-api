@@ -4,7 +4,7 @@ namespace Akizuki.Domain.Catalogs
 	/// <summary>
 	/// 秋月電子ページのレポジトリ
 	/// </summary>
-	public interface IAzikzukiPageRepository
+	public interface IAkizukiPageRepository
 	{
 
 		/// <summary>

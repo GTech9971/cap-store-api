@@ -11,11 +11,11 @@ namespace Akizuki.ApplicationService.Catalogs
     /// </summary>
     public class CatalogApplicationService
     {
-        private readonly IAzikzukiPageRepository _repository;
+        private readonly IAkizukiPageRepository _repository;
         private readonly ICategoryRepository _categoryRepository;
         private readonly IMakerRepository _makerRepository;
 
-        public CatalogApplicationService(IAzikzukiPageRepository repository,
+        public CatalogApplicationService(IAkizukiPageRepository repository,
                                         ICategoryRepository categoryRepository,
                                         IMakerRepository makerRepository)
         {
