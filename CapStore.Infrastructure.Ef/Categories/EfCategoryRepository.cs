@@ -20,12 +20,12 @@ namespace CapStore.Infrastructure.Ef.Categories
 
         public async Task<Category?> Fetch(CategoryId categoryId)
         {
-           CategoryData? data = await _context.CategoryDatas
-                .AsNoTracking()
-                .Where(x => x.Id == categoryId.Value)
-                .SingleOrDefaultAsync();
+            CategoryData? data = await _context.CategoryDatas
+                 .AsNoTracking()
+                 .Where(x => x.Id == categoryId.Value)
+                 .SingleOrDefaultAsync();
 
-            if(data == null)
+            if (data == null)
             {
                 return null;
             }
@@ -40,12 +40,20 @@ namespace CapStore.Infrastructure.Ef.Categories
                 .Where(x => x.Name == categoryName.Value)
                 .SingleOrDefaultAsync();
 
-            if(data == null)
+            if (data == null)
             {
                 return null;
             }
 
             return data.ToModel();
+        }
+
+        public IAsyncEnumerable<Category> FetchAll()
+        {
+            return _context.CategoryDatas
+                        .AsNoTracking()
+                        .Select(x => x.ToModel())
+                        .AsAsyncEnumerable();
         }
 
         public async Task<Category> Save(Category category)

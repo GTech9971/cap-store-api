@@ -9,6 +9,8 @@ namespace CapStore.Domain.Makers
 		Task<Maker?> Fetch(MakerId makerId);
 		Task<Maker?> Fetch(MakerName makerName);
 
+		IAsyncEnumerable<Maker> FetchAll();
+
 		Task<Maker> Save(Maker maker);
 	}
 }

@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CapStore.Infrastructure.Ef
 {
-	public class EfMakerRepository : IMakerRepository
-	{
+    public class EfMakerRepository : IMakerRepository
+    {
 
-		private readonly CapStoreDbContext _context;
+        private readonly CapStoreDbContext _context;
 
-		public EfMakerRepository(CapStoreDbContext context)
-		{
-			_context = context;
-		}
+        public EfMakerRepository(CapStoreDbContext context)
+        {
+            _context = context;
+        }
 
         public async Task<Maker?> Fetch(MakerId makerId)
         {
@@ -22,7 +22,7 @@ namespace CapStore.Infrastructure.Ef
                 .Where(x => x.Id == makerId.Value)
                 .SingleOrDefaultAsync();
 
-            if(data == null)
+            if (data == null)
             {
                 return null;
             }
@@ -37,12 +37,20 @@ namespace CapStore.Infrastructure.Ef
                 .Where(x => x.Name == makerName.Value)
                 .SingleOrDefaultAsync();
 
-            if(data == null)
+            if (data == null)
             {
                 return null;
             }
 
             return data.ToModel();
+        }
+
+        public IAsyncEnumerable<Maker> FetchAll()
+        {
+            return _context.MakerDatas
+                    .AsNoTracking()
+                    .Select(x => x.ToModel())
+                    .AsAsyncEnumerable();
         }
 
         public async Task<Maker> Save(Maker maker)
@@ -52,7 +60,7 @@ namespace CapStore.Infrastructure.Ef
                 .SingleOrDefaultAsync();
 
             MakerData data;
-            if(found == null)
+            if (found == null)
             {
                 data = new MakerData(maker);
                 await _context.MakerDatas.AddAsync(data);

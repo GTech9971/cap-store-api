@@ -9,6 +9,8 @@ namespace CapStore.Domain.Categories
 	public interface ICategoryRepository
 	{
 
+		IAsyncEnumerable<Category> FetchAll();
+
 		Task<Category?> Fetch(CategoryId categoryId);
 		Task<Category?> Fetch(CategoryName categoryName);
 
