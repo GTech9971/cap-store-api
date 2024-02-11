@@ -10,7 +10,7 @@ namespace Akizuki.Domain.Catalogs
 	public class AkizukiCatalogPageUrl
 	{
 
-		private readonly string PATTERN = $"{AkizukiPageUrlDomain.Value}/catalog/g/g[A-Z]-\\d+/";
+		private readonly string PATTERN = $"{AkizukiPageUrlDomain.Value}/catalog/g/g\\d+/";
 
 		private readonly string _url;
 

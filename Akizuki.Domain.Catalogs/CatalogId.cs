@@ -9,10 +9,10 @@ namespace Akizuki.Domain.Catalogs
 	/// </summary>
 	public class CatalogId
 	{
-		public const int LENGTH = 7;
-		private const string PATTERN = "^[A-Z]-\\d{5}$";
+		public const int LENGTH = 6;
+		private const string PATTERN = "^1\\d{5}$";
 
-        private readonly string _catalogId;
+		private readonly string _catalogId;
 
 		public CatalogId(string catalogId)
 		{
@@ -21,12 +21,12 @@ namespace Akizuki.Domain.Catalogs
 				throw new ValidationArgumentNullException("カタログIDは必須です");
 			}
 
-			if(catalogId.Length != LENGTH)
+			if (catalogId.Length != LENGTH)
 			{
 				throw new ValidationArgumentException($"カタログIDの桁数が{LENGTH}桁ではありません");
 			}
 
-			if(Regex.IsMatch(catalogId, PATTERN) == false)
+			if (Regex.IsMatch(catalogId, PATTERN) == false)
 			{
 				throw new ValidationArgumentException("カタログIDのフォーマットが不正です");
 			}

@@ -3,19 +3,19 @@ using CapStore.Domain.Shareds.Exceptions;
 
 namespace Akizuki.Domain.Catalogs.Test
 {
-	[TestClass]
-	public class CatalogIdTest
-	{
+    [TestClass]
+    public class CatalogIdTest
+    {
 
-		private const string CATEGORY = "カタログID";
+        private const string CATEGORY = "カタログID";
 
-		[TestMethod]
-		[TestCategory(CATEGORY)]
-		[ExpectedException(typeof(ValidationArgumentNullException))]
-		public void TestNullExceptions()
-		{
-			new CatalogId(null!);
-		}
+        [TestMethod]
+        [TestCategory(CATEGORY)]
+        [ExpectedException(typeof(ValidationArgumentNullException))]
+        public void TestNullExceptions()
+        {
+            new CatalogId(null!);
+        }
 
         [TestMethod]
         [TestCategory(CATEGORY)]
@@ -39,10 +39,10 @@ namespace Akizuki.Domain.Catalogs.Test
 
         [TestMethod]
         [TestCategory(CATEGORY)]
-        [DataRow("I-18167")]
-        [DataRow("I-08173")]
-        [DataRow("P-06437")]
-        [DataRow("P-05294")]
+        [DataRow("118167")]
+        [DataRow("108173")]
+        [DataRow("106437")]
+        [DataRow("105294")]
         public void TestSuccess(string catalogId)
         {
             var catalog = new CatalogId(catalogId);

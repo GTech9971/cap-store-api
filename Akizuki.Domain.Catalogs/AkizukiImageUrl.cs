@@ -10,7 +10,7 @@ namespace Akizuki.Domain.Catalogs
 	/// </summary>
 	public class AkizukiImageUrl
 	{
-		public static readonly string PATTERN = $"{AkizukiPageUrlDomain.Value}/img/goods/[A-Z0-9]/[A-Z]-\\d{{5}}.(jpg|jpeg|gif|png)$";
+		public static readonly string PATTERN = $"{AkizukiPageUrlDomain.Value}/img/goods/[A-Z0-9]/1\\d{{5}}.(jpg|jpeg|gif|png)$";
 
 		private readonly ImageUrl _url;
 
@@ -21,7 +21,7 @@ namespace Akizuki.Domain.Catalogs
 				throw new ValidationArgumentNullException("URLは必須です");
 			}
 
-			if(Regex.IsMatch(url.Value, PATTERN) == false)
+			if (Regex.IsMatch(url.Value, PATTERN) == false)
 			{
 				throw new ValidationArgumentException("秋月電子の画像URLのフォーマットが不正です");
 			}
