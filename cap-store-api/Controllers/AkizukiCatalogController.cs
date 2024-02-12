@@ -24,7 +24,7 @@ public class AkizukiCatalogController
         FetchAkizukiPageResponseDataDto response;
         try
         {
-            FetchAkizukiPageDataDto data = await _applicationService.FetchComponentFromAkizukiCatalogIdAsync(catalogId);
+            FetchAkizukiPageDataDto<FetchCategoryDataDto, FetchMakerDataDto> data = await _applicationService.FetchComponentFromAkizukiCatalogIdAsync(catalogId);
             response = new FetchAkizukiPageSuccessResponseDataDto(data);
         }
         catch (AkizukiPageHtmlParseException)

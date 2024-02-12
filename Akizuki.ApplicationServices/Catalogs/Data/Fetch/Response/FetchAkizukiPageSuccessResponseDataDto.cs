@@ -9,7 +9,7 @@ namespace Akizuki.ApplicationService.Catalogs;
 public class FetchAkizukiPageSuccessResponseDataDto
 : FetchAkizukiPageResponseDataDto
 {
-    public FetchAkizukiPageSuccessResponseDataDto(FetchAkizukiPageDataDto dto) : base(dto)
+    public FetchAkizukiPageSuccessResponseDataDto(FetchAkizukiPageDataDto<FetchCategoryDataDto, FetchMakerDataDto> dto) : base(dto)
     {
         Success = true;
         StatusCode = HttpStatusCode.OK;

@@ -8,7 +8,7 @@ namespace Akizuki.ApplicationService.Catalogs.Data.Fetch
     /// <summary>
     /// 秋月電子から電子部品の情報取得したデータモデル
     /// </summary>
-    public class FetchAkizukiPageDataDto
+    public class FetchAkizukiPageDataDto<CT, MT> where CT : FetchCategoryDataDto where MT : FetchMakerDataDto
     {
         public FetchAkizukiPageDataDto(AkizukiPage from)
         {
@@ -16,8 +16,8 @@ namespace Akizuki.ApplicationService.Catalogs.Data.Fetch
             Name = from.Component.Name.Value;
             ModelName = from.Component.ModelName.Value;
             Description = from.Component.Description.Value;
-            Category = new FetchCategoryDataDto(from.Component.Category);
-            Maker = new FetchMakerDataDto(from.Component.Maker);
+            Category = (CT)new FetchCategoryDataDto(from.Component.Category);
+            Maker = (MT)new FetchMakerDataDto(from.Component.Maker);
             Images = from.Component.Images.AsList().Select(x => x.Image.Value);
         }
 
@@ -34,10 +34,10 @@ namespace Akizuki.ApplicationService.Catalogs.Data.Fetch
         public string Description { get; }
 
         [JsonPropertyName("category")]
-        public FetchCategoryDataDto Category { get; }
+        public CT Category { get; }
 
         [JsonPropertyName("maker")]
-        public FetchMakerDataDto Maker { get; }
+        public MT Maker { get; }
 
         [JsonPropertyName("images")]
         public IEnumerable<string> Images { get; }
@@ -55,7 +55,7 @@ namespace Akizuki.ApplicationService.Catalogs.Data.Fetch
             Image = from.Image?.Value;
         }
 
-        [JsonPropertyName("id")]
+        [JsonPropertyName("categoryId")]
         public int Id { get; }
 
         [JsonPropertyName("name")]
@@ -77,7 +77,7 @@ namespace Akizuki.ApplicationService.Catalogs.Data.Fetch
             Image = from.Image?.Value;
         }
 
-        [JsonPropertyName("id")]
+        [JsonPropertyName("makerId")]
         public int Id { get; }
 
         [JsonPropertyName("name")]

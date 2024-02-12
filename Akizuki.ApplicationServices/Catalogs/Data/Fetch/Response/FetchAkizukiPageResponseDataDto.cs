@@ -7,12 +7,12 @@ namespace Akizuki.ApplicationService.Catalogs;
 /// 秋月電子から電子部品を取得したレスポンス
 /// </summary>
 public class FetchAkizukiPageResponseDataDto
-: BaseResponse<FetchAkizukiPageDataDto>
+: BaseResponse<FetchAkizukiPageDataDto<FetchCategoryDataDto, FetchMakerDataDto>>
 {
-    public FetchAkizukiPageResponseDataDto(FetchAkizukiPageDataDto? dto)
+    public FetchAkizukiPageResponseDataDto(FetchAkizukiPageDataDto<FetchCategoryDataDto, FetchMakerDataDto>? dto)
     {
         Data = dto != null
-        ? new List<FetchAkizukiPageDataDto>() { dto }
+        ? new List<FetchAkizukiPageDataDto<FetchCategoryDataDto, FetchMakerDataDto>>() { dto }
         : null;
     }
 }

@@ -31,7 +31,7 @@ namespace Akizuki.ApplicationService.Catalogs
         /// <returns></returns>
         /// <exception cref="AkizukiPageHtmlParseException"></exception>
         /// <exception cref="AkizukiCatalogIdUnAvailableException"></exception>
-        public async Task<FetchAkizukiPageDataDto> FetchComponentFromAkizukiCatalogIdAsync(string catalogIdStr)
+        public async Task<FetchAkizukiPageDataDto<FetchCategoryDataDto, FetchMakerDataDto>> FetchComponentFromAkizukiCatalogIdAsync(string catalogIdStr)
         {
             CatalogId catalogId = new CatalogId(catalogIdStr);
             AkizukiPage akizukiPage = await _repository.FetchAkizukiPageAsync(catalogId);
@@ -58,7 +58,7 @@ namespace Akizuki.ApplicationService.Catalogs
                     akizukiPage.Component.Images
                 ));
 
-            return new FetchAkizukiPageDataDto(applyId);
+            return new FetchAkizukiPageDataDto<FetchCategoryDataDto, FetchMakerDataDto>(applyId);
         }
     }
 }
