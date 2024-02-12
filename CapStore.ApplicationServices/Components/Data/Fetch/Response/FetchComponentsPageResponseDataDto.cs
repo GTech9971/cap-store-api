@@ -1,4 +1,6 @@
 ﻿using System;
+using CapStore.ApplicationServices.Categories.Data;
+using CapStore.ApplicationServices.Makers.Data;
 using CapStore.Domain.Shareds.Responses;
 
 namespace CapStore.ApplicationServices.Components.Data.Fetch.Response
@@ -6,7 +8,7 @@ namespace CapStore.ApplicationServices.Components.Data.Fetch.Response
 	/// <summary>
 	/// 電子部品取得ページレスポンスデータモデル
 	/// </summary>
-	public class FetchComponentsPageResponseDataDto : PageResponse<FetchComponentDataDto>
+	public class FetchComponentsPageResponseDataDto : PageResponse<FetchComponentDataDto<FetchCategoryDataDto, FetchMakerDataDto>>
 	{
 		public FetchComponentsPageResponseDataDto(FetchComponentListDataDto from,
 												  int pageIndex,

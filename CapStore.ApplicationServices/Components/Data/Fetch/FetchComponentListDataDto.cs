@@ -1,4 +1,6 @@
 ﻿using System;
+using CapStore.ApplicationServices.Categories.Data;
+using CapStore.ApplicationServices.Makers.Data;
 namespace CapStore.ApplicationServices.Components.Data.Fetch
 {
 	/// <summary>
@@ -6,14 +8,14 @@ namespace CapStore.ApplicationServices.Components.Data.Fetch
 	/// </summary>
 	public class FetchComponentListDataDto
 	{
-		public FetchComponentListDataDto(IEnumerable<FetchComponentDataDto> dtos,
+		public FetchComponentListDataDto(IEnumerable<FetchComponentDataDto<FetchCategoryDataDto, FetchMakerDataDto>> dtos,
 			int count)
 		{
 			Components = dtos;
 			Count = count;
 		}
 
-		public IEnumerable<FetchComponentDataDto> Components { get; }
+		public IEnumerable<FetchComponentDataDto<FetchCategoryDataDto, FetchMakerDataDto>> Components { get; }
 
 		/// <summary>
 		/// DB常にある全件数

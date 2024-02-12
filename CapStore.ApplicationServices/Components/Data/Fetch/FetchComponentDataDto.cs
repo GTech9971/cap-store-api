@@ -9,7 +9,7 @@ namespace CapStore.ApplicationServices.Components.Data.Fetch
 	/// <summary>
 	/// 電子部品取得データモデル
 	/// </summary>
-	public class FetchComponentDataDto
+	public class FetchComponentDataDto<CT, MT> where CT : FetchCategoryDataDto where MT : FetchMakerDataDto
 	{
 		public FetchComponentDataDto(Component from)
 		{
@@ -17,8 +17,8 @@ namespace CapStore.ApplicationServices.Components.Data.Fetch
 			Name = from.Name.Value;
 			ModelName = from.ModelName.Value;
 			Description = from.Description.Value;
-			Category = new FetchCategoryDataDto(from.Category);
-			Maker = new FetchMakerDataDto(from.Maker);
+			Category = (CT)new FetchCategoryDataDto(from.Category);
+			Maker = (MT)new FetchMakerDataDto(from.Maker);
 			Images = from.Images.AsList().Select(x => x.Image.Value);
 		}
 
@@ -35,10 +35,10 @@ namespace CapStore.ApplicationServices.Components.Data.Fetch
 		public string Description { get; }
 
 		[JsonPropertyName("category")]
-		public FetchCategoryDataDto Category { get;}
+		public CT Category { get; }
 
 		[JsonPropertyName("maker")]
-		public FetchMakerDataDto Maker { get; }
+		public MT Maker { get; }
 
 		[JsonPropertyName("images")]
 		public IEnumerable<string> Images { get; }

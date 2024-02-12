@@ -8,6 +8,8 @@ using CapStore.ApplicationServices.Components.Data.Fetch;
 using CapStore.Domain.Categories;
 using CapStore.Domain.Makers;
 using CapStore.Domain.Shareds;
+using CapStore.ApplicationServices.Categories.Data;
+using CapStore.ApplicationServices.Makers.Data;
 
 namespace CapStore.ApplicationServices.Components
 {
@@ -127,7 +129,7 @@ namespace CapStore.ApplicationServices.Components
 
             List<Component> data = await components.ToListAsync();
 
-            return new FetchComponentListDataDto(data.Select(x => new FetchComponentDataDto(x)), count);
+            return new FetchComponentListDataDto(data.Select(x => new FetchComponentDataDto<FetchCategoryDataDto, FetchMakerDataDto>(x)), count);
         }
 
 
