@@ -1,5 +1,7 @@
-﻿using CapStore.ApplicationServices.Categories.Data;
+﻿using System.Net;
+using CapStore.ApplicationServices.Categories.Data;
 using CapStore.Domain.Categories;
+using CapStore.Domain.Shareds.Responses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace cap_store_api;
@@ -15,10 +17,22 @@ public class CategoriesController
     }
 
     [HttpGet]
-    public IAsyncEnumerable<FetchCategoryDataDto> FetchAll()
+    public async Task<IActionResult> FetchAll()
     {
-        return _repository
-            .FetchAll()
-            .Select(x => new FetchCategoryDataDto(x));
+        BaseResponse<FetchCategoryDataDto> response = new BaseResponse<FetchCategoryDataDto>()
+        {
+            Success = true,
+            Data = await _repository
+                        .FetchAll()
+                        .Select(x => new FetchCategoryDataDto(x))
+                        .ToListAsync()
+        };
+
+        JsonResult result = new JsonResult(response)
+        {
+            StatusCode = (int)(response.Data.Any() ? HttpStatusCode.OK : HttpStatusCode.NoContent)
+        };
+
+        return result;
     }
 }
