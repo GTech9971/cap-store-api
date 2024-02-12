@@ -16,7 +16,7 @@ namespace CapStore.ApplicationServices.Makers.Data
 			Image = from.Image?.Value;
 		}
 
-		[JsonPropertyName("id")]
+		[JsonPropertyName("makerId")]
 		public int Id { get; }
 
 		[JsonPropertyName("name")]

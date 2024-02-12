@@ -16,13 +16,13 @@ namespace CapStore.ApplicationServices.Categories.Data
 			Image = from.Image?.Value;
 		}
 
-		[JsonPropertyName("id")]
+		[JsonPropertyName("categoryId")]
 		public int Id { get; }
 
 		[JsonPropertyName("name")]
 		public string Name { get; }
 
-		[JsonPropertyName("image")]	
+		[JsonPropertyName("image")]
 		public string? Image { get; }
 	}
 }
