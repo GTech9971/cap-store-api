@@ -7,6 +7,11 @@ namespace CapStore.Domain.Inventories;
 /// </summary>
 public class Unit
 {
+    public static Unit Pieces()
+    {
+        return new Unit("個");
+    }
+
     private readonly string _unit;
 
     public Unit(string unit)
@@ -23,4 +28,9 @@ public class Unit
     /// 在庫の単位
     /// </summary>
     public string Value => _unit;
+
+    public override string ToString()
+    {
+        return _unit;
+    }
 }

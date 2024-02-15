@@ -12,18 +12,12 @@ public class FetchAkizukiOrderDetailDataDto
     public FetchAkizukiOrderDetailDataDto(IOrderDetail from)
     {
         OrderId = from.OrderId.Value;
-        SlipNumber = from is OrderDetail
-                        ? from.SlipNumber.Value
-                        : 0;
         OrderDate = from.OrderDate.ToString();
         Components = from.Components.Select(x => new AkizukiOrderDetailComponentData(x));
     }
 
     [JsonPropertyName("orderId")]
     public string OrderId { get; }
-
-    [JsonPropertyName("slipNumber")]
-    public Int64 SlipNumber { get; }
 
     [JsonPropertyName("orderDate")]
     public string OrderDate { get; }

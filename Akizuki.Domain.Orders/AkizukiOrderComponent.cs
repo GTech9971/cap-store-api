@@ -14,16 +14,11 @@ public class AkizukiOrderComponent
     private readonly Unit _unit;
     private readonly CatalogId _catalogId;
     private readonly ComponentId _componentId;
-    private readonly ComponentName _componentName;
-
-    private readonly bool _registered;
 
     public AkizukiOrderComponent(Quantity quantity,
-                                 Unit unit,
+                                Unit unit,
                                 CatalogId catalogId,
-                                ComponentId componentId,
-                                ComponentName componentName,
-                                bool registered)
+                                ComponentId componentId)
     {
         if (quantity == null)
         {
@@ -45,17 +40,10 @@ public class AkizukiOrderComponent
             throw new ValidationArgumentNullException("電子部品IDは必須です");
         }
 
-        if (componentName == null)
-        {
-            throw new ValidationArgumentNullException("電子部品名は必須です");
-        }
-
         _quantity = quantity;
         _unit = unit;
         _catalogId = catalogId;
         _componentId = componentId;
-        _componentName = componentName;
-        _registered = registered;
     }
 
     /// <summary>
@@ -79,12 +67,12 @@ public class AkizukiOrderComponent
     public ComponentId ComponentId => _componentId;
 
     /// <summary>
-    /// 電子部品名
+    /// 新しい電子部品IDを適用する
     /// </summary>
-    public ComponentName ComponentName => _componentName;
-
-    /// <summary>
-    /// true:電子部品マスターに登録ずみ, false:電子部品マスターに登録されていない
-    /// </summary>
-    public bool Registered => _registered;
+    /// <param name="componentId"></param>
+    /// <returns></returns>
+    public AkizukiOrderComponent ApplyNewComponentId(ComponentId componentId)
+    {
+        return new AkizukiOrderComponent(_quantity, _unit, _catalogId, componentId);
+    }
 }

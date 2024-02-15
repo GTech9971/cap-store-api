@@ -20,7 +20,7 @@ public class OrderDetailService
     /// <returns></returns>
     public async Task<bool> Exists(IOrderDetail orderDetail)
     {
-        IOrderDetail? found = await _repository.Fetch(orderDetail.OrderId);
+        IOrderDetail? found = await _repository.FetchAsync(orderDetail.OrderId);
         return found != null;
     }
 }

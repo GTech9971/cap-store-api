@@ -144,18 +144,14 @@ public class AkizukiOrderControllerTest : IClassFixture<PostgreSqlTest>, IDispos
                 new AkizukiOrderDetailComponentData(new AkizukiOrderComponent(
                     new Quantity(10),
                     new Unit("個"),
-                    new CatalogId("P-01306"),
-                    new ComponentId(5),
-                    new ComponentName("ターミナルブロック ２Ｐ 青 縦 小"),
-                    true
+                    new CatalogId("101306"),
+                    new ComponentId(5)
                 )),
                 new AkizukiOrderDetailComponentData(new AkizukiOrderComponent(
                     new Quantity(5),
                     new Unit("個"),
-                    new CatalogId("C-05779"),
-                    new ComponentId(32),
-                    new ComponentName("分割ロングピンソケット １×４２ （４２Ｐ）"),
-                    true
+                    new CatalogId("105779"),
+                    new ComponentId(32)
                 ))
             }
         };

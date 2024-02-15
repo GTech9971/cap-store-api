@@ -140,7 +140,6 @@ public class AkizukiOrderHtmlRepository : IAkizukiOrderRepository
                                 .First()
                                 .Split("伝票番号　")[1];
         //キャンセルの場合、伝票番号が空になる
-        SlipNumber? slipNumber = isCancel ? null : new SlipNumber(Int64.Parse(slipNumberStr));
 
         IEnumerable<AkizukiComponent> akizukiComponents
             = list
@@ -161,10 +160,12 @@ public class AkizukiOrderHtmlRepository : IAkizukiOrderRepository
         });
 
 
-        IOrder order = isCancel
-                        ? new CancelOrder(orderId, orderDate, akizukiComponents)
-                        : new Order(orderId, slipNumber!, orderDate, akizukiComponents);
-        return order;
+        // IOrder order = isCancel
+        //                 ? new CancelOrder(orderId, orderDate, akizukiComponents)
+        //                 : new Order(orderId, slipNumber!, orderDate, akizukiComponents);
+        // return order;
+
+        return new Order(orderId, orderDate, akizukiComponents);
     }
 
     private IEnumerable<OrderElementList> GroupBy(IHtmlCollection<IElement> source)

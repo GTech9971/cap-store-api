@@ -51,8 +51,8 @@ public class OrderDetailData
     /// </summary>
     [Required]
     [Column("catalog_id")]
-    [MaxLength(7)]
-    [MinLength(7)]
+    [MaxLength(6)]
+    [MinLength(6)]
     public string CatalogId { get; set; } = null!;
 
 

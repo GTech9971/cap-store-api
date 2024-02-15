@@ -8,7 +8,7 @@ namespace CapStore.Infrastructure.Ef.Test
     public class BaseEfRepositoryTest : IAsyncLifetime
     {
         protected readonly PostgreSqlContainer _container = new PostgreSqlBuilder()
-            .WithImage("cap-store-db:0.0.6")
+            .WithImage("cap-store-db:0.0.7")
             .WithPortBinding(5431, 5432)
             .WithDatabase("test_db")
             .WithUsername("test")

@@ -15,8 +15,6 @@ public class AkizukiOrderDetailComponentData
         Unit = from.Unit.Value;
         CatalogId = from.CatalogId.Value;
         ComponentId = from.ComponentId.Value;
-        ComponentName = from.ComponentName.Value;
-        Registered = from.Registered;
     }
 
     public AkizukiOrderDetailComponentData() { }
@@ -32,10 +30,4 @@ public class AkizukiOrderDetailComponentData
 
     [JsonPropertyName("componentId")]
     public int ComponentId { get; set; }
-
-    [JsonPropertyName("name")]
-    public string ComponentName { get; set; } = null!;
-
-    [JsonPropertyName("registered")]
-    public bool Registered { get; set; }
 }

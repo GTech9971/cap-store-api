@@ -8,23 +8,16 @@ namespace Akizuki.Domain.Orders;
 public class Order : IOrder
 {
     private readonly OrderId _orderId;
-    private readonly SlipNumber _slipNumber;
     private readonly OrderDate _orderDate;
     private readonly IReadOnlyList<AkizukiComponent> _components;
 
     public Order(OrderId orderId,
-                SlipNumber slipNumber,
                 OrderDate orderDate,
                 IEnumerable<AkizukiComponent> components)
     {
         if (orderId == null)
         {
             throw new ValidationArgumentNullException("注文IDは必須です");
-        }
-
-        if (slipNumber == null)
-        {
-            throw new ValidationArgumentNullException("伝票番号は必須です");
         }
 
         if (orderDate == null)
@@ -43,7 +36,6 @@ public class Order : IOrder
         }
 
         _orderId = orderId;
-        _slipNumber = slipNumber;
         _orderDate = orderDate;
         _components = components.ToList().AsReadOnly();
     }
@@ -52,11 +44,6 @@ public class Order : IOrder
     /// 注文ID
     /// </summary>
     public OrderId OrderId => _orderId;
-
-    /// <summary>
-    /// 伝票番号
-    /// </summary>
-    public SlipNumber SlipNumber => _slipNumber;
 
     /// <summary>
     /// 注文日

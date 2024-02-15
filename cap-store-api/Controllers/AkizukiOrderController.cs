@@ -22,13 +22,10 @@ public class AkizukiOrderController
 {
     private readonly OrderDetailApplicationService _orderDetailApplicationService;
 
-    private readonly Encoding _encoding;
 
     public AkizukiOrderController(OrderDetailApplicationService orderDetailApplicationService)
     {
         _orderDetailApplicationService = orderDetailApplicationService;
-        Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-        _encoding = Encoding.GetEncoding("SHIFT_JIS");
     }
 
     /// <summary>
@@ -57,7 +54,7 @@ public class AkizukiOrderController
             //ファイル読み取り
             string html;
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            using (StreamReader reader = new StreamReader(file.OpenReadStream(), _encoding))
+            using (StreamReader reader = new StreamReader(file.OpenReadStream(), Encoding.UTF8))
             {
                 html = await reader.ReadToEndAsync();
             }
@@ -98,15 +95,12 @@ public class AkizukiOrderController
         {
             IOrderDetail orderDetail = new OrderDetail(
                 new OrderId(request.OrderId),
-                new SlipNumber(request.SlipNumber),
                 new OrderDate(DateOnly.Parse(request.OrderDate)),
                 request.Components.Select(x => new AkizukiOrderComponent(
                     new Quantity(x.Quantity),
                     new Unit(x.Unit),
                     new CatalogId(x.CatalogId),
-                    new ComponentId(x.ComponentId),
-                    new ComponentName(x.ComponentName),
-                    true
+                    new ComponentId(x.ComponentId)
                 ))
             );
             RegistryAkizukiOrderData data = await _orderDetailApplicationService.RegistryOrderAsync(orderDetail);

@@ -10,10 +10,6 @@ public interface IOrderDetail
     /// </summary>
     public OrderId OrderId { get; }
     /// <summary>
-    /// 伝票番号
-    /// </summary>
-    public SlipNumber SlipNumber { get; }
-    /// <summary>
     /// 注文日
     /// </summary>
     public OrderDate OrderDate { get; }

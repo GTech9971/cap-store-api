@@ -1,4 +1,6 @@
-﻿using Akizuki.Domain.Orders;
+﻿using Akizuki.Domain.Catalogs;
+using Akizuki.Domain.Orders;
+using CapStore.Domain.Components;
 using Microsoft.EntityFrameworkCore;
 
 namespace CapStore.Infrastructure.Ef;
@@ -16,7 +18,7 @@ public class EfOrderRepository : IAkizukiOrderDetailRepository
         _context = context;
     }
 
-    public async Task Save(IOrderDetail orderDetail)
+    public async Task SaveAsync(IOrderDetail orderDetail)
     {
         OrderData? found = await _context.OrderDatas
             .Where(x => x.OrderId == orderDetail.OrderId.Value)
@@ -36,7 +38,7 @@ public class EfOrderRepository : IAkizukiOrderDetailRepository
     }
 
 
-    public async Task<IOrderDetail?> Fetch(OrderId orderId)
+    public async Task<IOrderDetail?> FetchAsync(OrderId orderId)
     {
         OrderData? found = await _context.OrderDatas
                                .AsNoTracking()
@@ -45,5 +47,15 @@ public class EfOrderRepository : IAkizukiOrderDetailRepository
                                .SingleOrDefaultAsync();
 
         return found == null ? null : found.ToModel();
+    }
+
+    public async Task<ComponentId?> FetchComponentIdAsync(CatalogId catalogId)
+    {
+        OrderDetailData? found = await _context.OrderDetailDatas
+                                .AsNoTracking()
+                                .Where(x => x.CatalogId == catalogId.Value)
+                                .SingleOrDefaultAsync();
+
+        return found == null ? null : new ComponentId(found.ComponentId);
     }
 }
