@@ -1,0 +1,6 @@
+"MigrationId","ProductVersion"
+"20231128142925_init","7.0.14"
+"20231210060506_add-components","7.0.14"
+"20231231221208_fix-component-image-foregin-key","7.0.14"
+"20240101220927_create-orders","7.0.14"
+"20240214133555_fix-akizuki-order","7.0.14"
