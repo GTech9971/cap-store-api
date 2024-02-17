@@ -60,21 +60,27 @@ namespace cap_store_api.Controllers
 		/// </summary>
 		/// <param name="pageIndex">ページ数 0~</param>
 		/// <param name="pageSize">ページサイズ</param>
-		/// <param name="sortColumn">TODO</param>
-		/// <param name="sortOrder">TODO</param>
+		/// <param name="sortColumn">ソート項目</param>
+		/// <param name="sortOrder">ASC:昇順, DESC:降順</param>
+		/// <param name="filterColumn">絞り込み項目</param>
+		/// <param name="filterQuery">部分一致</param>
 		/// <returns></returns>
 		[HttpGet]
-		public async Task<IActionResult> FetchComponents(int pageIndex = 0,
-														 int pageSize = 10)
+		public IActionResult FetchComponents(int pageIndex = 0,
+											int pageSize = 10,
+											string? sortColumn = null,
+											string? sortOrder = null,
+											string? filterColumn = null,
+											string? filterQuery = null)
 		{
-			FetchComponentListDataDto components =
-				await _applicationService.FetchComponents(pageIndex,
-														  pageSize,
-														  null,
-														  null);
+			FetchComponentListDataDto components = _applicationService.FetchComponents(pageIndex,
+																						pageSize,
+																						sortColumn,
+																						sortOrder,
+														  								filterColumn,
+														  								filterQuery);
 
-			FetchComponentsSuccessPageResponseDataDto response =
-			 new FetchComponentsSuccessPageResponseDataDto(components, pageIndex, pageSize);
+			FetchComponentsSuccessPageResponseDataDto response = new FetchComponentsSuccessPageResponseDataDto(components, pageIndex, pageSize);
 
 			JsonResult result = new JsonResult(response)
 			{
@@ -86,4 +92,3 @@ namespace cap_store_api.Controllers
 		}
 	}
 }
-

@@ -12,8 +12,10 @@ namespace CapStore.Domain.Components
 
 		public Task<Component?> Fetch(ComponentModelName modelName);
 
-		public IQueryable<Component> FetchAll();
-		public Task<int> CountAsync();
+		public IQueryable<Component> FetchAll(string? sortColumn = null,
+											  string? sortOrder = null,
+											  string? filterColumn = null,
+											  string? filterQuery = null);
 
 		public Task<Component> Save(Component component);
 	}

@@ -3,7 +3,6 @@ using CapStore.ApplicationServices.Components.Data.Registry;
 using CapStore.ApplicationServices.Components.Exceptions;
 using CapStore.Domain.Components;
 using CapStore.Domain.Components.Services;
-using Microsoft.EntityFrameworkCore;
 using CapStore.ApplicationServices.Components.Data.Fetch;
 using CapStore.Domain.Categories;
 using CapStore.Domain.Makers;
@@ -98,61 +97,26 @@ namespace CapStore.ApplicationServices.Components
         /// <param name="sortColumn">ソート</param>
         /// <param name="sortOrder">ソート順</param>
         /// <returns></returns>
-        public async Task<FetchComponentListDataDto> FetchComponents(int pageIndex,
+        public FetchComponentListDataDto FetchComponents(int pageIndex,
                                                                 int pageSize,
                                                                 string? sortColumn,
-                                                                string? sortOrder)
+                                                                string? sortOrder,
+                                                                string? filterColumn,
+                                                                string? filterQuery)
         {
-            IQueryable<Component> components = _repository.FetchAll();
+            IQueryable<Component> components = _repository.FetchAll(sortColumn, sortOrder, filterColumn, filterQuery);
 
-            int count = await _repository.CountAsync();
+            int count = components.Count();
 
-            //if (!string.IsNullOrEmpty(sortColumn)
-            //    && IsValidProperty(sortColumn))
-            //{
-            //    sortOrder = !string.IsNullOrEmpty(sortOrder)
-            //        && sortOrder.ToUpper() == "ASC"
-            //        ? "ASC"
-            //        : "DESC";
-            //    components = components.OrderBy(
-            //        string.Format(
-            //            "{0} {1}",
-            //            sortColumn,
-            //            sortOrder)
-            //        );
-            //}
-
-            components = components
+            IEnumerable<FetchComponentDataDto<FetchCategoryDataDto, FetchMakerDataDto>> data =
+                components
                 .Skip(pageIndex * pageSize)
-                .Take(pageSize);
+                .Take(pageSize)
+                .Select(x => new FetchComponentDataDto<FetchCategoryDataDto, FetchMakerDataDto>(x))
+                .ToList();
 
-
-            List<Component> data = await components.ToListAsync();
-
-            return new FetchComponentListDataDto(data.Select(x => new FetchComponentDataDto<FetchCategoryDataDto, FetchMakerDataDto>(x)), count);
+            return new FetchComponentListDataDto(data, count);
         }
-
-
-        ///// <summary>
-        ///// Checks if the given property name exists
-        ///// to protect against SQL injection attacks
-        ///// </summary>
-        //public static bool IsValidProperty(
-        //    string propertyName,
-        //    bool throwExceptionIfNotFound = true)
-        //{
-        //    var prop = typeof(Component).GetProperty(
-        //        propertyName,
-        //        BindingFlags.IgnoreCase |
-        //        BindingFlags.Public |
-        //        BindingFlags.Static |
-        //        BindingFlags.Instance);
-        //    if (prop == null && throwExceptionIfNotFound)
-        //    {
-        //        throw new NotSupportedException($"ERROR: Property '{propertyName}' does not exist.");
-        //    }
-        //    return prop != null;
-        //}
 
     }
 }

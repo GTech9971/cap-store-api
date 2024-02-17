@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Reflection;
 using CapStore.Domain.Components;
 using CapStore.Infrastructure.Ef.Components.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Dynamic.Core;
 
 namespace CapStore.Infrastructure.Ef.Components
 {
@@ -15,11 +17,6 @@ namespace CapStore.Infrastructure.Ef.Components
         public EfComponentRepository(CapStoreDbContext context)
         {
             _context = context;
-        }
-
-        public async Task<int> CountAsync()
-        {
-            return await _context.ComponentDatas.CountAsync();
         }
 
         public async Task<Component?> Fetch(ComponentId componentId)
@@ -76,14 +73,58 @@ namespace CapStore.Infrastructure.Ef.Components
             return data.ToModel();
         }
 
-        public IQueryable<Component> FetchAll()
+        public IQueryable<Component> FetchAll(string? sortColumn = null,
+                                              string? sortOrder = null,
+                                              string? filterColumn = null,
+                                              string? filterQuery = null)
         {
-            return _context.ComponentDatas
-                .AsNoTracking()
-                .Include(x => x.CategoryData)
-                .Include(x => x.MakerData)
-                .Include(x => x.ComponentImageDatas)
-                .Select(x => x.ToModel());
+            IQueryable<ComponentData> components = _context.ComponentDatas
+                            .AsNoTracking()
+                            .Include(x => x.CategoryData)
+                            .Include(x => x.MakerData)
+                            .Include(x => x.ComponentImageDatas);
+
+            //フィルター
+            if (string.IsNullOrWhiteSpace(filterColumn) == false &&
+                    string.IsNullOrWhiteSpace(filterQuery) == false &&
+                    IsValidProperty(filterColumn))
+            {
+                components = components
+                                .Where($"{filterColumn}.ToString().StartsWith(@0)", filterQuery);
+            }
+
+            //ソート
+            if (string.IsNullOrEmpty(sortColumn) == false &&
+                    IsValidProperty(sortColumn))
+            {
+                sortOrder = string.IsNullOrEmpty(sortOrder) == false && sortOrder.ToUpper() == "ASC"
+                                ? "ASC"
+                                : "DESC";
+                components = components.OrderBy(string.Format("{0} {1}", sortColumn, sortOrder));
+            }
+
+            return components
+                    .Select(x => x.ToModel());
+        }
+
+        /// <summary>
+        /// Checks if the given property name exists
+        /// to protect against SQL injection attacks
+        /// </summary>
+        private static bool IsValidProperty(string propertyName,
+                                          bool throwExceptionIfNotFound = true)
+        {
+            var prop = typeof(ComponentData).GetProperty(
+                propertyName,
+                BindingFlags.IgnoreCase |
+                BindingFlags.Public |
+                BindingFlags.Static |
+                BindingFlags.Instance);
+            if (prop == null && throwExceptionIfNotFound)
+            {
+                throw new NotSupportedException($"ERROR: Property '{propertyName}' does not exist.");
+            }
+            return prop != null;
         }
 
         public async Task<Component> Save(Component component)

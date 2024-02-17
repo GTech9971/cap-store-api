@@ -71,6 +71,22 @@ namespace CapStoreAPI.Test
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
 
+        [Theory(DisplayName = "電子部品取得条件付きAPI")]
+        [Trait("Controller", "Component")]
+        [InlineData("ComponentId", "ASC", null, null)]
+        [InlineData("ComponentId", "DESC", null, null)]
+        [InlineData(null, null, "CategoryId", "1")]
+        [InlineData("ComponentId", "DESC", "CategoryId", "1")]
+        public async Task TestFetchComponentsComplex(string? sortColumn, string? sortOrder, string? filterColumn, string? filterQuery)
+        {
+            using HttpResponseMessage response
+                = await _httpClient.GetAsync($"/api/v1/components?sortColumn={sortColumn}&sortOrder={sortOrder}&filterColumn={filterColumn}&filterQuery={filterQuery}");
+
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+            // Assert
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
+
 
         [Fact(DisplayName = "電子部品取得API 1件")]
         [Trait("Controller", "Component")]

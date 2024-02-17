@@ -10,7 +10,7 @@ namespace CapStoreAPI.Test;
 public sealed class PostgreSqlTest : IAsyncLifetime
 {
     public readonly PostgreSqlContainer container = new PostgreSqlBuilder()
-                .WithImage("cap-store-db:0.0.6")
+                .WithImage("cap-store-db:0.0.7")
                 .WithDatabase("test_db")
                 .WithUsername("test")
                 .WithPassword("test")
