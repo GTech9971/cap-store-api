@@ -1,8 +1,7 @@
 ﻿using System.Net;
-using Akizuki.ApplicationService.Catalogs;
-using CapStore.Domain.Shareds;
+using CapStore.Domains.Shareds;
 
-namespace Akizuki.ApplicationServices;
+namespace CapStore.ApplicationServices.Akizukies.Catalogs.Data.Fetch.Response;
 
 public class AKE0101Response : FetchAkizukiPageErrorResponseDataDto
 {

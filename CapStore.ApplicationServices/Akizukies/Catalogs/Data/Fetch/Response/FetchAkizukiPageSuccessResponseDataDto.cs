@@ -1,7 +1,6 @@
 ﻿using System.Net;
-using Akizuki.ApplicationService.Catalogs.Data.Fetch;
 
-namespace Akizuki.ApplicationService.Catalogs;
+namespace CapStore.ApplicationServices.Akizukies.Catalogs.Data.Fetch.Response;
 
 /// <summary>
 /// 秋月電子から電子部品情報取得成功レスポンス

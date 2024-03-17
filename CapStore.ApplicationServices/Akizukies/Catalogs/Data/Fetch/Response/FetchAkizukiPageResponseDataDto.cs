@@ -1,7 +1,6 @@
-﻿using Akizuki.ApplicationService.Catalogs.Data.Fetch;
-using CapStore.Domain.Shareds.Responses;
+﻿using CapStore.Domains.Shareds.Responses;
 
-namespace Akizuki.ApplicationService.Catalogs;
+namespace CapStore.ApplicationServices.Akizukies.Catalogs.Data.Fetch.Response;
 
 /// <summary>
 /// 秋月電子から電子部品を取得したレスポンス

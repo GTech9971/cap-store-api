@@ -1,10 +1,10 @@
-﻿using Akizuki.ApplicationService.Catalogs.Data.Fetch;
-using Akizuki.Domain.Catalogs;
-using CapStore.Domain.Categories;
-using CapStore.Domain.Components;
-using CapStore.Domain.Makers;
+﻿using CapStore.ApplicationServices.Akizukies.Catalogs.Data.Fetch;
+using CapStore.Domains.Akizukies.Catalogs;
+using CapStore.Domains.Categories;
+using CapStore.Domains.Components;
+using CapStore.Domains.Makers;
 
-namespace Akizuki.ApplicationService.Catalogs
+namespace CapStore.ApplicationServices.Akizukies.Catalogs
 {
     /// <summary>
     /// カタログのアプリケーションサービス

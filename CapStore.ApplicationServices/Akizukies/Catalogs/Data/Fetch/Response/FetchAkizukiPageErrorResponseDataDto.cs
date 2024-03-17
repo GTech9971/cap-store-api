@@ -1,6 +1,6 @@
-﻿using CapStore.Domain.Shareds;
+﻿using CapStore.Domains.Shareds;
 
-namespace Akizuki.ApplicationService.Catalogs;
+namespace CapStore.ApplicationServices.Akizukies.Catalogs.Data.Fetch.Response;
 
 /// <summary>
 /// 秋月電子のカタログページから電子部品取得エラーレスポンス

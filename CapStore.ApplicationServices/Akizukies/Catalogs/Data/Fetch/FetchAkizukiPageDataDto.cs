@@ -1,9 +1,9 @@
-﻿using Akizuki.Domain.Catalogs;
-using CapStore.Domain.Categories;
-using CapStore.Domain.Makers;
+﻿using CapStore.Domains.Akizukies.Catalogs;
+using CapStore.Domains.Categories;
+using CapStore.Domains.Makers;
 using System.Text.Json.Serialization;
 
-namespace Akizuki.ApplicationService.Catalogs.Data.Fetch
+namespace CapStore.ApplicationServices.Akizukies.Catalogs.Data.Fetch
 {
     /// <summary>
     /// 秋月電子から電子部品の情報取得したデータモデル
