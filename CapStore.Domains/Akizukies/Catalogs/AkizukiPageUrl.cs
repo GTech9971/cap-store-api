@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using CapStore.Domains.Shareds.Exceptions;
-namespace Akizuki.Domains.Catalogs
+namespace CapStore.Domains.Akizukies.Catalogs
 {
 	/// <summary>
 	/// 秋月電子のページURL

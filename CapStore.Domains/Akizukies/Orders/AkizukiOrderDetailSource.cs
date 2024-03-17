@@ -1,8 +1,8 @@
 ﻿using System.Text;
-using Akizuki.Domain.Orders.Exceptions;
-using CapStore.Domain.Shareds.Exceptions;
+using CapStore.Domains.Shareds.Exceptions;
+using CapStore.Domains.Akizukies.Orders.Exceptions;
 
-namespace Akizuki.Domain.Orders;
+namespace CapStore.Domains.Akizukies.Orders;
 
 /// <summary>
 /// 秋月電子の注文詳細のソース

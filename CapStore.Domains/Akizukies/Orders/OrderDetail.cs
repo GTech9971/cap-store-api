@@ -1,6 +1,6 @@
-﻿using CapStore.Domain.Shareds.Exceptions;
+﻿using CapStore.Domains.Shareds.Exceptions;
 
-namespace Akizuki.Domain.Orders;
+namespace CapStore.Domains.Akizukies.Orders;
 
 /// <summary>
 /// 秋月電子で購入した注文詳細

@@ -10,6 +10,8 @@
     <Folder Include="Akizukies/" />
     <Folder Include="Akizukies/Catalogs/" />
     <Folder Include="Akizukies/Orders/" />
+    <Folder Include="Akizukies/Orders/Exceptions/" />
+    <Folder Include="Akizukies/Orders/Services/" />
     <Folder Include="Categories/" />
     <Folder Include="Categories/Services/" />
     <Folder Include="Components/" />

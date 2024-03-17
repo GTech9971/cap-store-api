@@ -1,4 +1,4 @@
-﻿namespace Akizuki.Domain.Orders;
+﻿namespace CapStore.Domains.Akizukies.Orders.Services;
 
 /// <summary>
 /// 注文詳細に関するドメインサービス

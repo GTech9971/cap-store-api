@@ -1,4 +1,4 @@
-﻿namespace Akizuki.Domain.Orders;
+﻿namespace CapStore.Domains.Akizukies.Orders;
 
 /// <summary>
 /// 秋月電子の注文詳細のデータソースに関する永続化を行う

@@ -1,7 +1,7 @@
-﻿using Akizuki.Domain.Catalogs;
-using CapStore.Domain.Components;
+﻿using Akizuki.Domains.Catalogs;
+using CapStore.Domains.Components;
 
-namespace Akizuki.Domain.Orders;
+namespace CapStore.Domains.Akizukies.Orders;
 
 /// <summary>
 /// 秋月電子の注文詳細の永続化に関する操作を行う

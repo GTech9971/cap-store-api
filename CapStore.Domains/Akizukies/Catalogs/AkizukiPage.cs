@@ -1,7 +1,7 @@
 ﻿using System;
 using CapStore.Domains.Components;
 
-namespace Akizuki.Domains.Catalogs
+namespace CapStore.Domains.Akizukies.Catalogs
 {
 	/// <summary>
 	/// 秋月電子のページ

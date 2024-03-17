@@ -1,8 +1,8 @@
-﻿using Akizuki.Domain.Catalogs;
-using CapStore.Domain.Components;
-using CapStore.Domain.Shareds.Exceptions;
+﻿using Akizuki.Domains.Catalogs;
+using CapStore.Domains.Components;
+using CapStore.Domains.Shareds.Exceptions;
 
-namespace Akizuki.Domain.Orders;
+namespace CapStore.Domains.Akizukies.Orders;
 
 /// <summary>
 /// 秋月電子の電子部品情報

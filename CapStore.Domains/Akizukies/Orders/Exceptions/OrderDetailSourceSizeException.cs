@@ -1,4 +1,4 @@
-﻿namespace Akizuki.Domain.Orders.Exceptions;
+﻿namespace CapStore.Domains.Akizukies.Orders.Exceptions;
 
 /// <summary>
 /// 秋月電子の注文詳細ソースのサイズ例外
