@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Akizuki.Domain.Catalogs
+namespace Akizuki.Domains.Catalogs
 {
 	/// <summary>
 	/// 秋月電子ページのレポジトリ

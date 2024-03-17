@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using CapStore.Domain.Shareds;
-using CapStore.Domain.Shareds.Exceptions;
+using CapStore.Domains.Shareds;
+using CapStore.Domains.Shareds.Exceptions;
 
-namespace Akizuki.Domain.Catalogs
+namespace Akizuki.Domains.Catalogs
 {
 	/// <summary>
 	/// 秋月電子の画像URL

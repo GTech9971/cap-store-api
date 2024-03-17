@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using CapStore.Domain.Shareds.Exceptions;
-namespace Akizuki.Domain.Catalogs
+using CapStore.Domains.Shareds.Exceptions;
+namespace Akizuki.Domains.Catalogs
 {
 	/// <summary>
 	/// 秋月電子のページURL
@@ -11,7 +11,7 @@ namespace Akizuki.Domain.Catalogs
 
 		private readonly string PATTERN = $"{AkizukiPageUrlDomain.Value}/";
 
-        private readonly string _url;
+		private readonly string _url;
 
 		public AkizukiPageUrl()
 		{
@@ -48,6 +48,6 @@ namespace Akizuki.Domain.Catalogs
 		/// </summary>
 		public string Value => _url;
 
-    }
+	}
 }
 

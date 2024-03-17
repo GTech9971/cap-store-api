@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Akizuki.Domain.Catalogs
+namespace Akizuki.Domains.Catalogs
 {
 	/// <summary>
 	/// 秋月電子ページのドメイン
@@ -11,7 +11,7 @@ namespace Akizuki.Domain.Catalogs
 		/// <summary>
 		/// 秋月電子のドメイン
 		/// </summary>
-		public static string Value => "https://akizukidenshi.com";       
+		public static string Value => "https://akizukidenshi.com";
 	}
 }
 
