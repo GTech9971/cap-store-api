@@ -1,7 +1,6 @@
-﻿using Akizuki.ApplicationServices.Registry;
-using CapStore.Domain.Shareds.Responses;
+﻿using CapStore.Domains.Shareds.Responses;
 
-namespace Akizuki.ApplicationServices;
+namespace CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Registry.Response;
 
 /// <summary>
 /// 注文登録レスポンス

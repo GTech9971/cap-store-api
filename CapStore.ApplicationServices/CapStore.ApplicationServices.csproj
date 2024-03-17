@@ -29,9 +29,14 @@
     <Folder Include="Akizukies/Catalogs/Data/Fetch/Response/" />
     <Folder Include="Akizukies/OrderDetails/" />
     <Folder Include="Akizukies/OrderDetails/Data/" />
+    <Folder Include="Akizukies/OrderDetails/Data/Fetch/" />
+    <Folder Include="Akizukies/OrderDetails/Data/Fetch/Exceptions/" />
+    <Folder Include="Akizukies/OrderDetails/Data/Fetch/Response/" />
+    <Folder Include="Akizukies/OrderDetails/Data/Registry/" />
+    <Folder Include="Akizukies/OrderDetails/Data/Registry/Exceptions/" />
+    <Folder Include="Akizukies/OrderDetails/Data/Registry/Request/" />
+    <Folder Include="Akizukies/OrderDetails/Data/Registry/Response/" />
     <Folder Include="Akizukies/Orders/" />
-    <Folder Include="Akizukies/Orders/Data/" />
-    <Folder Include="Akizukies/Orders/Exceptions/" />
     <Folder Include="Components\" />
     <Folder Include="Components\Data\" />
     <Folder Include="Components\Exceptions\" />

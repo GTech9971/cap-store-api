@@ -1,8 +1,7 @@
-﻿using Akizuki.ApplicationServices.Data.Fetch.Response;
-using Akizuki.Domain.Orders.Exceptions;
-using CapStore.Domain.Shareds;
+﻿using CapStore.Domains.Akizukies.Orders.Exceptions;
+using CapStore.Domains.Shareds;
 
-namespace Akizuki.ApplicationServices;
+namespace CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Fetch.Response;
 
 public class AKE0301Response : FetchAkizukiOrderDetailResponseData
 {

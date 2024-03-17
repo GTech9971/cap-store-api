@@ -1,8 +1,8 @@
 ﻿using System.Net;
-using Akizuki.ApplicationServices.Registry.Exceptions;
-using CapStore.Domain.Shareds;
+using CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Registry.Exceptions;
+using CapStore.Domains.Shareds;
 
-namespace Akizuki.ApplicationServices;
+namespace CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Registry.Response;
 
 public class AKE0401Response : RegistryAkizukiOrderResponseData
 {

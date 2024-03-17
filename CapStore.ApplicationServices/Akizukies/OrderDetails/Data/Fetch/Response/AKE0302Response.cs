@@ -1,8 +1,7 @@
 ﻿using System.Net;
-using Akizuki.ApplicationServices.Data.Fetch.Response;
-using CapStore.Domain.Shareds;
+using CapStore.Domains.Shareds;
 
-namespace Akizuki.ApplicationServices;
+namespace CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Fetch.Response;
 
 public class AKE0302Response : FetchAkizukiOrderDetailResponseData
 {

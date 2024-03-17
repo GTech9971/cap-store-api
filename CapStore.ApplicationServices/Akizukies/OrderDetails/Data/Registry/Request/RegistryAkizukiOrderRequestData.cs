@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
-using Akizuki.ApplicationServices.Data.Fetch;
+using CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Fetch;
 
-namespace Akizuki.ApplicationServices.Registry.Request;
+namespace CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Registry.Request;
 
 /// <summary>
 /// 秋月電子注文登録リクエスト

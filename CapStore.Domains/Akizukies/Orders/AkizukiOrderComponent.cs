@@ -1,4 +1,4 @@
-﻿using Akizuki.Domains.Catalogs;
+﻿using CapStore.Domains.Akizukies.Catalogs;
 using CapStore.Domains.Components;
 using CapStore.Domains.Inventories;
 using CapStore.Domains.Shareds.Exceptions;

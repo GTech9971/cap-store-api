@@ -1,6 +1,6 @@
-﻿using CapStore.Domain.Shareds.Responses;
+﻿using CapStore.Domains.Shareds.Responses;
 
-namespace Akizuki.ApplicationServices.Data.Fetch.Response;
+namespace CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Fetch.Response;
 
 /// <summary>
 /// 秋月電子の注文詳細取得のレスポンスデータ

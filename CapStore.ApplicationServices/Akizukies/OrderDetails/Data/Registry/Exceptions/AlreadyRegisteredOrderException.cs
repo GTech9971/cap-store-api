@@ -1,6 +1,6 @@
-﻿using Akizuki.Domain.Orders;
+﻿using CapStore.Domains.Akizukies.Orders;
 
-namespace Akizuki.ApplicationServices.Registry.Exceptions;
+namespace CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Registry.Exceptions;
 
 /// <summary>
 /// 注文が既に登録済みの例外

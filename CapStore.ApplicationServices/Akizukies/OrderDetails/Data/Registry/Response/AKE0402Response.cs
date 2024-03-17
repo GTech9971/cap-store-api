@@ -1,7 +1,7 @@
 ﻿using System.Net;
-using CapStore.Domain.Shareds;
+using CapStore.Domains.Shareds;
 
-namespace Akizuki.ApplicationServices;
+namespace CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Registry.Response;
 
 public class AKE0402Response : RegistryAkizukiOrderResponseData
 {

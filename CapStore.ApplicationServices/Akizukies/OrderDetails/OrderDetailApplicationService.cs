@@ -1,12 +1,13 @@
-﻿using Akizuki.ApplicationServices.Data.Fetch;
-using Akizuki.ApplicationServices.Registry;
-using Akizuki.ApplicationServices.Registry.Exceptions;
-using Akizuki.Domain.Catalogs;
-using Akizuki.Domain.Orders;
-using CapStore.Domain.Components;
-using CapStore.Domain.Components.Services;
+﻿using CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Fetch;
+using CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Registry;
+using CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Registry.Exceptions;
+using CapStore.Domains.Akizukies.Catalogs;
+using CapStore.Domains.Akizukies.Orders;
+using CapStore.Domains.Akizukies.Orders.Services;
+using CapStore.Domains.Components;
+using CapStore.Domains.Components.Services;
 
-namespace Akizuki.ApplicationServices.OrderDetails;
+namespace CapStore.ApplicationServices.Akizukies.OrderDetails;
 
 /// <summary>
 /// 秋月電子の注文詳細のアプリケーションサービス

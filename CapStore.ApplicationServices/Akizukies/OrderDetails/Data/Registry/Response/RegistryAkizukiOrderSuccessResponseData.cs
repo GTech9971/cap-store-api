@@ -1,7 +1,6 @@
 ﻿using System.Net;
-using Akizuki.ApplicationServices.Registry;
 
-namespace Akizuki.ApplicationServices;
+namespace CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Registry.Response;
 
 /// <summary>
 /// 注文登録成功レスポンス

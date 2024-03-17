@@ -1,7 +1,4 @@
-﻿using Akizuki.ApplicationServices.Data.Fetch;
-using Akizuki.ApplicationServices.Data.Fetch.Response;
-
-namespace Akizuki.ApplicationServices;
+﻿namespace CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Fetch.Response;
 
 /// <summary>
 /// 秋月電子の注文詳細取得成功レスポンス
