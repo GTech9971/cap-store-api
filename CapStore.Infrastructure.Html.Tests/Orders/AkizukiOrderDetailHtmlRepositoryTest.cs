@@ -1,7 +1,8 @@
 ﻿using System.Text;
-using Akizuki.Domain.Orders;
+using CapStore.Domains.Akizukies.Orders;
+using CapStore.Infrastructure.Html.Orders;
 
-namespace Akizuki.Infrastructure.Html.Test;
+namespace CapStore.Infrastructure.Html.Tests.Orders;
 
 public class AkizukiOrderDetailHtmlRepositoryTest
 {
@@ -17,7 +18,7 @@ public class AkizukiOrderDetailHtmlRepositoryTest
     public async Task SuccessTest()
     {
         string current = Directory.GetCurrentDirectory();
-        string html = await File.ReadAllTextAsync("../../../../Akizuki.Infrastructure.Html.Test/Orders/Assets/order-detail.html", Encoding.UTF8);
+        string html = await File.ReadAllTextAsync("../../../../CapStore.Infrastructure.Html.Tests/Orders/Assets/order-detail.html", Encoding.UTF8);
 
         AkizukiOrderDetailSource source = new AkizukiOrderDetailSource(html);
 

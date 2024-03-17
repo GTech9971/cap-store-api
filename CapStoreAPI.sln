@@ -17,13 +17,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Seeds", "Akizuki.Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Seeds.Test", "Akizuki.Seeds.Test\Akizuki.Seeds.Test.csproj", "{3441B0D0-BDD2-4DD5-BEEA-69824150263E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akizuki.Infrastructure.Html.Test", "Akizuki.Infrastructure.Html.Test\Akizuki.Infrastructure.Html.Test.csproj", "{28462283-C0C5-4C12-AC67-6B403EEE560C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Domains", "CapStore.Domains\CapStore.Domains.csproj", "{DB54FE27-D31C-4EB1-9A4B-3B986592E326}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Domains.Tests", "CapStore.Domains.Tests\CapStore.Domains.Tests.csproj", "{77EE0248-4CCC-4B67-BB6E-7F357E314A55}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Infrastructure.Html", "CapStore.Infrastructure.Html\CapStore.Infrastructure.Html.csproj", "{FE2AC23C-3624-4121-A56D-D3367EEAC066}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapStore.Infrastructure.Html.Tests", "CapStore.Infrastructure.Html.Tests\CapStore.Infrastructure.Html.Tests.csproj", "{8026B1C8-9F80-4037-B272-57995230E164}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,10 +59,6 @@ Global
 		{3441B0D0-BDD2-4DD5-BEEA-69824150263E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3441B0D0-BDD2-4DD5-BEEA-69824150263E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3441B0D0-BDD2-4DD5-BEEA-69824150263E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{28462283-C0C5-4C12-AC67-6B403EEE560C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{28462283-C0C5-4C12-AC67-6B403EEE560C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{28462283-C0C5-4C12-AC67-6B403EEE560C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{28462283-C0C5-4C12-AC67-6B403EEE560C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DB54FE27-D31C-4EB1-9A4B-3B986592E326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DB54FE27-D31C-4EB1-9A4B-3B986592E326}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB54FE27-D31C-4EB1-9A4B-3B986592E326}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,6 +71,10 @@ Global
 		{FE2AC23C-3624-4121-A56D-D3367EEAC066}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE2AC23C-3624-4121-A56D-D3367EEAC066}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE2AC23C-3624-4121-A56D-D3367EEAC066}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8026B1C8-9F80-4037-B272-57995230E164}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8026B1C8-9F80-4037-B272-57995230E164}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8026B1C8-9F80-4037-B272-57995230E164}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8026B1C8-9F80-4037-B272-57995230E164}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

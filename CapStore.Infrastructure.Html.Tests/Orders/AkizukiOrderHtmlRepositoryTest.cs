@@ -1,7 +1,8 @@
 ﻿using System.Text;
-using Akizuki.Domain.Orders;
+using CapStore.Domains.Akizukies.Orders;
+using CapStore.Infrastructure.Html.Orders;
 
-namespace Akizuki.Infrastructure.Html.Test;
+namespace CapStore.Infrastructure.Html.Tests.Orders;
 
 public class AkizukiOrderHtmlRepositoryTest
 {
@@ -17,14 +18,14 @@ public class AkizukiOrderHtmlRepositoryTest
     public async Task TestSuccess()
     {
         Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-        string html = await File.ReadAllTextAsync("../../../../Akizuki.Infrastructure.Html.Test/Orders/Assets/orders.html", Encoding.GetEncoding("SHIFT_JIS"));
+        string html = await File.ReadAllTextAsync("../../../../CapStore.Infrastructure.Html.Tests/Orders/Assets/orders.html", Encoding.GetEncoding("SHIFT_JIS"));
         IEnumerable<IOrder> orders = await _repository.Fetch(html);
 
         IEnumerable<string> catalogs = orders
                                         .SelectMany(x => x.Components.Select(y => y.CatalogId.Value)
                                         .Distinct())
                                         .ToList();
-        await File.WriteAllLinesAsync("../../../../Akizuki.Infrastructure.Html.Test/Orders/Assets/order-catalogs.txt", catalogs);
+        await File.WriteAllLinesAsync("../../../../CapStore.Infrastructure.Html.Tests/Orders/Assets/order-catalogs.txt", catalogs);
 
         Assert.True(html.Any());
         Assert.True(orders.Any());

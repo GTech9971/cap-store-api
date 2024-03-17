@@ -1,14 +1,14 @@
 ﻿using System;
-using Akizuki.Domain.Catalogs;
-using Akizuki.Infrastructure.Catalogs.Html;
+using CapStore.Domains.Akizukies.Catalogs;
+using CapStore.Infrastructure.Html.Catalogs;
 
-namespace Akizuki.Infrastructure.Html.Catalogs.Test
+namespace CapStore.Infrastructure.Html.Tests.Catalogs
 {
-    public class AkizukPageHtmlRepositoryTest
+    public class AkizukiPageHtmlRepositoryTest
     {
         private readonly AkizukiPageHtmlRepository _repository;
 
-        public AkizukPageHtmlRepositoryTest()
+        public AkizukiPageHtmlRepositoryTest()
         {
             _repository = new AkizukiPageHtmlRepository();
         }
