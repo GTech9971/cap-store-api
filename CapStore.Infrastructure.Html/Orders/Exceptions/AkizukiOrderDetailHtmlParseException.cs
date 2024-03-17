@@ -1,4 +1,4 @@
-﻿namespace Akizuki.Infrastructure.Html;
+﻿namespace CapStore.Infrastructure.Html.Orders.Exceptions;
 
 /// <summary>
 /// 秋月電子の注文詳細ページ解析時の例外

@@ -1,6 +1,6 @@
-﻿using Akizuki.Domain.Catalogs;
+﻿using CapStore.Domains.Akizukies.Catalogs;
 
-namespace Akizuki.Infrastructure.Catalogs.Html;
+namespace CapStore.Infrastructure.Html.Catalogs.Exceptions;
 
 /// <summary>
 /// 秋月電子のページ解析時の例外

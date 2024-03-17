@@ -3,16 +3,16 @@ using AngleSharp;
 using AngleSharp.Dom;
 using AngleSharp.Html.Parser;
 using AngleSharp.XPath;
-using Akizuki.Domain.Catalogs;
-using CapStore.Domain.Components;
+using CapStore.Domains.Components;
 using System.Text.RegularExpressions;
-using CapStore.Domain.Makers;
-using CapStore.Domain.Categories;
-using CapStore.Domain.Shareds;
+using CapStore.Domains.Makers;
+using CapStore.Domains.Categories;
+using CapStore.Domains.Shareds;
 using System.Text;
-using Akizuki.Infrastructure.Html;
+using CapStore.Domains.Akizukies.Catalogs;
+using CapStore.Infrastructure.Html.Catalogs.Exceptions;
 
-namespace Akizuki.Infrastructure.Catalogs.Html
+namespace CapStore.Infrastructure.Html.Catalogs
 {
 	public class AkizukiPageHtmlRepository : IAkizukiPageRepository
 	{

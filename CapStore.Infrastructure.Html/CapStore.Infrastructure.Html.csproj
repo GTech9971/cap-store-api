@@ -1,21 +1,24 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Catalogs/" />
     <Folder Include="Catalogs/Assets/" />
+    <Folder Include="Catalogs/Exceptions/" />
+    <Folder Include="Orders/" />
+    <Folder Include="Orders/Exceptions/" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj" />
-    <ProjectReference Include="..\Akizuki.Domain.Orders\Akizuki.Domain.Orders.csproj" />
+    <ProjectReference Include="..\CapStore.Domains\CapStore.Domains.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
+    <ItemGroup>
     <PackageReference Include="AngleSharp" Version="1.0.7" />
     <PackageReference Include="AngleSharp.XPath" Version="2.0.3" />
   </ItemGroup>

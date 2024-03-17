@@ -1,10 +1,10 @@
-﻿using Akizuki.Domain.Catalogs;
-using Akizuki.Domain.Orders;
-using AngleSharp.Dom;
+﻿using AngleSharp.Dom;
 using AngleSharp.Html.Parser;
-using CapStore.Domain.Components;
+using CapStore.Domains.Components;
+using CapStore.Domains.Akizukies.Orders;
+using CapStore.Domains.Akizukies.Catalogs;
 
-namespace Akizuki.Infrastructure.Html;
+namespace CapStore.Infrastructure.Html.Orders;
 
 public class AkizukiOrderHtmlRepository : IAkizukiOrderRepository
 {
