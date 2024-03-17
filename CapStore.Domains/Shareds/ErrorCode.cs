@@ -1,5 +1,5 @@
 ﻿using System;
-namespace CapStore.Domain.Shareds
+namespace CapStore.Domains.Shareds
 {
 	/// <summary>
 	/// エラーコード

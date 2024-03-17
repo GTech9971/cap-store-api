@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Net;
-using CapStore.Domain.Shareds.Exceptions;
+using CapStore.Domains.Shareds.Exceptions;
 
-namespace CapStore.Domain.Shareds.Responses
+namespace CapStore.Domains.Shareds.Responses
 {
 
 	/// <summary>

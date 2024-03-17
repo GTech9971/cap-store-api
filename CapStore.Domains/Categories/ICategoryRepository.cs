@@ -1,7 +1,7 @@
 ﻿using System;
-using CapStore.Domain.Shareds;
+using CapStore.Domains.Shareds;
 
-namespace CapStore.Domain.Categories
+namespace CapStore.Domains.Categories
 {
 	/// <summary>
 	/// カテゴリーの永続化に関連する操作を行うレポジトリ

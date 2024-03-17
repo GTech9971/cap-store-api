@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.Json.Serialization;
 
-namespace CapStore.Domain.Shareds
+namespace CapStore.Domains.Shareds
 {
     /// <summary>
     /// エラー情報

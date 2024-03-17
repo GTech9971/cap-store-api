@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Akizukies/" />
+    <Folder Include="Akizukies/Catalogs/" />
+    <Folder Include="Akizukies/Orders/" />
+    <Folder Include="Categories/" />
+    <Folder Include="Categories/Services/" />
+    <Folder Include="Components/" />
+    <Folder Include="Components/Exceptions/" />
+    <Folder Include="Components/Services/" />
+    <Folder Include="Inventories/" />
+    <Folder Include="Makers/" />
+    <Folder Include="Makers/Services/" />
+    <Folder Include="Shareds/" />
+    <Folder Include="Shareds/Exceptions/" />
+    <Folder Include="Shareds/Responses/" />
+  </ItemGroup>
+
+</Project>

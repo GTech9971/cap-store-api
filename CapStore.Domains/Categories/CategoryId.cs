@@ -1,7 +1,7 @@
 ﻿using System;
-using CapStore.Domain.Shareds.Exceptions;
+using CapStore.Domains.Shareds.Exceptions;
 
-namespace CapStore.Domain.Categories
+namespace CapStore.Domains.Categories
 {
 	/// <summary>
 	/// カテゴリーID
@@ -24,7 +24,7 @@ namespace CapStore.Domain.Categories
 
 		public CategoryId(int id)
 		{
-			if(id < 0)
+			if (id < 0)
 			{
 				throw new ValidationArgumentException("カテゴリーIDがマイナスです");
 			}
@@ -45,14 +45,14 @@ namespace CapStore.Domain.Categories
 		{
 			get
 			{
-                return _id == UNDETECT_ID;
-            }
+				return _id == UNDETECT_ID;
+			}
 		}
 
-        public override string ToString()
-        {
+		public override string ToString()
+		{
 			return $"カテゴリーID:{_id}";
-        }
-    }
+		}
+	}
 }
 

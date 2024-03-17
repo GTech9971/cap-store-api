@@ -1,5 +1,5 @@
 ﻿using System;
-namespace CapStore.Domain.Shareds.Exceptions
+namespace CapStore.Domains.Shareds.Exceptions
 {
 
 	/// <summary>

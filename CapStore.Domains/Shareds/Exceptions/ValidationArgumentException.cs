@@ -1,5 +1,5 @@
 ﻿using System;
-namespace CapStore.Domain.Shareds.Exceptions
+namespace CapStore.Domains.Shareds.Exceptions
 {
 	/// <summary>
 	/// モデルの引数の例外
@@ -10,7 +10,7 @@ namespace CapStore.Domain.Shareds.Exceptions
 
 		public ValidationArgumentException(string message) : base(message) { }
 
-		public ValidationArgumentException(string message, Exception exception):base(message, exception) { }
+		public ValidationArgumentException(string message, Exception exception) : base(message, exception) { }
 	}
 }
 

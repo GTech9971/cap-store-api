@@ -1,5 +1,5 @@
 ﻿using System;
-namespace CapStore.Domain.Categories.Services
+namespace CapStore.Domains.Categories.Services
 {
 	/// <summary>
 	/// カテゴリーサービス

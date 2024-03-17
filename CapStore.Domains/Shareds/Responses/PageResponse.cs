@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace CapStore.Domain.Shareds.Responses
+namespace CapStore.Domains.Shareds.Responses
 {
     /// <summary>
     /// ページネーション付きレスポンス

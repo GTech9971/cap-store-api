@@ -2,7 +2,7 @@
 using System.Net;
 using System.Text.Json.Serialization;
 
-namespace CapStore.Domain.Shareds.Responses
+namespace CapStore.Domains.Shareds.Responses
 {
     /// <summary>
     /// 基本となるレスポンス

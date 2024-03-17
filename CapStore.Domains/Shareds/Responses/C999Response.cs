@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace CapStore.Domain.Shareds.Responses
+namespace CapStore.Domains.Shareds.Responses
 {
 	/// <summary>
 	/// 予期せぬ例外発生時のレスポンス

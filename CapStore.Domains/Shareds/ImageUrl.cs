@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
-using CapStore.Domain.Shareds.Exceptions;
+using CapStore.Domains.Shareds.Exceptions;
 
-namespace CapStore.Domain.Shareds
+namespace CapStore.Domains.Shareds
 {
 	/// <summary>
 	/// 画像URL

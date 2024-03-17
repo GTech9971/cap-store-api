@@ -1,7 +1,7 @@
 ﻿using System;
-using CapStore.Domain.Shareds.Exceptions;
+using CapStore.Domains.Shareds.Exceptions;
 
-namespace CapStore.Domain.Categories
+namespace CapStore.Domains.Categories
 {
 	/// <summary>
 	/// カテゴリー名

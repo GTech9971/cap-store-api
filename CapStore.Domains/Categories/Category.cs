@@ -1,8 +1,8 @@
 ﻿using System;
-using CapStore.Domain.Shareds;
-using CapStore.Domain.Shareds.Exceptions;
+using CapStore.Domains.Shareds;
+using CapStore.Domains.Shareds.Exceptions;
 
-namespace CapStore.Domain.Categories
+namespace CapStore.Domains.Categories
 {
 	/// <summary>
 	/// 電子部品カテゴリーモデル
@@ -18,12 +18,12 @@ namespace CapStore.Domain.Categories
 
 		public Category(CategoryId id, CategoryName name, ImageUrl? imageUrl)
 		{
-			if(id == null)
+			if (id == null)
 			{
 				throw new ValidationArgumentNullException("カテゴリーIDは必須です");
 			}
 
-			if(name == null)
+			if (name == null)
 			{
 				throw new ValidationArgumentNullException("カテゴリー名は必須です");
 			}
