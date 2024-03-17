@@ -1,5 +1,5 @@
 ﻿using System;
-namespace CapStore.Domain.Makers
+namespace CapStore.Domains.Makers
 {
 	/// <summary>
 	/// メーカーの永続化を行うレポジトリ

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace CapStore.Domain.Makers.Services
+namespace CapStore.Domains.Makers.Services
 {
 	/// <summary>
 	/// メーカードメインサービス

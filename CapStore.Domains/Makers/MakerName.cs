@@ -1,7 +1,7 @@
 ﻿using System;
-using CapStore.Domain.Shareds.Exceptions;
+using CapStore.Domains.Shareds.Exceptions;
 
-namespace CapStore.Domain.Makers
+namespace CapStore.Domains.Makers
 {
 	/// <summary>
 	/// メーカー名

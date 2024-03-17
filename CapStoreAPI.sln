@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akizuki.Domain.Catalogs", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akizuki.Domain.Catalogs.Test", "Akizuki.Domain.Catalogs.Test\Akizuki.Domain.Catalogs.Test.csproj", "{34C39BDF-E8A0-4AEC-9057-CFA60949559E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Makers", "CapStore.Domain.Makers\CapStore.Domain.Makers.csproj", "{26D0E8D3-435D-48D5-87C6-E51DDBBCF4E9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Makers.Test", "CapStore.Domain.Makers.Test\CapStore.Domain.Makers.Test.csproj", "{EDB1D2AE-327B-49AC-918B-DA507113D7F4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Categories.Test", "CapStore.Domains.Categories.Test\CapStore.Domain.Categories.Test.csproj", "{65232BFD-03EE-434A-94E5-F553045BB8BF}"
@@ -77,10 +75,6 @@ Global
 		{34C39BDF-E8A0-4AEC-9057-CFA60949559E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34C39BDF-E8A0-4AEC-9057-CFA60949559E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34C39BDF-E8A0-4AEC-9057-CFA60949559E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26D0E8D3-435D-48D5-87C6-E51DDBBCF4E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26D0E8D3-435D-48D5-87C6-E51DDBBCF4E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26D0E8D3-435D-48D5-87C6-E51DDBBCF4E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26D0E8D3-435D-48D5-87C6-E51DDBBCF4E9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EDB1D2AE-327B-49AC-918B-DA507113D7F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EDB1D2AE-327B-49AC-918B-DA507113D7F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDB1D2AE-327B-49AC-918B-DA507113D7F4}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -1,8 +1,8 @@
 ﻿using System;
-using CapStore.Domain.Shareds;
-using CapStore.Domain.Shareds.Exceptions;
+using CapStore.Domains.Shareds;
+using CapStore.Domains.Shareds.Exceptions;
 
-namespace CapStore.Domain.Makers
+namespace CapStore.Domains.Makers
 {
 	/// <summary>
 	/// メーカーモデル
