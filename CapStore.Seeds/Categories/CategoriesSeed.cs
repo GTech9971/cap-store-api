@@ -1,16 +1,16 @@
 ﻿using System.Text;
-using Akizuki.Domain.Catalogs;
 using AngleSharp;
 using AngleSharp.Dom;
 using AngleSharp.Html.Parser;
-using CapStore.Domain.Categories;
+using CapStore.Domains.Akizukies.Catalogs;
+using CapStore.Domains.Categories;
 
-namespace Akizuki.Seeds;
+namespace CapStore.Seeds.Categories;
 
 public class CategoriesSeed
 {
 
-    private const string PATH = "../../../../Akizuki.Seeds/Assets/categories.txt";
+    private const string PATH = "../../../../CapStore.Seeds/Assets/categories.txt";
 
     public CategoriesSeed() { }
 

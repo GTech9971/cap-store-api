@@ -1,15 +1,15 @@
 ﻿using System.Text;
-using Akizuki.Domain.Catalogs;
 using AngleSharp;
 using AngleSharp.Dom;
 using AngleSharp.Html.Parser;
-using CapStore.Domain.Makers;
+using CapStore.Domains.Akizukies.Catalogs;
+using CapStore.Domains.Makers;
 
-namespace Akizuki.Seeds;
+namespace CapStore.Seeds.Makers;
 
 public class MakersSeed
 {
-    private const string PATH = "../../../../Akizuki.Seeds/Assets/makers.txt";
+    private const string PATH = "../../../../CapStore.Seeds/Assets/makers.txt";
 
     public MakersSeed() { }
 

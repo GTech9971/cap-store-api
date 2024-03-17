@@ -1,19 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Assets/" />
+    <Folder Include="Categories/" />
+    <Folder Include="Makers/" />
+  </ItemGroup>
+
+    <ItemGroup>
     <PackageReference Include="AngleSharp" Version="1.0.7" />
     <PackageReference Include="AngleSharp.XPath" Version="2.0.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\CapStore.Domain.Categories\CapStore.Domain.Categories.csproj" />
-    <ProjectReference Include="..\Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\CapStore.Domains\CapStore.Domains.csproj" />
+    </ItemGroup>
 
 </Project>
