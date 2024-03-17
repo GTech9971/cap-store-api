@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Reflection;
-using CapStore.Domain.Components;
+using CapStore.Domains.Components;
 using CapStore.Infrastructure.Ef.Components.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Dynamic.Core;

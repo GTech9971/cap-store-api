@@ -1,9 +1,9 @@
 ﻿using System;
-using CapStore.Domain.Makers;
+using CapStore.Domains.Makers;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
-using CapStore.Domain.Shareds;
+using CapStore.Domains.Shareds;
 
 namespace CapStore.Infrastructure.Ef.Makers.Data
 {
@@ -51,13 +51,13 @@ namespace CapStore.Infrastructure.Ef.Makers.Data
 
 		public Maker ToModel()
 		{
-            return new Maker(
-              new MakerId(Id),
-              new MakerName(Name),
-              Image == null
-              ? null
-              : new ImageUrl(Image));
-        }
+			return new Maker(
+			  new MakerId(Id),
+			  new MakerName(Name),
+			  Image == null
+			  ? null
+			  : new ImageUrl(Image));
+		}
 	}
 }
 

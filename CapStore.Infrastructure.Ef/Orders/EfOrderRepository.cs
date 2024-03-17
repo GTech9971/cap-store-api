@@ -1,6 +1,6 @@
-﻿using Akizuki.Domain.Catalogs;
-using Akizuki.Domain.Orders;
-using CapStore.Domain.Components;
+﻿using CapStore.Domains.Akizukies.Catalogs;
+using CapStore.Domains.Akizukies.Orders;
+using CapStore.Domains.Components;
 using Microsoft.EntityFrameworkCore;
 
 namespace CapStore.Infrastructure.Ef;

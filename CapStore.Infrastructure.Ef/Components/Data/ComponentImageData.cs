@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using CapStore.Domain.Components;
-using CapStore.Domain.Shareds;
+using CapStore.Domains.Components;
+using CapStore.Domains.Shareds;
 
 namespace CapStore.Infrastructure.Ef.Components.Data
 {

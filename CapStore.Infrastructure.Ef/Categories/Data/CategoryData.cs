@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using CapStore.Domain.Categories;
-using CapStore.Domain.Shareds;
+using CapStore.Domains.Categories;
+using CapStore.Domains.Shareds;
 using Microsoft.EntityFrameworkCore;
 
 namespace CapStore.Infrastructure.Ef.Categories.Data
@@ -40,7 +40,7 @@ namespace CapStore.Infrastructure.Ef.Categories.Data
 
 		public CategoryData(Category from)
 		{
-			if(from.Id.IsUnDetect == false)
+			if (from.Id.IsUnDetect == false)
 			{
 				Id = from.Id.Value;
 			}
@@ -50,13 +50,13 @@ namespace CapStore.Infrastructure.Ef.Categories.Data
 
 		public Category ToModel()
 		{
-            return new Category(
-              new CategoryId(Id),
-              new CategoryName(Name),
-              Image == null
-              ? null
-              : new ImageUrl(Image));
-        }
+			return new Category(
+			  new CategoryId(Id),
+			  new CategoryName(Name),
+			  Image == null
+			  ? null
+			  : new ImageUrl(Image));
+		}
 	}
 }
 

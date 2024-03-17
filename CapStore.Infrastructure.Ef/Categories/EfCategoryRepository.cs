@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using CapStore.Domain.Categories;
+using CapStore.Domains.Categories;
 using CapStore.Infrastructure.Ef.Categories.Data;
 
 namespace CapStore.Infrastructure.Ef.Categories

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -35,9 +35,6 @@
     <Folder Include="Orders/Data/" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapStore.Domain.Makers\CapStore.Domain.Makers.csproj" />
-    <ProjectReference Include="..\CapStore.Domain.Categories\CapStore.Domain.Categories.csproj" />
-    <ProjectReference Include="..\CapStore.Domain.Components\CapStore.Domain.Components.csproj" />
-    <ProjectReference Include="..\Akizuki.Domain.Orders\Akizuki.Domain.Orders.csproj" />
+    <ProjectReference Include="..\CapStore.Domains\CapStore.Domains.csproj" />
   </ItemGroup>
 </Project>

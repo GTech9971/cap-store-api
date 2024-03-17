@@ -1,8 +1,8 @@
 ﻿using System;
-using CapStore.Domain.Categories;
-using CapStore.Domain.Components;
-using CapStore.Domain.Makers;
-using CapStore.Domain.Shareds;
+using CapStore.Domains.Categories;
+using CapStore.Domains.Components;
+using CapStore.Domains.Makers;
+using CapStore.Domains.Shareds;
 using CapStore.Infrastructure.Ef.Categories.Data;
 using CapStore.Infrastructure.Ef.Components;
 using CapStore.Infrastructure.Ef.Makers.Data;
@@ -10,6 +10,7 @@ using Xunit;
 
 namespace CapStore.Infrastructure.Ef.Test
 {
+	[Collection("Ef Component")]
 	public class EfComponentRepositoryTest : IClassFixture<BaseEfRepositoryTest>
 	{
 

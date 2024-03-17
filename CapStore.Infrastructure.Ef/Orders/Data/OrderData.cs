@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Akizuki.Domain.Catalogs;
-using Akizuki.Domain.Orders;
-using CapStore.Domain.Components;
-using CapStore.Domain.Inventories;
+using CapStore.Domains.Akizukies.Catalogs;
+using CapStore.Domains.Akizukies.Orders;
+using CapStore.Domains.Components;
+using CapStore.Domains.Inventories;
 using Microsoft.EntityFrameworkCore;
 
 namespace CapStore.Infrastructure.Ef;

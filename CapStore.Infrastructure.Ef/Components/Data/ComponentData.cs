@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using CapStore.Domain.Categories;
-using CapStore.Domain.Components;
-using CapStore.Domain.Makers;
+using CapStore.Domains.Categories;
+using CapStore.Domains.Components;
+using CapStore.Domains.Makers;
 using CapStore.Infrastructure.Ef.Categories.Data;
 using CapStore.Infrastructure.Ef.Makers.Data;
 

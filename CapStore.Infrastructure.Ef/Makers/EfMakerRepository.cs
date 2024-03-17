@@ -1,5 +1,5 @@
 ﻿using System;
-using CapStore.Domain.Makers;
+using CapStore.Domains.Makers;
 using CapStore.Infrastructure.Ef.Makers.Data;
 using Microsoft.EntityFrameworkCore;
 

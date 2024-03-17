@@ -1,9 +1,10 @@
 ﻿using System;
-using CapStore.Domain.Makers;
+using CapStore.Domains.Makers;
 using Xunit;
 
 namespace CapStore.Infrastructure.Ef.Test
 {
+    [Collection("Ef Maker")]
     public class EfMakerRepositoryTest : IClassFixture<BaseEfRepositoryTest>
     {
         private readonly CapStoreDbContext _context;

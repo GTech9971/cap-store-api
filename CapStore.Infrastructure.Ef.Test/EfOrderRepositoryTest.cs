@@ -1,11 +1,12 @@
 ﻿using System.Text;
-using Akizuki.Domain.Orders;
-using Akizuki.Infrastructure.Html;
-using CapStore.Domain.Components;
+using CapStore.Domains.Akizukies.Orders;
+using CapStore.Domains.Components;
+using CapStore.Infrastructure.Html.Orders;
 using Xunit;
 
 namespace CapStore.Infrastructure.Ef.Test;
 
+[Collection("Ef Order")]
 public class EfOrderRepositoryTest : IClassFixture<BaseEfRepositoryTest>
 {
     private readonly CapStoreDbContext _context;

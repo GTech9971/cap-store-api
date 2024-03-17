@@ -1,10 +1,11 @@
 ﻿using System;
-using CapStore.Domain.Categories;
+using CapStore.Domains.Categories;
 using CapStore.Infrastructure.Ef.Categories;
 using Xunit;
 
 namespace CapStore.Infrastructure.Ef.Test
 {
+	[Collection("Ef Category")]
 	public class EfCategoryRepositoryTest : IClassFixture<BaseEfRepositoryTest>
 	{
 

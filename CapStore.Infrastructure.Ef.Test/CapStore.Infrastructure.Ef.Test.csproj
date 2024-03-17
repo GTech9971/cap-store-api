@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -21,8 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj" />
     <ProjectReference Include="..\CapStore.Infrastructure.Ef\CapStore.Infrastructure.Ef.csproj" />
-    <ProjectReference Include="..\Akizuki.Infrastructure.Html\Akizuki.Infrastructure.Html.csproj" />
+    <ProjectReference Include="..\CapStore.Infrastructure.Html\CapStore.Infrastructure.Html.csproj" />
   </ItemGroup>
 </Project>

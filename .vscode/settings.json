@@ -5,6 +5,7 @@
         "Datas",
         "Npgsql",
         "Shareds",
+        "Testcontainers",
         "Xunit"
     ]
 }

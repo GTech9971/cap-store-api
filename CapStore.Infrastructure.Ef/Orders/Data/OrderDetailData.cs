@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Akizuki.Domain.Orders;
+using CapStore.Domains.Akizukies.Orders;
 using CapStore.Infrastructure.Ef.Components.Data;
 
 namespace CapStore.Infrastructure.Ef;
