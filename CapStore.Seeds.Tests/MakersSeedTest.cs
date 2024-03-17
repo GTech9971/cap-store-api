@@ -1,7 +1,8 @@
-﻿using Akizuki.Domain.Catalogs;
-using CapStore.Domain.Makers;
+﻿using CapStore.Domains.Akizukies.Catalogs;
+using CapStore.Domains.Makers;
+using CapStore.Seeds.Makers;
 
-namespace Akizuki.Seeds.Test;
+namespace CapStore.Seeds.Tests;
 
 public class MakersSeedTest
 {

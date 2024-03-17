@@ -1,8 +1,9 @@
 ﻿
-using Akizuki.Domain.Catalogs;
-using CapStore.Domain.Categories;
+using CapStore.Domains.Akizukies.Catalogs;
+using CapStore.Domains.Categories;
+using CapStore.Seeds.Categories;
 
-namespace Akizuki.Seeds.Test;
+namespace CapStore.Seeds.Tests;
 
 public class CategoriesSeedTest
 {
