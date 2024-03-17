@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <Folder Include="Akizukies/" />
+    <Folder Include="Akizukies/Catalogs/" />
     <Folder Include="Akizukies/Orders/" />
     <Folder Include="Categories/" />
     <Folder Include="Components/" />
