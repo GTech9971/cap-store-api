@@ -1,6 +1,6 @@
-﻿using CapStore.Domain.Shareds.Exceptions;
+﻿using CapStore.Domains.Shareds.Exceptions;
 
-namespace CapStore.Domain.Inventories;
+namespace CapStore.Domains.Inventories;
 
 /// <summary>
 /// 在庫の単位
