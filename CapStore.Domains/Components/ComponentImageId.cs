@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CapStore.Domain.Components
+namespace CapStore.Domains.Components
 {
 	/// <summary>
 	/// 電子部品画像UrlID
@@ -9,22 +9,22 @@ namespace CapStore.Domain.Components
 	public class ComponentImageId
 	{
 
-        private const int UNDETECT_ID = 999999;
+		private const int UNDETECT_ID = 999999;
 
-        /// <summary>
-        /// 未確定の電子部品画像UrlID
-        /// </summary>
-        /// <returns></returns>
-        public static ComponentImageId UnDetectId()
-        {
-            return new ComponentImageId(UNDETECT_ID);
-        }
+		/// <summary>
+		/// 未確定の電子部品画像UrlID
+		/// </summary>
+		/// <returns></returns>
+		public static ComponentImageId UnDetectId()
+		{
+			return new ComponentImageId(UNDETECT_ID);
+		}
 
-        private readonly int _id;
+		private readonly int _id;
 
 		public ComponentImageId(int id)
 		{
-			if(id < 0)
+			if (id < 0)
 			{
 				throw new ValidationException("IDがマイナスです");
 			}

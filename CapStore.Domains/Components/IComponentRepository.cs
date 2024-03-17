@@ -1,5 +1,5 @@
 ﻿using System;
-namespace CapStore.Domain.Components
+namespace CapStore.Domains.Components
 {
 	/// <summary>
 	/// 電子部品の永続化を行うレポジトリ

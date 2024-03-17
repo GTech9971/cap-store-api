@@ -1,4 +1,4 @@
-﻿namespace CapStore.Domain.Components;
+﻿namespace CapStore.Domains.Components;
 
 /// <summary>
 /// 電子部品が見つからなかった際の例外                                          

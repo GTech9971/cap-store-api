@@ -1,12 +1,12 @@
 ﻿using System;
-using CapStore.Domain.Shareds;
+using CapStore.Domains.Shareds;
 
-namespace CapStore.Domain.Components
+namespace CapStore.Domains.Components
 {
-    /// <summary>
-    /// 電子部品画像URL
-    /// </summary>
-    public class ComponentImage
+	/// <summary>
+	/// 電子部品画像URL
+	/// </summary>
+	public class ComponentImage
 	{
 
 		private readonly ComponentImageId _id;

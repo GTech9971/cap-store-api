@@ -1,9 +1,9 @@
 ﻿using System;
-using CapStore.Domain.Makers;
-using CapStore.Domain.Categories;
-using CapStore.Domain.Shareds.Exceptions;
+using CapStore.Domains.Makers;
+using CapStore.Domains.Categories;
+using CapStore.Domains.Shareds.Exceptions;
 
-namespace CapStore.Domain.Components
+namespace CapStore.Domains.Components
 {
 	/// <summary>
 	/// 電子部品モデル
@@ -28,40 +28,40 @@ namespace CapStore.Domain.Components
 						ComponentImageList images)
 		{
 
-			if(id == null)
+			if (id == null)
 			{
 				throw new ValidationArgumentNullException("電子部品IDは必須です");
 			}
 
-			if(name == null)
+			if (name == null)
 			{
 				throw new ValidationArgumentNullException("電子部品名は必須です");
 			}
 
-			if(modelName == null)
+			if (modelName == null)
 			{
 				throw new ValidationArgumentNullException("電子部品モデル名は必須です");
 			}
 
-			if(description == null)
+			if (description == null)
 			{
-                throw new ValidationArgumentNullException("電子部品説明がNullです");
-            }
+				throw new ValidationArgumentNullException("電子部品説明がNullです");
+			}
 
-			if(maker == null)
+			if (maker == null)
 			{
 				throw new ValidationArgumentNullException("メーカーは必須です");
 			}
 
-			if(category == null)
+			if (category == null)
 			{
 				throw new ValidationArgumentNullException("カテゴリーは必須です");
 			}
 
-			if(images == null)
+			if (images == null)
 			{
-                throw new ValidationArgumentNullException("画像リストがNullです");
-            }
+				throw new ValidationArgumentNullException("画像リストがNullです");
+			}
 
 			_id = id;
 			_name = name;

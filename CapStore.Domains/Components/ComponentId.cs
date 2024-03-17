@@ -1,7 +1,7 @@
 ﻿using System;
-using CapStore.Domain.Shareds.Exceptions;
+using CapStore.Domains.Shareds.Exceptions;
 
-namespace CapStore.Domain.Components
+namespace CapStore.Domains.Components
 {
 	/// <summary>
 	/// 電子部品ID
@@ -24,7 +24,7 @@ namespace CapStore.Domain.Components
 
 		public ComponentId(int componentId)
 		{
-			if(componentId < 0)
+			if (componentId < 0)
 			{
 				throw new ValidationArgumentException($"電子部品IDの値がマイナスです。");
 			}

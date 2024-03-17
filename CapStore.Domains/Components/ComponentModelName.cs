@@ -1,7 +1,7 @@
 ﻿using System;
-using CapStore.Domain.Shareds.Exceptions;
+using CapStore.Domains.Shareds.Exceptions;
 
-namespace CapStore.Domain.Components
+namespace CapStore.Domains.Components
 {
 	/// <summary>
 	/// 電子部品モデル名

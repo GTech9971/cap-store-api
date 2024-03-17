@@ -1,8 +1,8 @@
 ﻿using System;
-using CapStore.Domain.Shareds;
-using CapStore.Domain.Shareds.Exceptions;
+using CapStore.Domains.Shareds;
+using CapStore.Domains.Shareds.Exceptions;
 
-namespace CapStore.Domain.Components
+namespace CapStore.Domains.Components
 {
 	/// <summary>
 	/// 電子部品画像URLリスト
@@ -22,7 +22,7 @@ namespace CapStore.Domain.Components
 
 		public ComponentImageList()
 		{
-			_imageUrls = new List<ComponentImage>();			
+			_imageUrls = new List<ComponentImage>();
 		}
 
 		public ComponentImageList(ComponentImage image)
@@ -30,20 +30,20 @@ namespace CapStore.Domain.Components
 			_imageUrls = new List<ComponentImage>() { image };
 		}
 
-        public ComponentImageList(IEnumerable<ComponentImage> images)
-        {
-            _imageUrls = new List<ComponentImage>(images);
-        }
+		public ComponentImageList(IEnumerable<ComponentImage> images)
+		{
+			_imageUrls = new List<ComponentImage>(images);
+		}
 
 
-        public ComponentImageList Add(ComponentImage imageUrl)
+		public ComponentImageList Add(ComponentImage imageUrl)
 		{
 			if (_imageUrls.Contains(imageUrl))
 			{
 				throw new ValidationException("画像URLが重複しています");
 			}
 
-			var temps = new List<ComponentImage>(_imageUrls);			
+			var temps = new List<ComponentImage>(_imageUrls);
 			temps.Add(imageUrl);
 			return new ComponentImageList(temps);
 		}

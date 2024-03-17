@@ -5,8 +5,6 @@ VisualStudioVersion = 17.7.34302.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStoreAPI", "cap-store-api\CapStoreAPI.csproj", "{1C8A754D-7965-46AC-ACDF-4EC7B3AD3662}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Components", "CapStore.Domain.Components\CapStore.Domain.Components.csproj", "{8CDA5CA2-71F8-4C3E-B592-28FB84284246}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Components.Test", "CapStore.Domain.Components.Test\CapStore.Domain.Components.Test.csproj", "{1B2FB1E3-DB50-4F14-86E6-76561FC53B36}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Shareds.Test", "CapStore.Domain.Shareds.Test\CapStore.Domain.Shareds.Test.csproj", "{6EE69B9F-8C1B-42E3-B888-497D128D838A}"
@@ -55,10 +53,6 @@ Global
 		{1C8A754D-7965-46AC-ACDF-4EC7B3AD3662}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C8A754D-7965-46AC-ACDF-4EC7B3AD3662}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C8A754D-7965-46AC-ACDF-4EC7B3AD3662}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8CDA5CA2-71F8-4C3E-B592-28FB84284246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8CDA5CA2-71F8-4C3E-B592-28FB84284246}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8CDA5CA2-71F8-4C3E-B592-28FB84284246}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8CDA5CA2-71F8-4C3E-B592-28FB84284246}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1B2FB1E3-DB50-4F14-86E6-76561FC53B36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1B2FB1E3-DB50-4F14-86E6-76561FC53B36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B2FB1E3-DB50-4F14-86E6-76561FC53B36}.Release|Any CPU.ActiveCfg = Release|Any CPU

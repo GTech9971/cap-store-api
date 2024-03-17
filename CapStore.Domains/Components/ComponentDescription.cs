@@ -1,6 +1,6 @@
 ﻿using System;
-using CapStore.Domain.Shareds.Exceptions;
-namespace CapStore.Domain.Components
+using CapStore.Domains.Shareds.Exceptions;
+namespace CapStore.Domains.Components
 {
 	/// <summary>
 	/// 電子部品説明
@@ -10,11 +10,11 @@ namespace CapStore.Domain.Components
 
 		private const string EMPTY = "説明文なし";
 
-        /// <summary>
-        /// 空の説明文
-        /// </summary>
-        /// <returns></returns>
-        public static ComponentDescription Empty()
+		/// <summary>
+		/// 空の説明文
+		/// </summary>
+		/// <returns></returns>
+		public static ComponentDescription Empty()
 		{
 			return new ComponentDescription(EMPTY);
 		}

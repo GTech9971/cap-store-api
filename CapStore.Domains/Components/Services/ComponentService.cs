@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Reflection.Metadata.Ecma335;
-namespace CapStore.Domain.Components.Services
+namespace CapStore.Domains.Components.Services
 {
 	/// <summary>
 	/// 電子部品に関するドメインサービス
