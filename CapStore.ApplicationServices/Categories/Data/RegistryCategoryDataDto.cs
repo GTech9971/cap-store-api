@@ -1,7 +1,7 @@
 ﻿using System;
-using CapStore.Domain.Categories;
+using CapStore.Domains.Categories;
 
-namespace CapStore.ApplicationService.Categories.Data
+namespace CapStore.ApplicationServices.Categories.Data
 {
 	/// <summary>
 	/// カテゴリー登録後のIDが付与されたカテゴリーデータ

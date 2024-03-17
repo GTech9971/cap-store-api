@@ -22,7 +22,7 @@ public class EfOrderRepositoryTest : IClassFixture<BaseEfRepositoryTest>
     [Trait("Category", "Akizuki")]
     public async Task TestSaveSuccess()
     {
-        string html = await File.ReadAllTextAsync("../../../../Akizuki.Infrastructure.Html.Test/Orders/Assets/order-detail.html", Encoding.UTF8);
+        string html = await File.ReadAllTextAsync("../../../../CapStore.Infrastructure.Html.Tests/Orders/Assets/order-detail.html", Encoding.UTF8);
 
         AkizukiOrderDetailSource source = new AkizukiOrderDetailSource(html);
         //登録データ用意

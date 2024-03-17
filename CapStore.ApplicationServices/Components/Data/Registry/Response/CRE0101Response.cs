@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Net;
-using CapStore.Domain.Shareds;
+using CapStore.Domains.Shareds;
 
 namespace CapStore.ApplicationServices.Components.Data.Registry.Response
 {

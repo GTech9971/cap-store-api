@@ -1,5 +1,5 @@
 ﻿using System;
-using CapStore.Domain.Components;
+using CapStore.Domains.Components;
 
 namespace CapStore.ApplicationServices.Components.Exceptions
 {
@@ -9,7 +9,7 @@ namespace CapStore.ApplicationServices.Components.Exceptions
 	public class AlreadyExistComponentException : Exception
 	{
 		public AlreadyExistComponentException(Component component, string message)
-			:base($"{component}:{message}")
+			: base($"{component}:{message}")
 		{
 		}
 	}

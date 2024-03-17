@@ -6,7 +6,8 @@ using CapStore.ApplicationServices.Components.Data.Registry.Response;
 using CapStore.ApplicationServices.Components.Data.Registry;
 using CapStore.ApplicationServices.Components.Data.Fetch;
 using CapStore.ApplicationServices.Components.Data.Fetch.Response;
-using CapStore.ApplicationServices;
+using CapStore.ApplicationServices.Categories.Exceptions;
+using CapStore.ApplicationServices.Makers.Exceptions;
 
 namespace cap_store_api.Controllers
 {

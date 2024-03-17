@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text.Json.Serialization;
-using CapStore.Domain.Makers;
+using CapStore.Domains.Makers;
 
 namespace CapStore.ApplicationServices.Makers.Data
 {

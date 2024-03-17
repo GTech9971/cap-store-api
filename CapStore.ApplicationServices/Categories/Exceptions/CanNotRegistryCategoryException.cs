@@ -1,7 +1,7 @@
 ﻿using System;
-using CapStore.Domain.Categories;
+using CapStore.Domains.Categories;
 
-namespace CapStore.ApplicationService.Categories.Exceptions
+namespace CapStore.ApplicationServices.Categories.Exceptions
 {
 	/// <summary>
 	/// カテゴリー登録時の例外

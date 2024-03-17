@@ -1,11 +1,11 @@
 ﻿using System;
-using CapStore.ApplicationService.Categories.Data;
-using CapStore.ApplicationService.Categories.Exceptions;
-using CapStore.Domain.Categories;
-using CapStore.Domain.Categories.Services;
-using CapStore.Domain.Shareds;
+using CapStore.ApplicationServices.Categories.Data;
+using CapStore.ApplicationServices.Categories.Exceptions;
+using CapStore.Domains.Categories;
+using CapStore.Domains.Categories.Services;
+using CapStore.Domains.Shareds;
 
-namespace CapStore.ApplicationService.Categories
+namespace CapStore.ApplicationServices.Categories
 {
 	/// <summary>
 	/// カテゴリーのアプリケーションサービス

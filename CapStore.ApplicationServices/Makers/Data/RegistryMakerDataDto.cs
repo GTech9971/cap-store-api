@@ -1,5 +1,5 @@
 ﻿using System;
-using CapStore.Domain.Makers;
+using CapStore.Domains.Makers;
 
 namespace CapStore.ApplicationServices.Makers.Data
 {

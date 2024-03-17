@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using CapStore.ApplicationServices.Categories.Data;
-using CapStore.Domain.Categories;
-using CapStore.Domain.Shareds.Responses;
+using CapStore.Domains.Categories;
+using CapStore.Domains.Shareds.Responses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace cap_store_api;

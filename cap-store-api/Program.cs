@@ -1,20 +1,22 @@
 ﻿using System.Text.Encodings.Web;
 using System.Text.Unicode;
-using Akizuki.ApplicationService.Catalogs;
-using Akizuki.ApplicationServices.OrderDetails;
-using Akizuki.Domain.Catalogs;
-using Akizuki.Domain.Orders;
-using Akizuki.Infrastructure.Catalogs.Html;
-using Akizuki.Infrastructure.Html;
+
 using cap_store_api.Filters;
+using CapStore.ApplicationServices.Akizukies.Catalogs;
+using CapStore.ApplicationServices.Akizukies.OrderDetails;
 using CapStore.ApplicationServices.Components;
-using CapStore.Domain.Categories;
-using CapStore.Domain.Components;
-using CapStore.Domain.Components.Services;
-using CapStore.Domain.Makers;
+using CapStore.Domains.Akizukies.Catalogs;
+using CapStore.Domains.Akizukies.Orders;
+using CapStore.Domains.Akizukies.Orders.Services;
+using CapStore.Domains.Categories;
+using CapStore.Domains.Components;
+using CapStore.Domains.Components.Services;
+using CapStore.Domains.Makers;
 using CapStore.Infrastructure.Ef;
 using CapStore.Infrastructure.Ef.Categories;
 using CapStore.Infrastructure.Ef.Components;
+using CapStore.Infrastructure.Html.Catalogs;
+using CapStore.Infrastructure.Html.Orders;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

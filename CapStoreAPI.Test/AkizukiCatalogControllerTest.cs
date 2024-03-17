@@ -4,7 +4,7 @@ using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Unicode;
-using Akizuki.Domain.Catalogs;
+using CapStore.Domains.Akizukies.Catalogs;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;
 
@@ -113,7 +113,7 @@ public class AkizukiCatalogControllerTest : IClassFixture<PostgreSqlTest>, IDisp
     /// <returns></returns>
     public static IEnumerable<object[]> CreateCatalogIds()
     {
-        const string PATH = "../../../../Akizuki.Infrastructure.Html.Test/Orders/Assets/order-catalogs.txt";
+        const string PATH = "../../../../CapStore.Infrastructure.Html.Tests/Orders/Assets/order-catalogs.txt";
         using (StreamReader reader = new StreamReader(PATH, Encoding.UTF8))
         {
             string? line;

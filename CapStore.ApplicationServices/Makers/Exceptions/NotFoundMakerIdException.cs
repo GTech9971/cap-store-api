@@ -1,6 +1,6 @@
-﻿using CapStore.Domain.Makers;
+﻿using CapStore.Domains.Makers;
 
-namespace CapStore.ApplicationServices;
+namespace CapStore.ApplicationServices.Makers.Exceptions;
 
 public class NotFoundMakerIdException : Exception
 {

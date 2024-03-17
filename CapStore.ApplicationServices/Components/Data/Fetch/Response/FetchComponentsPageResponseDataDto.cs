@@ -1,7 +1,7 @@
 ﻿using System;
 using CapStore.ApplicationServices.Categories.Data;
 using CapStore.ApplicationServices.Makers.Data;
-using CapStore.Domain.Shareds.Responses;
+using CapStore.Domains.Shareds.Responses;
 
 namespace CapStore.ApplicationServices.Components.Data.Fetch.Response
 {

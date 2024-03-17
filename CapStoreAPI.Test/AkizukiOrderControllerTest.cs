@@ -2,12 +2,12 @@
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
-using Akizuki.ApplicationServices.Data.Fetch;
-using Akizuki.ApplicationServices.Registry.Request;
-using Akizuki.Domain.Catalogs;
-using Akizuki.Domain.Orders;
-using CapStore.Domain.Components;
-using CapStore.Domain.Inventories;
+using CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Fetch;
+using CapStore.ApplicationServices.Akizukies.OrderDetails.Data.Registry.Request;
+using CapStore.Domains.Akizukies.Catalogs;
+using CapStore.Domains.Akizukies.Orders;
+using CapStore.Domains.Components;
+using CapStore.Domains.Inventories;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;
 

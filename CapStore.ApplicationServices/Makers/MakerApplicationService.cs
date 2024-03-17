@@ -1,9 +1,9 @@
 ﻿using System;
-using CapStore.Domain.Makers;
+using CapStore.Domains.Makers;
 using CapStore.ApplicationServices.Makers.Data;
 using CapStore.ApplicationServices.Makers.Exceptions;
-using CapStore.Domain.Makers.Services;
-using CapStore.Domain.Shareds;
+using CapStore.Domains.Makers.Services;
+using CapStore.Domains.Shareds;
 
 namespace CapStore.ApplicationServices.Makers
 {

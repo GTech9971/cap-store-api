@@ -1,14 +1,16 @@
 ﻿using System;
 using CapStore.ApplicationServices.Components.Data.Registry;
 using CapStore.ApplicationServices.Components.Exceptions;
-using CapStore.Domain.Components;
-using CapStore.Domain.Components.Services;
+using CapStore.Domains.Components;
+using CapStore.Domains.Components.Services;
 using CapStore.ApplicationServices.Components.Data.Fetch;
-using CapStore.Domain.Categories;
-using CapStore.Domain.Makers;
-using CapStore.Domain.Shareds;
+using CapStore.Domains.Categories;
+using CapStore.Domains.Makers;
+using CapStore.Domains.Shareds;
 using CapStore.ApplicationServices.Categories.Data;
 using CapStore.ApplicationServices.Makers.Data;
+using CapStore.ApplicationServices.Categories.Exceptions;
+using CapStore.ApplicationServices.Makers.Exceptions;
 
 namespace CapStore.ApplicationServices.Components
 {

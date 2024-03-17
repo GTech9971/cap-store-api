@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text.Json.Serialization;
-using CapStore.Domain.Categories;
+using CapStore.Domains.Categories;
 
 namespace CapStore.ApplicationServices.Categories.Data
 {

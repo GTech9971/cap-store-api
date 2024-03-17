@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Net;
-using CapStore.Domain.Categories;
-using CapStore.Domain.Shareds;
+using CapStore.ApplicationServices.Categories.Exceptions;
+using CapStore.Domains.Categories;
+using CapStore.Domains.Shareds;
 
 namespace CapStore.ApplicationServices.Components.Data.Registry.Response
 {

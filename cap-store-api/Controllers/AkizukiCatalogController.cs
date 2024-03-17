@@ -1,8 +1,7 @@
-﻿using Akizuki.ApplicationService.Catalogs;
-using Akizuki.ApplicationService.Catalogs.Data.Fetch;
-using Akizuki.ApplicationServices;
-using Akizuki.Infrastructure.Catalogs.Html;
-using Akizuki.Infrastructure.Html;
+﻿using CapStore.ApplicationServices.Akizukies.Catalogs;
+using CapStore.ApplicationServices.Akizukies.Catalogs.Data.Fetch;
+using CapStore.ApplicationServices.Akizukies.Catalogs.Data.Fetch.Response;
+using CapStore.Infrastructure.Html.Catalogs.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace cap_store_api;

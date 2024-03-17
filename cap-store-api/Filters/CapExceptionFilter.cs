@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Text.Json;
-using CapStore.Domain.Shareds;
-using CapStore.Domain.Shareds.Exceptions;
-using CapStore.Domain.Shareds.Responses;
+using CapStore.Domains.Shareds.Exceptions;
+using CapStore.Domains.Shareds.Responses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 

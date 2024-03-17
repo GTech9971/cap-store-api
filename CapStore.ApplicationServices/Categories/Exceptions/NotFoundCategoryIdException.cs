@@ -1,6 +1,6 @@
-﻿using CapStore.Domain.Categories;
+﻿using CapStore.Domains.Categories;
 
-namespace CapStore.ApplicationServices;
+namespace CapStore.ApplicationServices.Categories.Exceptions;
 
 public class NotFoundCategoryIdException : Exception
 {

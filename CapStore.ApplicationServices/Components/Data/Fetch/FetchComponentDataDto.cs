@@ -2,7 +2,7 @@
 using System.Text.Json.Serialization;
 using CapStore.ApplicationServices.Categories.Data;
 using CapStore.ApplicationServices.Makers.Data;
-using CapStore.Domain.Components;
+using CapStore.Domains.Components;
 
 namespace CapStore.ApplicationServices.Components.Data.Fetch
 {

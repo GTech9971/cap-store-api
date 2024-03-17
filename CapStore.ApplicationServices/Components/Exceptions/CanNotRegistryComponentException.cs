@@ -1,5 +1,5 @@
 ﻿using System;
-using CapStore.Domain.Components;
+using CapStore.Domains.Components;
 
 namespace CapStore.ApplicationServices.Components.Exceptions
 {

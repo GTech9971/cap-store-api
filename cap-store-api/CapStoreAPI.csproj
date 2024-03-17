@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>cap_store_api</RootNamespace>
@@ -9,30 +9,11 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
-  <ItemGroup>    
-    <ProjectReference Include="..\Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\CapStore.Domain.Categories\CapStore.Domain.Categories.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\CapStore.Domain.Makers\CapStore.Domain.Makers.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\CapStore.Domain.Components\CapStore.Domain.Components.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\Akizuki.Infrastructure.Catalogs\Akizuki.Infrastructure.Catalogs.Html.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\CapStore.Infrastructure.Ef\CapStore.Infrastructure.Ef.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\CapStore.ApplicationServices\CapStore.ApplicationServices.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\Akizuki.ApplicationServices\Akizuki.ApplicationServices.csproj" />
-    <ProjectReference Include="..\Akizuki.Infrastructure.Html\Akizuki.Infrastructure.Html.csproj" />
+  <ItemGroup>
+    <ProjectReference Include="..\CapStore.Domains\CapStore.Domains.csproj" />
+    <ProjectReference Include="..\CapStore.ApplicationServices\CapStore.ApplicationServices.csproj" />
+    <ProjectReference Include="..\CapStore.Infrastructure.Html\CapStore.Infrastructure.Html.csproj" />
+    <ProjectReference Include="..\CapStore.Infrastructure.Ef\CapStore.Infrastructure.Ef.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
