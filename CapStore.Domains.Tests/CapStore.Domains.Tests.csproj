@@ -21,6 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Akizukies/" />
+    <Folder Include="Akizukies/Orders/" />
     <Folder Include="Categories/" />
     <Folder Include="Components/" />
     <Folder Include="Makers/" />

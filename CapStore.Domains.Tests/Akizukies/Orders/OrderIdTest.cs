@@ -1,7 +1,7 @@
-﻿using Akizuki.Domain.Orders;
-using CapStore.Domain.Shareds.Exceptions;
+﻿using CapStore.Domains.Akizukies.Orders;
+using CapStore.Domains.Shareds.Exceptions;
 
-namespace Akizuki.Domain.Test.Orders;
+namespace CapStore.Domains.Tests.Akizukies.Orders;
 
 public class OrderIdTest
 {
