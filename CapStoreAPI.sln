@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStoreAPI", "cap-store-ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Components.Test", "CapStore.Domain.Components.Test\CapStore.Domain.Components.Test.csproj", "{1B2FB1E3-DB50-4F14-86E6-76561FC53B36}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapStore.Domain.Shareds.Test", "CapStore.Domain.Shareds.Test\CapStore.Domain.Shareds.Test.csproj", "{6EE69B9F-8C1B-42E3-B888-497D128D838A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akizuki.Domain.Catalogs", "Akizuki.Domain.Catalogs\Akizuki.Domain.Catalogs.csproj", "{B838B758-2BD7-4173-A4F3-C0DADB0D4D00}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akizuki.Domain.Catalogs.Test", "Akizuki.Domain.Catalogs.Test\Akizuki.Domain.Catalogs.Test.csproj", "{34C39BDF-E8A0-4AEC-9057-CFA60949559E}"
@@ -53,10 +51,6 @@ Global
 		{1B2FB1E3-DB50-4F14-86E6-76561FC53B36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B2FB1E3-DB50-4F14-86E6-76561FC53B36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B2FB1E3-DB50-4F14-86E6-76561FC53B36}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6EE69B9F-8C1B-42E3-B888-497D128D838A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6EE69B9F-8C1B-42E3-B888-497D128D838A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6EE69B9F-8C1B-42E3-B888-497D128D838A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6EE69B9F-8C1B-42E3-B888-497D128D838A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B838B758-2BD7-4173-A4F3-C0DADB0D4D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B838B758-2BD7-4173-A4F3-C0DADB0D4D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B838B758-2BD7-4173-A4F3-C0DADB0D4D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
