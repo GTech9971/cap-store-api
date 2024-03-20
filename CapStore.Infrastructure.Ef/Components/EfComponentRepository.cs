@@ -1,9 +1,8 @@
-﻿using System;
-using System.Reflection;
-using CapStore.Domains.Components;
+﻿using CapStore.Domains.Components;
 using CapStore.Infrastructure.Ef.Components.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Dynamic.Core;
+using CapStore.Domains;
 
 namespace CapStore.Infrastructure.Ef.Components
 {
@@ -13,10 +12,13 @@ namespace CapStore.Infrastructure.Ef.Components
     public class EfComponentRepository : IComponentRepository
     {
         private readonly CapStoreDbContext _context;
+        private readonly FilterSortService<ComponentData> _filterSortService;
 
-        public EfComponentRepository(CapStoreDbContext context)
+        public EfComponentRepository(CapStoreDbContext context,
+                                    FilterSortService<ComponentData> filterSortService)
         {
             _context = context;
+            _filterSortService = filterSortService;
         }
 
         public async Task<Component?> Fetch(ComponentId componentId)
@@ -85,46 +87,19 @@ namespace CapStore.Infrastructure.Ef.Components
                             .Include(x => x.ComponentImageDatas);
 
             //フィルター
-            if (string.IsNullOrWhiteSpace(filterColumn) == false &&
-                    string.IsNullOrWhiteSpace(filterQuery) == false &&
-                    IsValidProperty(filterColumn))
+            if (string.IsNullOrWhiteSpace(filterColumn) == false && string.IsNullOrWhiteSpace(filterQuery) == false)
             {
-                components = components
-                                .Where($"{filterColumn}.ToString().StartsWith(@0)", filterQuery);
+                components = _filterSortService.filter(components, filterColumn, filterQuery);
             }
 
             //ソート
-            if (string.IsNullOrEmpty(sortColumn) == false &&
-                    IsValidProperty(sortColumn))
+            if (string.IsNullOrEmpty(sortColumn) == false && string.IsNullOrWhiteSpace(sortOrder) == false)
             {
-                sortOrder = string.IsNullOrEmpty(sortOrder) == false && sortOrder.ToUpper() == "ASC"
-                                ? "ASC"
-                                : "DESC";
-                components = components.OrderBy(string.Format("{0} {1}", sortColumn, sortOrder));
+                components = _filterSortService.sort(components, sortColumn, sortOrder);
             }
 
             return components
                     .Select(x => x.ToModel());
-        }
-
-        /// <summary>
-        /// Checks if the given property name exists
-        /// to protect against SQL injection attacks
-        /// </summary>
-        private static bool IsValidProperty(string propertyName,
-                                          bool throwExceptionIfNotFound = true)
-        {
-            var prop = typeof(ComponentData).GetProperty(
-                propertyName,
-                BindingFlags.IgnoreCase |
-                BindingFlags.Public |
-                BindingFlags.Static |
-                BindingFlags.Instance);
-            if (prop == null && throwExceptionIfNotFound)
-            {
-                throw new NotSupportedException($"ERROR: Property '{propertyName}' does not exist.");
-            }
-            return prop != null;
         }
 
         public async Task<Component> Save(Component component)
@@ -176,7 +151,7 @@ namespace CapStore.Infrastructure.Ef.Components
             {
                 //電子部品画像UrlIdと電子部品IDで一意に特定する
                 ComponentImage? fromImage = fromImageList.SingleOrDefault(y => y.ComponentImageId.Value == x.Id && y.ComponentId.Value == x.ComponentId);
-                x.ImageUrl = fromImage.Image.Value;
+                x.ImageUrl = fromImage == null ? "" : fromImage.Image.Value;
             });
             return to;
         }

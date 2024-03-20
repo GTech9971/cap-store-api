@@ -1,10 +1,12 @@
 ﻿using System;
+using CapStore.Domains;
 using CapStore.Domains.Categories;
 using CapStore.Domains.Components;
 using CapStore.Domains.Makers;
 using CapStore.Domains.Shareds;
 using CapStore.Infrastructure.Ef.Categories.Data;
 using CapStore.Infrastructure.Ef.Components;
+using CapStore.Infrastructure.Ef.Components.Data;
 using CapStore.Infrastructure.Ef.Makers.Data;
 using Xunit;
 
@@ -62,7 +64,9 @@ namespace CapStore.Infrastructure.Ef.Test
 				imageList);
 
 
-			IComponentRepository repository = new EfComponentRepository(_context);
+			FilterSortService<ComponentData> filterSortService = new FilterSortService<ComponentData>();
+
+			IComponentRepository repository = new EfComponentRepository(_context, filterSortService);
 			//登録テスト
 			var registeredComponent = await repository.Save(component);
 

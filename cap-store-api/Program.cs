@@ -5,6 +5,7 @@ using cap_store_api.Filters;
 using CapStore.ApplicationServices.Akizukies.Catalogs;
 using CapStore.ApplicationServices.Akizukies.OrderDetails;
 using CapStore.ApplicationServices.Components;
+using CapStore.Domains;
 using CapStore.Domains.Akizukies.Catalogs;
 using CapStore.Domains.Akizukies.Orders;
 using CapStore.Domains.Akizukies.Orders.Services;
@@ -51,6 +52,7 @@ builder.Services.AddScoped<ComponentsApplicationService>();
 builder.Services.AddScoped<CatalogApplicationService>();
 builder.Services.AddScoped<OrderDetailService>();
 builder.Services.AddScoped<OrderDetailApplicationService>();
+builder.Services.AddScoped(typeof(FilterSortService<>));
 
 builder.Services.AddControllers(options =>
 {

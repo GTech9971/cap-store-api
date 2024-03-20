@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.3.8" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Akizukies/" />
     <Folder Include="Akizukies/Catalogs/" />
     <Folder Include="Akizukies/Orders/" />
@@ -20,7 +24,6 @@
     <Folder Include="Inventories/" />
     <Folder Include="Makers/" />
     <Folder Include="Makers/Services/" />
-    <Folder Include="Shareds/" />
     <Folder Include="Shareds/Exceptions/" />
     <Folder Include="Shareds/Responses/" />
   </ItemGroup>
